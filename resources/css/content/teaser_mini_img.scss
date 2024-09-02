@@ -1,0 +1,73 @@
+@charset "utf-8";
+$color: #282828;
+$colorRed: #EF533F;
+$colorCCC: #CCCCCC;
+$colorGrey: #667085;
+$colorBlue: #00AFEF;
+
+$maxWidth: 1440;
+@mixin adaptiv-font($pcSize, $mobSize) {
+    $addSize: $pcSize - $mobSize;
+    $maxWidth: $maxWidth - 320;
+    font-size: calc(#{$mobSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidth}));
+}
+
+@mixin family {
+    font-family: 'Source Sans Pro', "Arial Narrow", Arial, Helvetica, sans-serif;
+
+}
+
+@mixin family_Philosopher {
+    font-family: "Philosopher", "Arial Narrow", Arial, Helvetica, sans-serif;
+}
+
+@mixin Inter {
+    font-family: 'Inter Variable', sans-serif;
+}
+
+@mixin Roboto {
+    font-family: 'Roboto Flex Variable', sans-serif;
+}
+
+
+.teaser_mini_img {
+    padding: 4px 7px;
+    margin-bottom: 20px;
+
+
+    .tmg__img {
+        padding-right: 30px;
+
+        img {
+            border-radius: 4px;
+
+        }
+    }
+
+    .tmg__title {
+
+    }
+
+    .tmg__flex {
+        display: flex;
+        width: 100%;
+
+    }
+
+    .tmg__titleText {
+        a {
+            color: $color;
+            font-size: 18px;
+            display: block;
+            padding: 10px 0;
+        }
+    }
+
+    .tmg__religion_area {
+        a {
+            color: $colorGrey;
+            font-size: 15px;
+            margin-right: 10px;
+        }
+    }
+}

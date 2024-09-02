@@ -1,0 +1,21 @@
+.teaser_mini_img {
+  padding: 4px 7px;
+  margin-bottom: 20px; }
+  .teaser_mini_img .tmg__img {
+    padding-right: 30px; }
+    .teaser_mini_img .tmg__img img {
+      border-radius: 4px; }
+  .teaser_mini_img .tmg__flex {
+    display: flex;
+    width: 100%; }
+  .teaser_mini_img .tmg__titleText a {
+    color: #282828;
+    font-size: 18px;
+    display: block;
+    padding: 10px 0; }
+  .teaser_mini_img .tmg__religion_area a {
+    color: #667085;
+    font-size: 15px;
+    margin-right: 10px; }
+
+/*# sourceMappingURL=teaser_mini_img.css.map */

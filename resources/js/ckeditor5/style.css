@@ -1,0 +1,55 @@
+
+@media print {
+    body {
+        margin: 0 !important;
+    }
+}
+
+.main-container {
+    width: 100%;
+}
+
+.ck-content {
+    line-height: 1.6;
+    word-break: break-word;
+}
+
+.editor-container_classic-editor .editor-container__editor {
+
+}
+.ck.ck-sticky-panel__content,
+.ck.ck-sticky-panel,
+.ck.ck-reset.ck-editor.ck-rounded-corners,
+.editor-container__editor,
+.editor-container.editor-container_classic-editor
+
+{
+    border-radius: 12px 12px 0 0 !important;
+
+}
+.ck.ck-sticky-panel__content {
+  border-radius: 12px 12px 0 0;
+    border: 1px solid #dddddd !important;
+    border-bottom: none !important;
+}
+.ck.ck-toolbar.ck-toolbar_grouping {
+    border-radius: 12px 12px 0 0;
+
+}
+.ck.ck-editor__main > .ck-editor__editable:not(.ck-focused) {
+    border: 1px solid #dddddd !important;
+    border-radius:0 0 12px 12px;
+
+}
+
+.ck-content.ck-editor__editable     ul {
+        margin: 10px 10px 10px 40px;
+    }
+.ck-content.ck-editor__editable     li {
+    margin: 10px 0 ;
+    list-style-type: disc !important;
+    }
+.ck-content.ck-editor__editable     p {
+        margin: 10px 0 ;
+    }
+

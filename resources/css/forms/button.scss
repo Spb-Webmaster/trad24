@@ -1,0 +1,126 @@
+@charset "utf-8";
+$color: #282828;
+$colorRed: #EF533F;
+$colorBlue: #0969A4;
+$colorCCC: #CCCCCC;
+$colorGrey: #667085;
+$colorBlue2: #00AFEF;
+$colorGreen: #00A357;
+
+
+$maxWidth: 1440;
+@mixin adaptiv-font($pcSize, $mobSize) {
+    $addSize: $pcSize - $mobSize;
+    $maxWidth: $maxWidth - 320;
+    font-size: calc(#{$mobSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidth}));
+}
+
+@mixin family {
+    font-family: 'Source Sans Pro', "Arial Narrow", Arial, Helvetica, sans-serif;
+
+}
+
+@mixin family_Philosopher {
+    font-family: "Philosopher", "Arial Narrow", Arial, Helvetica, sans-serif;
+}
+
+@mixin Inter {
+    font-family: 'Inter Variable', sans-serif;
+}
+
+@mixin Roboto {
+    font-family: 'Roboto Flex Variable', sans-serif;
+}
+
+.button {
+    height: 46px;
+    border: 1px solid $colorBlue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 400;
+    font-style: normal;
+    background: $colorBlue;
+    width: 100%;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: 0.3s;
+    text-decoration: none;
+    &:hover {
+        border: 1px solid $colorBlue;
+        color: $colorBlue;
+        background: #fff;
+    }
+}
+.button_big {
+    height: 54px;
+
+}
+.button_normal {
+    height: 46px;
+
+}
+.button_small {
+
+}
+.button_mini {
+
+}
+
+/* цвет */
+.button_green {
+    border: 1px solid $colorGreen;
+    background: $colorGreen;
+
+    &:hover {
+        border: 1px solid $colorGreen;
+        color: $colorGreen;
+        background: #fff;
+    }
+}
+
+@media (max-width: 793px) {
+    .button_big {
+        height: 46px;
+        font-size: 16px;
+
+
+    }
+    .button_normal {
+        height: 40px !important;
+        font-size: 15px;
+
+
+    }
+    .button_small {
+
+    }
+    .button_mini {
+
+    }
+}
+
+@media (max-width: 468px) {
+    .button_big {
+        height: 40px;
+        font-size: 16px;
+
+
+    }
+    .button_normal {
+        height: 38px !important;
+        font-size: 15px;
+
+
+    }
+    .button_small {
+
+    }
+    .button_mini {
+
+    }
+}
+
+

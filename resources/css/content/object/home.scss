@@ -1,0 +1,108 @@
+@charset "utf-8";
+$color: #282828;
+$colorRed: #EF533F;
+$colorCCC: #CCCCCC;
+$colorGrey: #667085;
+$colorBlue: #00AFEF;
+$colorGreen: #0f6567;
+
+
+$maxWidth: 1440;
+@mixin adaptiv-font($pcSize, $mobSize) {
+    $addSize: $pcSize - $mobSize;
+    $maxWidth: $maxWidth - 320;
+    font-size: calc(#{$mobSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidth}));
+}
+
+@mixin family {
+    font-family: 'Source Sans Pro', "Arial Narrow", Arial, Helvetica, sans-serif;
+
+}
+
+@mixin family_Philosopher {
+    font-family: "Philosopher", "Arial Narrow", Arial, Helvetica, sans-serif;
+}
+
+@mixin Inter {
+    font-family: 'Inter Variable', sans-serif;
+}
+
+@mixin Roboto {
+    font-family: 'Roboto Flex Variable', sans-serif;
+}
+
+.page_l {
+    display: flex;
+    padding: 20px 0 0 0;
+    .page_l__left {
+        width: 75%;
+        padding: 4px 4% 0 0;
+    }
+    .page_l__right {
+        width: 25%;
+        background: #f9f9fa;
+        .desc_main__imgR {
+            text-align: center;
+            img {
+                border-radius: 4px;
+            }
+        }
+        .desc_main__signature_img {
+            padding: 16px 10px;
+        }
+    }
+    .desc_main__imgR {
+        text-align: center;
+    }
+}
+
+.page_l__revers.page_l {
+
+    .page_l__left {
+        width: 25%;
+        background: #f9f9fa;
+        padding-right: 0;
+    }
+
+    .page_l__right {
+        width: 75%;
+        padding: 4px 0 0 4%;
+        background: #fff;
+    }
+}
+.page_l {
+    &.no_back {
+        .page_l__left {
+            background: #fff;
+        }
+
+        .page_l__right {
+            background: #fff;
+
+        }
+    }
+}
+.page_r {
+    display: flex;
+    padding: 20px 0 0 0;
+    .page_r__left {
+        width: 50%;
+        padding: 4px 4% 0 0;
+        .desc_main__imgR {
+            text-align: center;
+            img {
+                border-radius: 4px;
+            }
+        }
+        .desc_main__signature_img {
+            padding: 16px 10px;
+        }
+    }
+    .page_r__right {
+        width: 50%;
+
+    }
+}
+
+
+

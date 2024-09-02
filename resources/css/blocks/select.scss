@@ -1,0 +1,161 @@
+@charset "utf-8";
+$color: #282828;
+$colorRed: #EF533F;
+$colorBlue: #0969A4;
+$colorCCC: #CCCCCC;
+$colorGrey: #667085;
+$colorBlue2: #00AFEF;
+$colorGreen: #00A357;
+
+
+$maxWidth: 1440;
+@mixin adaptiv-font($pcSize, $mobSize) {
+    $addSize: $pcSize - $mobSize;
+    $maxWidth: $maxWidth - 320;
+    font-size: calc(#{$mobSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidth}));
+}
+
+@mixin family {
+    font-family: 'Source Sans Pro', "Arial Narrow", Arial, Helvetica, sans-serif;
+
+}
+
+@mixin family_Philosopher {
+    font-family: "Philosopher", "Arial Narrow", Arial, Helvetica, sans-serif;
+}
+
+@mixin Inter {
+    font-family: 'Inter Variable', sans-serif;
+}
+
+@mixin Roboto {
+    font-family: 'Roboto Flex Variable', sans-serif;
+}
+
+
+.religion_select__flex {
+    display: flex;
+    position: relative;
+    z-index: 100;
+}
+
+.religion_select__axeld {
+
+    position: relative;
+    padding: 0 0 0 20px;
+    z-index: 100;
+
+    .s_active {
+        font-weight: 600;
+        font-size: 30px;
+        color: #000;
+        cursor: pointer;
+        position: relative;
+        span {
+            border-bottom: 3px solid #999;
+            padding-bottom: 2px;
+        }
+        &:hover {
+            color: $colorRed;
+        }
+        &:after {
+            content: '';
+            display: block;
+            width: 20px;
+            height: 20px;
+            position: absolute;
+            background-position: 0 0;
+            background-repeat: no-repeat;
+            background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPCEtLSBHZW5lcmF0b3I6IEFkb2JlIElsbHVzdHJhdG9yIDI4LjQuMSwgU1ZHIEV4cG9ydCBQbHVnLUluIC4gU1ZHIFZlcnNpb246IDYuMDAgQnVpbGQgMCkgIC0tPgo8c3ZnIHZlcnNpb249IjEuMSIgaWQ9ItCh0LvQvtC5XzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IgoJIHZpZXdCb3g9IjAgMCA0MiAyMyIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgNDIgMjM7IiB4bWw6c3BhY2U9InByZXNlcnZlIj4KPHN0eWxlIHR5cGU9InRleHQvY3NzIj4KCS5zdDB7ZmlsbC1ydWxlOmV2ZW5vZGQ7Y2xpcC1ydWxlOmV2ZW5vZGQ7ZmlsbDojMDEwMjAyO30KPC9zdHlsZT4KPGc+Cgk8Zz4KCQk8cGF0aCBjbGFzcz0ic3QwIiBkPSJNNDEuMjIsMC42Yy0wLjgtMC44LTIuMS0wLjgtMi45LDBMMjAuOTEsMTguMDRMMy41LDAuNmMtMC44LTAuOC0yLjEtMC44LTIuOSwwYy0wLjgsMC44LTAuOCwyLjEsMCwyLjkxCgkJCUwxOS40NiwyMi40YzAuOCwwLjgsMi4xLDAuOCwyLjksMEw0MS4yMiwzLjUxQzQyLjAyLDIuNzEsNDIuMDIsMS40LDQxLjIyLDAuNnoiLz4KCTwvZz4KPC9nPgo8L3N2Zz4K');
+            right: -34px;
+            top: 15px;
+            transition: 0.2s;
+
+        }
+
+    }
+    .reverse {
+        &:after {
+            transform: rotate(180deg);
+            top: 6px;
+
+        }
+    }
+
+    .s_box {
+        position: absolute;
+        padding: 24px;
+        z-index: 100;
+        left: 50%;
+        top: 90%;
+        width: 250px;
+        height: auto;
+        margin-top: 7px;
+        background: #fff;
+        border-radius: 5px;
+        box-shadow: 0 0 30px #0003;
+        box-sizing: border-box;
+        visibility: hidden;
+        opacity: 0;
+        transform: translate(-50%, 20px);
+        transition: .3s;
+
+        .s_box__rel {
+            font-weight: 600;
+            font-size: 24px;
+            color: #000;
+            cursor: pointer;
+            padding: 6px 0 7px 0;
+
+            span {
+                border-bottom: 3px solid #999;
+                padding-bottom: 2px;
+            }
+
+            &:hover {
+                color: $colorGreen;
+
+                span {
+                    border-bottom: 3px solid $colorGreen;
+                }
+            }
+        }
+
+        .s_box__rel.active {
+            color: $colorGreen;
+
+            span {
+                border-bottom: 3px solid $colorGreen;
+            }
+        }
+
+    }
+
+    .s_box.active {
+        visibility: visible;
+        opacity: 1;
+        transform: translate(-50%)
+    }
+}
+
+._rel_cat {
+    .s_box {
+        width: 421px !important;
+         }
+}
+._lefttext {
+    min-width: 200px;
+}
+._righttext {
+    min-width: 200px;
+
+    .font_30 {
+     span {
+         overflow: hidden;
+         text-overflow: ellipsis;
+         white-space: nowrap;
+         max-width: 295px;
+         display: block;
+     }
+    }
+}

@@ -1,0 +1,53 @@
+@import "@fontsource/philosopher";
+@import "@fontsource/philosopher/400.css";
+@import "@fontsource/philosopher/400-italic.css";
+@import "@fontsource/philosopher/700.css";
+
+@import "@fontsource-variable/inter";
+@import '@fontsource/source-sans-pro/200-italic.css';
+@import '@fontsource/source-sans-pro/300-italic.css';
+@import '@fontsource/source-sans-pro/400-italic.css';
+@import '@fontsource/source-sans-pro/600-italic.css';
+@import '@fontsource/source-sans-pro/700-italic.css';
+@import '@fontsource/source-sans-pro/900-italic.css';
+
+
+
+
+
+@import '@fontsource-variable/roboto-flex';
+
+@import "slick-carousel/slick/slick.scss";
+@import "slick-carousel/slick/slick-theme.scss";
+
+@import "./click.scss";
+@import "chosen-js/chosen.css";
+@import "./chosen/chosen.css";
+/*@import "@selectize/selectize/dist/css/selectize.css";*/
+@import "./ui/jquery-ui.min.css";
+@import "./general-style/paddind.scss";
+@import "./general-style/width.scss";
+@import "./fancybox.scss";
+@import "./blocks/select.scss";
+@import "./cabinet/articles.scss";
+@import "./cabinet/cabinet.scss";
+@import "./forms/file.scss";
+@import "./forms/button.scss";
+@import "./forms/input.scss";
+@import "./forms/select.css";
+@import "./forms/form_modal/form_modal.scss";
+@import "./forms/form_modal/qr_modal.scss";
+@import "./forms/order_mini.scss";
+@import "./forms/loader.css";
+@import "./menu/menu.scss";
+@import "./menu/left_menu.scss";
+@import "./auth/flash.scss";
+@import "./auth/register.scss";
+@import "./pagination.scss";
+@import "./content/object/page.scss";
+@import "./content/object/home.scss";
+@import "./content/teaser_4.scss";
+@import "./content/teaser_mini_img.scss";
+@import "./content/teaser_img.scss";
+@import "./style.scss";
+@import "./media.scss";
