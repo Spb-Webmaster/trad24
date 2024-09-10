@@ -1,3 +1,4 @@
+{{--
 <div class="block block_1147 sections">
     <div class="_h1 color_green "><span>{{__('Выберите одно из направлений:')}}</span></div>
     <div class="sections__flex">
@@ -18,3 +19,4 @@
     </div>
 </div>
 
+--}}
