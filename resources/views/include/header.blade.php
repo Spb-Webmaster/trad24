@@ -54,7 +54,7 @@
                 </div>
 
                 <div class="h_b_right__text">
-                    {{ __('Межрелигиозное взаимодействие') }}
+                
                 </div>
             </div><!--.h_b_right-->
         </div>
