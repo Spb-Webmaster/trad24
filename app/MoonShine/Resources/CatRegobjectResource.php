@@ -31,7 +31,7 @@ class CatRegobjectResource extends TreeResource
 {
     protected string $model = CatRegobject::class;
 
-    protected string $title = 'CatRegobjects';
+    protected string $title = 'CatRegobjects Категории';
 
     protected string $column = 'title';
 
@@ -75,7 +75,7 @@ class CatRegobjectResource extends TreeResource
 
     public function getActiveActions(): array
     {
-        return ['create',  'update', /* 'view', 'delete', 'massDelete'*/];
+        return ['create',  'update', 'delete', 'massDelete'];
     }
 
 

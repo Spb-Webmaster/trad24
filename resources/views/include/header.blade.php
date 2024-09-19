@@ -54,7 +54,7 @@
                 </div>
 
                 <div class="h_b_right__text">
-                
+
                 </div>
             </div><!--.h_b_right-->
         </div>

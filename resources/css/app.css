@@ -46,6 +46,7 @@
 @import "./pagination.scss";
 @import "./content/object/page.scss";
 @import "./content/object/home.scss";
+@import "./content/teaser_list.scss";
 @import "./content/teaser_4.scss";
 @import "./content/teaser_mini_img.scss";
 @import "./content/teaser_img.scss";

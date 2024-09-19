@@ -13,6 +13,8 @@ use App\Http\Controllers\Dashboard\UserArticle\UserArticleController;
 use App\Http\Controllers\Dashboard\UserPhoto\UserPhotoAjaxController;
 use App\Http\Controllers\Dashboard\UserPhoto\UserPhotoController;
 use App\Http\Controllers\Dashboard\UserVideo\UserVideoController;
+use App\Http\Controllers\Family\FamilyCatalogController;
+use App\Http\Controllers\Family\FamilyObjectController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\Info\InfoController;
 use App\Http\Controllers\Pages\PageController;
@@ -246,6 +248,7 @@ Route::controller(VideoController::class)->group(function () {
 /**
  * страницы
  */
+
 /**
  * каталог
  */
@@ -348,9 +351,37 @@ Route::controller(AjaxController::class)->group(function () {
     Route::post('/cabinet/upload-avatar', 'uploadAvatar')->name('uploadAvatar');
 
 });
+
+
 /**
  * каталог
  */
+
+
+/**
+ *
+ * фамилии
+ */
+
+Route::controller(FamilyCatalogController::class)->group(function () {
+
+    Route::get('/family/last-names', 'familyCategory');
+
+});
+
+Route::controller(FamilyObjectController::class)->group(function () {
+
+    Route::get('/family/last-names/{slug}', 'family')->name('family');
+
+});
+
+// familyObjects
+
+
+/**
+ * * /////////// фамилии
+ */
+
 
 
 /**
