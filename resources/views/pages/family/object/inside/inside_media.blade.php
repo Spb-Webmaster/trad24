@@ -44,12 +44,15 @@
                                 alt="{{$page->title}}"></a>
                     </div>
                 @endif
-                    <hr class="p_hr">
+
 
 
                     @if($page->gallery_visible)
                         <div class="block">
+                            <h2 class="_h2">{{ $page->gallery_title  }}</h2>
+
                             <div class="ob_gallery pad_t36 ">
+
                                 @foreach($page->gallery as $k => $g)
                                     <div class="mItem">
                                         <a href="{{ asset(Storage::disk('public')->url($g['gallery_img'])) }}"

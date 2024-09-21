@@ -156,7 +156,9 @@ class FamilyMediaResource extends ModelResource
                         Grid::make([
 
                             Column::make([
+
                                 Text::make(__('Заголовок фотогалереи'), 'gallery_title'),
+
                                 Json::make('Галерея', 'gallery')->fields([
 
                                     Image::make('Изображение (30)', 'gallery_img')
@@ -179,7 +181,6 @@ class FamilyMediaResource extends ModelResource
 
                             Column::make([
 
-                                Text::make(__('Заголовок Видеоматериалов'), 'video_title'),
 
                                 Json::make('Видеоматериал', 'video')->fields([
                                     Text::make('Заголовок  Видеоматериала', 'video_video_title'),
@@ -208,7 +209,6 @@ class FamilyMediaResource extends ModelResource
 
                             Column::make([
 
-                                Text::make(__('Заголовок Аудио'), 'audio_title'),
 
                                 Json::make('Аудиоматериал', 'audio')->fields([
                                     Text::make('Заголовок  Аудиоматериала', 'audio_audio_title'),
