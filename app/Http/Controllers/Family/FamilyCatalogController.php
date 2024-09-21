@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Family;
 
 use App\Http\Controllers\Controller;
 use App\Models\CatRegobject;
+use App\Models\Family;
 use App\Models\Regobject;
 use Domain\Catalog\ViewModels\AreaViewModel;
 use Domain\Catalog\ViewModels\CatalogViewModel;
@@ -32,6 +33,33 @@ class FamilyCatalogController extends Controller
                 'items' => $items,
             ]);
     }
+
+    /**
+     * view
+     *
+     */
+
+
+        public function topSearch(Request $request)
+    {
+
+
+        $search = $request->top_search;
+        if ($search) {
+            $items = Family::query()
+                ->where('published', 1)
+                ->where("title", "like", "%" . $search . "%")
+                ->paginate(20);
+        }
+
+        return view('pages.family.list_search.list',
+            [
+                'search' => $search,
+                'items' => $items,
+            ]);
+    }
+
+
 
 
 }

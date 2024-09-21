@@ -9,11 +9,11 @@
     <main>
         <div class="page_object">
 
-            @include('pages.catalog.object.partial._object_breadcrumbs')
+            @include('pages.family.object.partial._object_breadcrumbs')
 
-            @include('pages.catalog.object.partial._object_title')
+            @include('pages.family.object.partial._object_title')
 
-            @include('pages.catalog.object.partial._object_logo')
+            @include('pages.family.object.partial._object_logo')
 
 
             @include('include.menu.object_menu')
@@ -25,18 +25,19 @@
                 </h2>
 
                 <div class="category_teaser ob_category_teaser pad_t20_important">
-                    @foreach($item->regobject_new as $new)
+                   @if(isset($news))
+                    @foreach($news as $new)
                         <div class=" slick_slide">
                             <div class="slide_link slick_slider__1">
                                 <div class="s_img">
-                                    <a href="{{asset(route('page.object.new', ['religion_slug'=> $religion->slug,'object_slug'=>$item->slug, 'new_slug' => $new->slug ] ))}}">
+                                    <a href="{{asset(route('family_new', ['family_slug'=> $item->slug,'slug'=>$new->slug ] ))}}">
                                         <img class="pc_category_img" width="260" height="151" loading="lazy"
                                              src="{{ asset(intervention('260x151', $new->img, 'object_news')) }}"
                                              alt="{{$new->title}}">
                                     </a>
                                 </div>
                                 <div class="s_title">
-                                    <a href="{{asset(route('page.object.new', ['religion_slug'=> $religion->slug,'object_slug'=>$item->slug, 'new_slug' => $new->slug ] ))}}"><span>{{ $new->title }}</span></a>
+                                    <a href="{{asset(route('family_new', ['family_slug'=> $item->slug,'slug'=>$new->slug ] ))}}"><span>{{ $new->title }}</span></a>
                                 </div>
                                 <div class="s_date">
                                     <span>{{ rusdate3($new->created_at) }}</span>
@@ -46,10 +47,11 @@
                         </div>
 
                     @endforeach
+                    @endif
                 </div>
             </div>
 
-            @include('pages.catalog.object.partial._object_menu__js')
+            @include('pages.family.object.partial._object_menu__js')
 
         </div>
     </main>

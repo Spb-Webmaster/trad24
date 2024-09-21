@@ -13,26 +13,25 @@
     <div class="ob_menu_hor__ul">
 
         <ul class="top_menu">
-            <li class="{{ active_linkMenu(asset(route('page.object.about', ['religion_slug'=> $religion->slug ,'object_slug'=> $item->slug  ] )), 'find') }}">
-                <a class="{{ active_linkMenu(asset(route('page.object.about', ['religion_slug'=> $religion->slug ,'object_slug'=> $item->slug  ] ) ), 'find') }} add__mobile_menu upper_level @if(count($item->regobject_about)) arrow_down @endif"
-                   href="{{ route('page.object.about', ['religion_slug'=> $religion->slug ,'object_slug'=> $item->slug  ] ) }}"><span>
-                        О нас</span></a>
+            <li class="{{ active_linkMenu(asset(route('family', ['slug' => $item->slug])), 'find')}}">
+                <a class="{{ active_linkMenu(asset(route('family', ['slug' => $item->slug])), 'find')}} add__mobile_menu upper_level @if(count($item->family_main)) arrow_down @endif"
+                   href="{{ route('family', ['slug' => $item->slug]) }}"><span>Главы фамилии</span></a>
 
 
-                @if(count($item->regobject_about))
+                @if(count($item->family_main))
 
                     <ul class="submenu">
-                        @foreach($item->regobject_about as $regobject_about)
+                        @foreach($item->family_main as $s)
 
-                            @if($regobject_about->url)
-                                <li class="">
+                            @if($s->url)
+                                <li >
                                     <a class="add__mobile_menu"
-                                       href="{{ asset($regobject_about->url) }}">{{ $regobject_about->title  }}</a>
+                                       href="{{ asset($s->url) }}">{{ $s->title  }}</a>
                                 </li>
                             @else
-                                <li class="{{ active_linkMenu(asset(route('page.object.about.page', ['religion_slug'=> $religion->slug ,'object_slug'=> $item->slug,  'slug' => $regobject_about->slug ]))) }}">
-                                    <a class="{{ active_linkMenu(asset(route('page.object.about.page', ['religion_slug'=> $religion->slug ,'object_slug'=> $item->slug,  'slug' => $regobject_about->slug ]))) }} add__mobile_menu"
-                                       href="{{ route('page.object.about.page', ['religion_slug'=> $religion->slug ,'object_slug'=> $item->slug , 'slug' => $regobject_about->slug ]) }}">{{ $regobject_about->title  }}</a>
+                                <li class="{{ active_linkMenu(asset(route('family_main', ['family_slug' => $item->slug, 'slug' => $s->slug] )), 'find')}}">
+                                    <a class="{{ active_linkMenu(asset(route('family_main', ['family_slug' => $item->slug, 'slug' => $s->slug] )), 'find')}}  add__mobile_menu"
+                                       href="{{ asset(route('family_main', ['family_slug' => $item->slug, 'slug' => $s->slug] )) }}">{{ $s->title  }}</a>
                                 </li>
                             @endif
 
@@ -44,27 +43,29 @@
             </li>
 
 
-            <li class="{{ active_linkMenu(asset(route('page.object.new_category', ['religion_slug'=> $religion->slug ,'object_slug'=> $item->slug  ] ) ), 'find') }}">
-                <a class="{{ active_linkMenu(asset(route('page.object.new_category', ['religion_slug'=> $religion->slug ,'object_slug'=> $item->slug  ] ) ), 'find') }} add__mobile_menu upper_level"
-                   href="{{ route('page.object.new_category', ['religion_slug'=> $religion->slug ,'object_slug'=> $item->slug  ] ) }}"><span>Новости</span></a>
+            <li class="{{ active_linkMenu(asset(route('family_news', ['family_slug' => $item->slug ])), 'find') }}">
+                <a class=" add__mobile_menu upper_level"
+                   href="{{ route('family_news', ['family_slug' => $item->slug ]) }}"><span>Новости</span></a>
             </li>
 
 
-            <li><a class="@if(count($item->regobject_media)) arrow_down @endif" href="#"><span>Медиа</span></a>
-                @if(count($item->regobject_media))
+            <li class="">
+
+            <a class="@if(count($item->family_media)) arrow_down @endif" href="#"><span>Медиа</span></a>
+                @if(count($item->family_media))
 
                     <ul class="submenu">
-                        @foreach($item->regobject_media as $regobject_media)
+                        @foreach($item->family_media as $s)
 
-                            @if($regobject_media->url)
+                            @if($s->url)
                                 <li class="">
                                     <a class="add__mobile_menu"
-                                       href="{{ asset($regobject_media->url) }}">{{ $regobject_media->title  }}</a>
+                                       href="{{ asset($s->url) }}"  target="_blank">{{ $s->title  }}</a>
                                 </li>
                             @else
-                            <li class="{{ active_linkMenu(asset(route('page.object.media', ['religion_slug'=> $religion->slug ,'object_slug'=> $item->slug,  'slug' => $regobject_media->slug ]))) }}">
-                                <a class="{{ active_linkMenu(asset(route('page.object.media', ['religion_slug'=> $religion->slug ,'object_slug'=> $item->slug,  'slug' => $regobject_media->slug ]))) }} add__mobile_menu"
-                                   href="{{ route('page.object.media', ['religion_slug'=> $religion->slug ,'object_slug'=> $item->slug , 'slug' => $regobject_media->slug ]) }}">{{ $regobject_media->title  }}</a>
+                                <li class="{{ active_linkMenu(asset(route('family_media', ['family_slug' => $item->slug, 'slug' => $s->slug])), 'find')}}">
+                                <a class=" add__mobile_menu"
+                                   href="{{ asset(route('family_media', ['family_slug' => $item->slug, 'slug' => $s->slug])) }}">{{ $s->title  }}</a>
                             </li>
                             @endif
                         @endforeach
@@ -73,102 +74,59 @@
                 @endif
             </li>
 
-            <li class="{{ active_linkMenu(asset(route('page.object.faq', ['religion_slug'=> $religion->slug ,'object_slug'=> $item->slug  ] ) )) }}">
-                <a class="{{ active_linkMenu(asset(route('page.object.faq', ['religion_slug'=> $religion->slug ,'object_slug'=> $item->slug  ] ) )) }} add__mobile_menu upper_level"
-                   href="{{ route('page.object.faq', ['religion_slug'=> $religion->slug ,'object_slug'=> $item->slug  ] ) }}"><span>Вопрос-ответ</span></a>
+            <li class="{{ active_linkMenu(asset(route('family_charity', ['family_slug' => $item->slug ])), 'find') }}">
+                <a class=" add__mobile_menu upper_level"
+                   href="{{ asset(route('family_charity', ['family_slug' => $item->slug])) }}"><span>Благотворительность</span></a>
             </li>
 
-
-
-            <li class="{{ active_linkMenu(asset(route('page.object.activity', ['religion_slug'=> $religion->slug ,'object_slug'=> $item->slug  ] ) ), 'find'  ) }}">
-                <a class="{{ active_linkMenu(asset(route('page.object.activity', ['religion_slug'=> $religion->slug ,'object_slug'=> $item->slug  ] ) )) }} add__mobile_menu upper_level  @if(count($item->regobject_activity)) arrow_down @endif"
-                   href="{{ asset(route('page.object.activity', ['religion_slug'=> $religion->slug ,'object_slug'=> $item->slug  ] ) ) }}"><span>{{ __('Деятельность') }}</span></a>
-
-                @if(count($item->regobject_activity))
+            <li class="{{ active_linkMenu(asset(route('family_peoples', ['family_slug' => $item->slug])), 'find')}}">
+                <a class="@if(count($item->family_people)) arrow_down @endif" href="{{ asset(route('family_peoples', ['family_slug' => $item->slug])) }}"><span>Выдающиеся люди</span></a>
+                @if(count($item->family_people))
 
                     <ul class="submenu">
-                        @foreach($item->regobject_activity as $regobject_activity)
+                        @foreach($item->family_people as $s)
 
-                            @if($regobject_activity->url)
+                            @if($s->url)
                                 <li class="">
                                     <a class="add__mobile_menu"
-                                       href="{{ asset($regobject_activity->url) }}">{{ $regobject_activity->title  }}</a>
+                                       href="{{ asset($s->url) }}"  target="_blank">{{ $s->title  }}</a>
                                 </li>
                             @else
-                                <li class="{{ active_linkMenu(asset(route('page.object.activity.page', ['religion_slug'=> $religion->slug ,'object_slug'=> $item->slug,  'slug' => $regobject_activity->slug ]))) }}">
-                                    <a class="{{ active_linkMenu(asset(route('page.object.activity.page', ['religion_slug'=> $religion->slug ,'object_slug'=> $item->slug,  'slug' => $regobject_activity->slug ]))) }} add__mobile_menu"
-                                       href="{{ route('page.object.activity.page', ['religion_slug'=> $religion->slug ,'object_slug'=> $item->slug , 'slug' => $regobject_activity->slug ]) }}">{{ $regobject_activity->title  }}</a>
+                                <li class="{{ active_linkMenu(asset(route('family_people', ['family_slug' => $item->slug, 'slug' => $s->slug])), 'find')}}">
+                                    <a class=" add__mobile_menu"
+                                       href="{{ asset(route('family_people', ['family_slug' => $item->slug, 'slug' => $s->slug])) }}">{{ $s->title  }}</a>
                                 </li>
                             @endif
-
                         @endforeach
 
                     </ul>
                 @endif
             </li>
 
-
-            <li class="{{ active_linkMenu(asset(route('page.object.info', ['religion_slug'=> $religion->slug ,'object_slug'=> $item->slug  ] ) ), 'find'  ) }}">
-                <a class="{{ active_linkMenu(asset(route('page.object.info', ['religion_slug'=> $religion->slug ,'object_slug'=> $item->slug  ] ) )) }} add__mobile_menu upper_level  @if(count($item->regobject_info)) arrow_down @endif"
-                   href="{{ asset(route('page.object.info', ['religion_slug'=> $religion->slug ,'object_slug'=> $item->slug  ] ) ) }}"><span>{{ __('Информация') }}</span></a>
-
-                @if(count($item->regobject_info))
+            <li class="{{ active_linkMenu(asset(route('family_cultures', ['family_slug' => $item->slug])), 'find')}}">
+                <a class="@if(count($item->family_culture)) arrow_down @endif" href="{{ asset(route('family_cultures', ['family_slug' => $item->slug])) }}"><span>Культурное наследие</span></a>
+                @if(count($item->family_culture))
 
                     <ul class="submenu">
-                        @foreach($item->regobject_info as $regobject_info)
+                        @foreach($item->family_culture as $s)
 
-                            @if($regobject_info->url)
+                            @if($s->url)
                                 <li class="">
                                     <a class="add__mobile_menu"
-                                       href="{{ asset($regobject_info->url) }}">{{ $regobject_info->title  }}</a>
+                                       href="{{ asset($s->url) }}" target="_blank">{{ $s->title  }}</a>
                                 </li>
                             @else
-                                <li class="{{ active_linkMenu(asset(route('page.object.info.page', ['religion_slug'=> $religion->slug ,'object_slug'=> $item->slug,  'slug' => $regobject_info->slug ]))) }}">
-                                    <a class="{{ active_linkMenu(asset(route('page.object.info.page', ['religion_slug'=> $religion->slug ,'object_slug'=> $item->slug,  'slug' => $regobject_info->slug ]))) }} add__mobile_menu"
-                                       href="{{ route('page.object.info.page', ['religion_slug'=> $religion->slug ,'object_slug'=> $item->slug , 'slug' => $regobject_info->slug ]) }}">{{ $regobject_info->title  }}</a>
+                                <li class="{{ active_linkMenu(asset(route('family_culture', ['family_slug' => $item->slug, 'slug' => $s->slug])), 'find')}}">
+                                    <a class=" add__mobile_menu"
+                                       href="{{ asset(route('family_culture', ['family_slug' => $item->slug, 'slug' => $s->slug]))  }}">{{ $s->title  }}</a>
                                 </li>
                             @endif
-
                         @endforeach
 
                     </ul>
                 @endif
             </li>
 
-
-            <li class="{{ active_linkMenu(asset(route('page.object.ritual', ['religion_slug'=> $religion->slug ,'object_slug'=> $item->slug  ] ) ), 'find'  ) }}">
-                <a class="{{ active_linkMenu(asset(route('page.object.ritual', ['religion_slug'=> $religion->slug ,'object_slug'=> $item->slug  ] ) )) }} add__mobile_menu upper_level  @if(count($item->regobject_ritual)) arrow_down @endif"
-                   href="{{ asset(route('page.object.ritual', ['religion_slug'=> $religion->slug ,'object_slug'=> $item->slug  ] ) ) }}"><span>{{ __('Обряды') }}</span></a>
-
-                @if(count($item->regobject_ritual))
-
-                    <ul class="submenu">
-                        @foreach($item->regobject_ritual as $regobject_ritual)
-
-                            @if($regobject_ritual->url)
-                                <li class="">
-                                    <a class="add__mobile_menu"
-                                       href="{{ asset($regobject_ritual->url) }}">{{ $regobject_ritual->title  }}</a>
-                                </li>
-                            @else
-                                <li class="{{ active_linkMenu(asset(route('page.object.ritual.page', ['religion_slug'=> $religion->slug ,'object_slug'=> $item->slug,  'slug' => $regobject_ritual->slug ]))) }}">
-                                    <a class="{{ active_linkMenu(asset(route('page.object.ritual.page', ['religion_slug'=> $religion->slug ,'object_slug'=> $item->slug,  'slug' => $regobject_ritual->slug ]))) }} add__mobile_menu"
-                                       href="{{ route('page.object.ritual.page', ['religion_slug'=> $religion->slug ,'object_slug'=> $item->slug , 'slug' => $regobject_ritual->slug ]) }}">{{ $regobject_ritual->title  }}</a>
-                                </li>
-                            @endif
-
-                        @endforeach
-
-                    </ul>
-                @endif
-            </li>
-
-
-
-            <li class="{{ active_linkMenu(asset(route('page.object.contact', ['religion_slug'=> $religion->slug ,'object_slug'=> $item->slug  ] ) )) }}">
-                <a class="{{ active_linkMenu(asset(route('page.object.contact', ['religion_slug'=> $religion->slug ,'object_slug'=> $item->slug  ] ) )) }} add__mobile_menu upper_level"
-                   href="{{ route('page.object.contact', ['religion_slug'=> $religion->slug ,'object_slug'=> $item->slug  ] ) }}"><span>Контакты</span></a>
-            </li>
 
         </ul>
     </div>

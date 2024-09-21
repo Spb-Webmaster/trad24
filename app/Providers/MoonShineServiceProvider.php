@@ -5,20 +5,19 @@ declare(strict_types=1);
 namespace App\Providers;
 
 use App\MoonShine\Resources\AreaResource;
-use App\MoonShine\Resources\CatRegobjectResource;
+use App\MoonShine\Resources\FamilyCultureResource;
+use App\MoonShine\Resources\FamilyMainResource;
+use App\MoonShine\Resources\FamilyMediaResource;
+use App\MoonShine\Resources\FamilyNewResource;
+use App\MoonShine\Resources\FamilyPageResource;
+use App\MoonShine\Resources\FamilyPeopleResource;
+use App\MoonShine\Resources\FamilyResource;
 use App\MoonShine\Resources\InfoResource;
 use App\MoonShine\Resources\ItemRegobjectResource;
 use App\MoonShine\Resources\MenuBottomResource;
 use App\MoonShine\Resources\MenuTopResource;
 use App\MoonShine\Resources\PageResource;
-use App\MoonShine\Resources\RegobjectAboutResource;
-use App\MoonShine\Resources\RegobjectActivityResource;
 use App\MoonShine\Resources\RegobjectInfoResource;
-use App\MoonShine\Resources\RegobjectMediaResource;
-use App\MoonShine\Resources\RegobjectNewResource;
-use App\MoonShine\Resources\RegobjectPageResource;
-use App\MoonShine\Resources\RegobjectResource;
-use App\MoonShine\Resources\RegobjectRitualResource;
 use App\MoonShine\Resources\ReligionResource;
 use App\MoonShine\Resources\SeoResource;
 use App\MoonShine\Resources\UserResource;
@@ -83,65 +82,54 @@ class MoonShineServiceProvider extends MoonShineApplicationServiceProvider
             ]),
 
 
-            MenuGroup::make(static fn() => __('Категории объектов'), [
+            MenuGroup::make(static fn() => __('Категории'), [
 
-               MenuItem::make(
-                    static fn() => __('Категории'),
-                    new CatRegobjectResource()
-                )->icon('heroicons.bars-3'),
+
 
                 MenuItem::make(
-                    static fn() => __('Объекты'),
-                    new RegobjectResource()
+                    static fn() => __('Фамилии'),
+                    new FamilyResource()
                 )->icon('heroicons.bars-arrow-up'),
 
                 MenuItem::make(
-                    static fn() => __('Новости объектов'),
-                    new RegobjectNewResource()
+                    static fn() => __('Главы фамилии'),
+                    new FamilyMainResource()
+                )->icon('heroicons.clipboard-document-list'),
+
+                MenuItem::make(
+                    static fn() => __('Новости фамилий'),
+                    new FamilyNewResource()
                 )->icon('heroicons.newspaper'),
 
+
                 MenuItem::make(
-                    static fn() => __('Левое меню объектов'),
-                    new RegobjectPageResource()
+                    static fn() => __('Медиа фамилий'),
+                    new FamilyMediaResource()
+                )->icon('heroicons.clipboard-document-list'),
+
+
+                MenuItem::make(
+                    static fn() => __('Левое меню фамилий'),
+                    new FamilyPageResource()
                 )->icon('heroicons.clipboard-document-list'),
 
                 MenuItem::make(
-                    static fn() => __('O нас'),
-                    new RegobjectAboutResource()
+                    static fn() => __('Выдающиеся люди'),
+                    new FamilyPeopleResource()
                 )->icon('heroicons.clipboard-document-list'),
+
+
 
                 MenuItem::make(
-                    static fn() => __('Медиа'),
-                    new RegobjectMediaResource()
+                    static fn() => __('Культурное наследие'),
+                    new FamilyCultureResource()
                 )->icon('heroicons.clipboard-document-list'),
 
-                MenuItem::make(
-                    static fn() => __('Информация'),
-                    new RegobjectInfoResource()
-                )->icon('heroicons.clipboard-document-list'),
 
-                MenuItem::make(
-                    static fn() => __('Деятельность'),
-                    new RegobjectActivityResource()
-                )->icon('heroicons.clipboard-document-list'),
 
-               MenuItem::make(
-                    static fn() => __('Обряды'),
-                    new RegobjectRitualResource()
-                )->icon('heroicons.clipboard-document-list')
 
             ]),
 
-
-/*            MenuGroup::make(static fn() => __('Страницы объектов'), [
-
-               MenuItem::make(
-                    static fn() => __('Страницы'),
-                    new ItemRegobjectResource()
-                )->icon('heroicons.outline.flag'),
-
-
-            ]),*/
 
 
 
@@ -152,10 +140,6 @@ class MoonShineServiceProvider extends MoonShineApplicationServiceProvider
                     static fn() => __('Субъекты РФ'),
                     new AreaResource()
                 )->icon('heroicons.outline.building-library'),
-                MenuItem::make(
-                    static fn() => __('Религии'),
-                    new ReligionResource()
-                )->icon('heroicons.outline.rectangle-group'),
 
             ]),
 

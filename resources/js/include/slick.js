@@ -24,6 +24,7 @@ export function slick() {
         autoplaySpeed: 7000,
     });
 
+/*
 
     $('header ul.top_menu').slick({
         //   slidesToShow: 3,
@@ -34,5 +35,6 @@ export function slick() {
         infinite: false,
 
     });
+*/
 
 }

@@ -29,14 +29,14 @@
                         <div class=" slick_slide">
                             <div class="slide_link slick_slider__1">
                                 <div class="s_img">
-                                    <a href="{{asset(route('page.object.new', ['religion_slug'=> $religion->slug,'object_slug'=>$item->slug, 'new_slug' => $new->slug ] ))}}">
+                                    <a href="{{asset(route('family_new', ['family_slug'=> $item->slug,'slug'=>$new->slug ] ))}}">
                                         <img class="pc_category_img" width="260" height="151" loading="lazy"
                                              src="{{ asset(intervention('260x151', $new->img, 'object_news')) }}"
                                              alt="{{$new->title}}">
                                     </a>
                                 </div>
                                 <div class="s_title">
-                                    <a href="{{asset(route('page.object.new', ['religion_slug'=> $religion->slug,'object_slug'=>$item->slug, 'new_slug' => $new->slug ] ))}}"><span>{{ $new->title }}</span></a>
+                                    <a href="{{asset(route('family_new', ['family_slug'=> $item->slug,'slug'=>$new->slug ] ))}}"><span>{{ $new->title }}</span></a>
                                 </div>
                                 <div class="s_date">
                                     <span>{{ rusdate3($new->created_at) }}</span>

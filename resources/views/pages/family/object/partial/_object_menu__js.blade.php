@@ -1,4 +1,4 @@
-@if(isset($item->regobject_page) and count($item->regobject_page))
+@if(isset($item->family_page) and count($item->family_page))
 
 
     @if(!isset($active))
@@ -11,7 +11,7 @@
 
             <ul class="ob_menu__for_leftmenu m_l__js">
 
-                @foreach($item->regobject_page as  $link)
+                @foreach($item->family_page as  $link)
 
 
                     @if($link->url)
@@ -19,7 +19,7 @@
                         <li><a target="_blank" href="{{$link->url}}"><span>{{ $link->title }}</span></a></li>
                     @else
                         <li class="@if($link->id == $active) active @endif"><a
-                                href="{{asset(route('page.object.page', ['religion_slug'=> $religion->slug,'object_slug'=>$item->slug, 'page_slug' => $link->slug ] ))}}"><span>{{ $link->title }}</span></a>
+                                href="{{ asset(route('family_page', ['family_slug' => $item->slug, 'slug' => $link->slug, ])) }}"><span>{{ $link->title }}</span></a>
                         </li>
                     @endif
 

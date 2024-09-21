@@ -27,7 +27,7 @@ class AreaResource extends TreeResource
 {
     protected string $model = Area::class;
 
-    protected string $title = 'Areas';
+    protected string $title = 'НЕ РАБОТАЕТ (Не задействовано в этом проекте)';
 
     protected string $column = 'title';
 

@@ -7,7 +7,7 @@
             </div>
         @else
             <div class="ob_logo">
-                <div class="ob_logo__img ob_logo__default_{{ $religion->slug  }}"></div>
+                <div class="ob_logo__img ob_logo__default_islam"></div>
             </div>
         @endif
     </div>

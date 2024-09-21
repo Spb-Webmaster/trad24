@@ -1,6 +1,6 @@
 @extends('layouts.layout')
 <x-seo.meta
-    title="{{($item->title)?:null}}"
+    title="{{($item->title)? 'Выдающиеся люди | ' . $item->title :null}}"
     description="{{($item->description)?:null}}"
     keywords="{{($item->keywords)?:null}}"
 />
@@ -22,23 +22,23 @@
                 <div class="block">
                     <div class="page_l">
                         <div class="page_l__left">
-                            @if($item->title)
+                            @if($item->p_title)
                                 <h2 class="_h2">
-                                    {{ $item->title  }}
+                                    {{ $item->p_title  }}
                                 </h2>
                             @endif
                             <div class="desc desc_main__content">
-                                {!! $item->f_text !!}
+                                {!! $item->p_text !!}
                             </div>
 
                         </div>
                         <div class="page_l__right">
 
-                            @if($item->f_img )
+                            @if($item->p_img )
                                 <div class="desc desc_main__imgR pad_t33">
                                     <a href=""><img class="pc_category_img" width="228" height="270" loading="lazy"
-                                                    src="{{ asset(intervention('228x270', $item->f_img, 'objects')) }}"
-                                                    alt="{{$item->f_img}}"></a>
+                                                    src="{{ asset(intervention('228x270', $item->p_img, 'objects')) }}"
+                                                    alt="{{$item->p_img}}"></a>
                                 </div>
 
                             @endif
@@ -57,5 +57,7 @@
         </div>
     </main>
 @endsection
+
+
 
 

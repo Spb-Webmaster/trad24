@@ -363,17 +363,73 @@ Route::controller(AjaxController::class)->group(function () {
  * фамилии
  */
 
+/**
+ * категория - фамилии
+ */
 Route::controller(FamilyCatalogController::class)->group(function () {
 
-    Route::get('/family/last-names', 'familyCategory');
+    Route::get('/family/last-names', 'familyCategory')->name('familyCategory');
+    /** search */
 
+    Route::post('/search/top-search', 'topSearch')
+        ->name('form.search.top_search');
+
+    /** //search */
 });
 
+
+/**
+ * гланая фамилии - Глава фамилии - выпадает
+ */
 Route::controller(FamilyObjectController::class)->group(function () {
 
-    Route::get('/family/last-names/{slug}', 'family')->name('family');
+
+    /**
+     *  фамилии
+     */
+    Route::get('/family/last-names/{slug}/main', 'family')->name('family');
+    /**
+     * Глава фамилии
+     */
+    Route::get('/family/last-names/{family_slug}/main/{slug}', 'family_main')->name('family_main');
+
+    /**
+     * Новости  фамилии
+     */
+    Route::get('/family/last-names/{family_slug}/news', 'family_news')->name('family_news');
+
+    Route::get('/family/last-names/{family_slug}/news/{slug}', 'family_new')->name('family_new');
+
+    /**
+     * медиа
+     */
+    Route::get('/family/last-names/{family_slug}/media/{slug}', 'family_media')->name('family_media');
+
+
+    /**
+     * Глава Благотоворительность
+     */
+    Route::get('/family/last-names/{family_slug}/charity', 'family_charity')->name('family_charity');
+    /**
+     * Люди
+     */
+    Route::get('/family/last-names/{family_slug}/people', 'family_peoples')->name('family_peoples');
+    Route::get('/family/last-names/{family_slug}/people/{slug}', 'family_people')->name('family_people');
+
+    /**
+     * Культурное наследие
+     */
+    Route::get('/family/last-names/{family_slug}/culture', 'family_cultures')->name('family_cultures');
+    Route::get('/family/last-names/{family_slug}/culture/{slug}', 'family_culture')->name('family_culture');
+
+
+    /**
+     * Страницы в левое меню
+     */
+    Route::get('/family/last-names/{family_slug}/page/{slug}', 'family_page')->name('family_page');
 
 });
+
 
 // familyObjects
 

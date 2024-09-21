@@ -249,7 +249,6 @@ if (!function_exists('shortcode')) {
 }
 
 
-
 if (!function_exists('rusdate')) {
     function rusdate($timestump): string|null
     {
@@ -439,7 +438,7 @@ if (!function_exists('fullYoutube')) {
     function fullYoutube($code): string|null
     {
 
-        return 'https://www.youtube.com/watch?v='. trim($code);
+        return 'https://www.youtube.com/watch?v=' . trim($code);
     }
 }
 
@@ -457,6 +456,18 @@ if (!function_exists('youtube')) {
         return
             '<embed ' . $style . ' src="https://www.youtube.com/embed/' . codeYoutube($html) . '" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></embed>';
 
+    }
+}
+if (!function_exists('a_url')) {
+    function a_url($url = null)
+    {
+
+        $d = config('app.app_url');
+        if ($url) {
+            $a = $d . '/' . $url;
+            return trim($a);
+        }
+      return  false;
     }
 }
 

@@ -3,228 +3,327 @@
 namespace App\Http\Controllers\Family;
 
 use App\Http\Controllers\Controller;
-use Domain\Catalog\ViewModels\AreaViewModel;
-use Domain\Catalog\ViewModels\CatalogViewModel;
-use Domain\Catalog\ViewModels\ObjectsViewModel;
+use App\Models\Family;
+use App\Models\FamilyCulture;
+use App\Models\FamilyMain;
+use App\Models\FamilyMedia;
+use App\Models\FamilyPage;
+use App\Models\FamilyPeople;
+
 use Domain\Family\ViewModels\FamilyObjectsViewModel;
 
 class FamilyObjectController extends Controller
 {
 
+
     /**
      * @return array
-     * активная религия
-     *
+     * фамилия !
      */
 
-    public function religion($religion_slug){
-        return   CatalogViewModel::make()->religionSlug($religion_slug);
-
-    }
-    /**
-     * @return array
-     * Религиозный объект
-     */
-
-    public function item($object_slug){
-        return ObjectsViewModel::make()->objectSlug($object_slug);
+    public function item($slug){
+        return FamilyObjectsViewModel::make()->objectSlug($slug);
 
     }
 
     /**
      * @return array
-     * все религии
+     * выпадающая !
      */
 
-    public function religions(){
-        return CatalogViewModel::make()->religionList();
+    public function page($model, $slug){
+        return FamilyObjectsViewModel::make()->page($model, $slug);
+
+    }
+
+
+    /**
+     * @return array
+     * список новостей
+     */
+
+    public function news($id){
+        return FamilyObjectsViewModel::make()->news($id);
 
     }
 
     /**
      * @return array
-     * Все субъекты РФ
-     */
-
-    public function areas(){
-        return AreaViewModel::make()->areaList();
-
-    }
-
-    /**
-     * @return array
-     * Один субъект РФ
-     */
-
-    public function area($id){
-        return AreaViewModel::make()->areaId($id);
-
-    }
-
-    /**
-     * @return array
-     * спискоk категорий определенной религии
-     */
-
-    public function categories($religion_id){
-        return CatalogViewModel::make()->catRegobjects($religion_id);
-
-    }
-
-    /**
-     * @return array
-     * категория определенной религии
-     */
-
-    public function category($cat_id){
-        return CatalogViewModel::make()->categoryId($cat_id);
-
-    }
-
-    /**
-     * @return array
-     * список объектов определенной категории и региона
-     */
-
-
-   public function items($religion, $selected_area, $selected_religion_category){
-        return ObjectsViewModel::make()->objects($religion, $selected_area, $selected_religion_category);
-
-    }
-
-    /**
-     * @return array
-     * страница новости объекта
+     * новость
      */
 
     public function new($slug){
-        return ObjectsViewModel::make()->new($slug);
-
-    }
-
-
-    /**
-     * @return array
-     * страница в левое меню
-     */
-
-    public function object_page($slug){
-        return ObjectsViewModel::make()->object_page($slug);
-
-    }
-
-    /**
-     * @return array
-     * страница в полезную информацию
-     */
-
-    public function object_info($slug) {
-        return ObjectsViewModel::make()->object_info($slug);
-
-    }
-
-    /**
-     * @return array
-     * страница в полезную информацию
-     */
-
-    public function object_about($slug) {
-        return ObjectsViewModel::make()->object_about($slug);
-
-    }
-    /**
-     * @return array
-     * страница в деятельность
-     */
-
-    public function object_activity($slug) {
-        return ObjectsViewModel::make()->object_activity($slug);
-
-    }    /**
- * @return array
- * страница в обряды
- */
-
-    public function object_ritual($slug) {
-        return ObjectsViewModel::make()->object_ritual($slug);
-
-    }
-
-
-    /**
-     * @return array
-     * страница media
-     */
-
-    public function object_media($slug) {
-        return ObjectsViewModel::make()->object_media($slug);
+        return FamilyObjectsViewModel::make()->new($slug);
 
     }
 
 
 
     /**
-     * view
-     * страница  объекта исключена!!!- --------------------------------
+     * Главная *
+     *
+     *
+     * ///////////
      */
 
-    public function pageObjectHome($religion_slug, $object_slug)
-    {
+    public function family($slug) {
+        $item = $this->item($slug); /** фамилия  **/
 
-        $item = $this->item($object_slug); /** Религиозный объект **/
+         return view('pages.family.object.object',
+            [
+                'item' => $item,
+            ]);
+    }
+
+
+    /**
+     * Глава фамилии - выпадающее
+     */
+    public function family_main($family_slug, $slug) {
+
+        $item = $this->item($family_slug); /** фамилия  **/
+
+        $page = $this->page(FamilyMain::class, $slug); /** внутреннии   **/
 
 
         if(!$item) {
             abort(404);
         }
 
-
-        $religion =  $this->religion($religion_slug); /** активная религия **/
-        if(!$religion) {
+        if(!$page) {
             abort(404);
         }
 
-        $religions =  $this->religions();  /** все религии **/
-        $areas = $this->areas(); /** Все субъекты РФ **/
-        $selected_area = $this->area($item->area->id); /** Один субъект РФ **/
-        $religion_categories = $this->categories($religion->id); /** спискоk категорий определенной религии **/
-        $selected_religion_category = $this->category($item->catregobject->id); /**  категория определенной религии **/
-        $items = $this->items($religion, $selected_area, $selected_religion_category);
-        /** список объектов определенной категории и региона */
 
-        return view('pages.catalog.object.object',
+         return view('pages.family.object.inside.inside_page',
             [
-                'religion' => $religion,
-                'religions' => $religions,
-                'areas' => $areas,
-                'selected_area' => $selected_area,
-                'items' => $items,
                 'item' => $item,
-                'religion_categories' => $religion_categories,
-                'selected_religion_category' => $selected_religion_category,
+                'page' => $page,
             ]);
     }
 
 
 
-    public function family($slug) {
-        dd($slug);
+    /**
+     * Новости  фамилии - Категория
+     */
+    public function family_news($family_slug) {
+
+        $item = $this->item($family_slug); /** фамилия  **/
+
+        if(!$item) {
+            abort(404);
+        }
+
+        $news = $this->news($item->id); /** новости список с пагинацией   **/
 
 
+        if(!$news) {
+            abort(404);
+        }
 
 
-        return view('pages.catalog.object.object',
+         return view('pages.family.object.new_category',
             [
-                'religion' => $religion,
-                'religions' => $religions,
-                'areas' => $areas,
-                'selected_area' => $selected_area,
-                'items' => $items,
                 'item' => $item,
-                'religion_categories' => $religion_categories,
-                'selected_religion_category' => $selected_religion_category,
+                'news' => $news,
             ]);
     }
+
+    /**
+     * Новости  фамилии - полная страница
+     */
+    public function family_new($family_slug, $slug) {
+
+        $item = $this->item($family_slug); /** фамилия  **/
+
+        if(!$item) {
+            abort(404);
+        }
+
+        $new = $this->new($slug); /** новости страница   **/
+
+
+        if(!$new) {
+            abort(404);
+        }
+
+
+         return view('pages.family.object.inside.inside_new',
+            [
+                'item' => $item,
+                'new' => $new,
+            ]);
+    }
+
+
+
+    /**
+     * Медиа
+     */
+    public function family_media($family_slug, $slug) {
+
+        $item = $this->item($family_slug); /** фамилия  **/
+
+        $page = $this->page(FamilyMedia::class, $slug); /** внутреннии   **/
+
+
+        if(!$item) {
+            abort(404);
+        }
+
+        if(!$page) {
+            abort(404);
+        }
+
+
+        return view('pages.family.object.inside.inside_media',
+            [
+                'item' => $item,
+                'page' => $page,
+            ]);
+    }
+
+
+
+    /**
+     * Благотворительность
+     */
+    public function family_charity($family_slug) {
+
+        $item = $this->item($family_slug); /** фамилия  **/
+
+        if(!$item) {
+            abort(404);
+        }
+
+
+         return view('pages.family.object.object_charity',
+            [
+                'item' => $item,
+           ]);
+    }
+
+
+
+    /**
+     * Люди
+     */
+    public function family_peoples($family_slug) {
+
+        $item = $this->item($family_slug); /** фамилия  **/
+
+        if(!$item) {
+            abort(404);
+        }
+
+
+         return view('pages.family.object.object_people',
+            [
+                'item' => $item,
+           ]);
+    }
+
+    /**
+     * Люди внутренняя
+     */
+    public function family_people($family_slug, $slug) {
+
+        $item = $this->item($family_slug); /** фамилия  **/
+
+        $page = $this->page(FamilyPeople::class, $slug); /** внутреннии   **/
+
+
+        if(!$item) {
+            abort(404);
+        }
+
+        if(!$page) {
+            abort(404);
+        }
+
+
+        return view('pages.family.object.inside.inside_page',
+            [
+                'item' => $item,
+                'page' => $page,
+            ]);
+    }
+
+
+
+
+    /**
+     * Культурное настледие
+     */
+    public function family_cultures($family_slug) {
+
+        $item = $this->item($family_slug); /** фамилия  **/
+
+        if(!$item) {
+            abort(404);
+        }
+
+
+         return view('pages.family.object.object_culture',
+            [
+                'item' => $item,
+           ]);
+    }
+
+    /**
+     * Культурное наследие внутренняя
+     */
+    public function family_culture($family_slug, $slug) {
+
+        $item = $this->item($family_slug); /** фамилия  **/
+
+        $page = $this->page(FamilyCulture::class, $slug); /** внутреннии   **/
+
+
+        if(!$item) {
+            abort(404);
+        }
+
+        if(!$page) {
+            abort(404);
+        }
+
+
+        return view('pages.family.object.inside.inside_page',
+            [
+                'item' => $item,
+                'page' => $page,
+            ]);
+    }
+
+    /**
+     * Страницы в левое меню
+     */
+    public function family_page($family_slug, $slug) {
+
+        $item = $this->item($family_slug); /** фамилия  **/
+
+        $page = $this->page(FamilyPage::class, $slug); /** внутреннии   **/
+
+
+        if(!$item) {
+            abort(404);
+        }
+
+        if(!$page) {
+            abort(404);
+        }
+
+
+        return view('pages.family.object.inside.inside_page',
+            [
+                'item' => $item,
+                'page' => $page,
+            ]);
+    }
+
+
 
 
 
