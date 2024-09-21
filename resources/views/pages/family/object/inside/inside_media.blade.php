@@ -1,8 +1,8 @@
 @extends('layouts.layout')
 <x-seo.meta
-    title="{{($page->metatitle)?:null}}"
-    description="{{($page->description)?:null}}"
-    keywords="{{($page->keywords)?:null}}"
+    title="{{(isset($page->metatitle))? $page->metatitle : $page->title}}"
+    description="{{(isset($page->description))? $page->metatitle : null}}"
+    keywords="{{(isset($page->keywords))? $page->keywords : null}}"
 />
 @section('content')
     <section class="good_summer"></section>
