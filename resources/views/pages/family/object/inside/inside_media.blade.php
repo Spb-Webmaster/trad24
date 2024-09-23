@@ -56,14 +56,12 @@
                                 @foreach($page->gallery as $k => $g)
                                     <div class="mItem">
                                         <a href="{{ asset(Storage::disk('public')->url($g['gallery_img'])) }}"
-                                           data-fancybox="gallery">
-
-
-
+                                           data-fancybox="gallery"     data-caption="{{ $g['gallery_img_title'] }}">
 
 
                                             <img  class="pc_category_img"
                                                   style="width: auto; height: auto"
+
                                                   loading="lazy"
                                                   src="{{ asset(intervention('252x0', $g['gallery_img'], 'gallery', 'scaleDown')) }}"
                                                   alt="photo_{{ $k }}">

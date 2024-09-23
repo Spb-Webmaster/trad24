@@ -17,18 +17,57 @@ class Family extends Model
         'f_title',
         'f_img',
         'f_text',
+        'f_img2',
+        'f_text2',
+
+        'f_img3',
+        'f_text4',
+
+        'f_img4',
+        'f_text4',
+
 
         'b_title',
         'b_img',
         'b_text',
 
+        'b_img2',
+        'b_text2',
+
+        'b_img3',
+        'b_text4',
+
+        'b_img4',
+        'b_text4',
+
+
         'p_title',
         'p_img',
         'p_text',
 
+        'p_img2',
+        'p_text2',
+
+        'p_img3',
+        'p_text4',
+
+        'p_img4',
+        'p_text4',
+
+
         'k_title',
         'k_img',
         'k_text',
+
+        'k_img2',
+        'k_text2',
+
+        'k_img3',
+        'k_text4',
+
+        'k_img4',
+        'k_text4',
+
 
         'files',
 

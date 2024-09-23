@@ -167,7 +167,7 @@ class FamilyMediaResource extends ModelResource
                                         ->disk('moonshine') // Filesystems disk
                                         ->allowedExtensions(['jpg', 'gif', 'png', 'svg'])/* Допустимые расширения */
                                         ->removable(),
-                                    Text::make('Описание изображения', 'gallery_img_title'),
+                                    Text::make('Описание изображения', ''),
                                 ])->vertical()->creatable(limit: 30)->removable(),
 
                                 TinyMce::make('Описание', 'gallery_desc'),

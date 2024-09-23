@@ -156,12 +156,9 @@ class FamilyPageResource extends ModelResource
                                 ->columnSpan(4),
                         ]),
 
-
-
-
-
                         Divider::make(),
 
+                        Grid::make([
                         TinyMce::make('Описание', 'text2')
                             ->hint('На всю ширину макета'),
 
@@ -172,10 +169,9 @@ class FamilyPageResource extends ModelResource
                             ->allowedExtensions(['jpg', 'png', 'jpeg', 'gif', 'svg'])
                             ->removable()
                             ->hint('Растягивается на 100% ширины'),
+                        ]),
 
                         Divider::make(),
-
-
 
                         Grid::make([
                             Column::make([
@@ -195,10 +191,8 @@ class FamilyPageResource extends ModelResource
                                 ->columnSpan(6)
                         ]),
 
-
-
-
                         Divider::make(),
+
                         Grid::make([
 
                             Column::make([
@@ -214,7 +208,6 @@ class FamilyPageResource extends ModelResource
                                     ->hint('Растягивается на 100% ширины'),
                             ])->columnSpan(12)
                         ]),
-
 
 
                     ]),

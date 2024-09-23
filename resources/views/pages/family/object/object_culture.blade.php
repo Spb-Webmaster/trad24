@@ -48,6 +48,64 @@
                         </div>
                     </div>
 
+
+                    @if($item->k_text2)
+                        <div class="block page_l2 pad_t20">
+                            <div class="page_page__desc2 desc">
+                                {!! $item->k_text2 !!}
+                            </div>
+                        </div>
+                    @endif
+
+                    @if($item->k_img2)
+                        <div class="block pad_t26  pad_b20 ">
+                            <a href="{{ asset(Storage::disk('public')->url($item->k_img2)) }}" data-fancybox=""><img
+                                    class="pc_category_img" style="width: 100%; height: auto" loading="lazy"
+                                    src="{{ asset(Storage::disk('public')->url($item->k_img2)) }}"></a>
+                        </div>
+                    @endif
+
+                    @if($item->k_text3)
+                        <div class="block    @if($item->k_img3) page_r @endif">
+                            @if($item->k_img3)
+                                <div class="page_r__left">
+
+                                    @if($item->k_img3)
+                                        <a href="{{ asset(Storage::disk('public')->url($item->k_img3)) }}"
+                                           data-fancybox=""><img class="pc_category_img" width="500" height="376" loading="lazy"
+                                                                 src="{{ asset(intervention('500x376', $item->k_img3, 'objects')) }}"></a>
+
+                                    @endif
+                                </div>
+                            @endif
+
+                            <div class="@if($item->k_img3) page_r__right @endif">
+                                <div class="page_page__desc1 desc pad_b33">
+                                    {!! $item->k_text3 !!}
+                                </div>
+                            </div>
+
+                        </div>
+                    @endif
+
+                    @if($item->k_text4)
+                        <hr class="p_hr">
+                        <div class="block page_l2">
+                            <div class="page_page__desc2 desc">
+                                {!! $item->k_text4 !!}
+                            </div>
+                        </div>
+                    @endif
+
+                    @if($item->k_img4)
+                        <div class="block pad_t26  pad_b20 ">
+                            <a href="{{ asset(Storage::disk('public')->url($item->k_img4)) }}" data-fancybox=""><img
+                                    class="pc_category_img" style="width: 100%; height: auto" loading="lazy"
+                                    src="{{ asset(Storage::disk('public')->url($item->k_img4)) }}"
+                                ></a>
+                        </div>
+                    @endif
+
                 </div>
 
             </div>
