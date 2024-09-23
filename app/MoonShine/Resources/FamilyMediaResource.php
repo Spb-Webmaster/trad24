@@ -160,14 +160,12 @@ class FamilyMediaResource extends ModelResource
                                 Text::make(__('Заголовок фотогалереи'), 'gallery_title'),
 
                                 Json::make('Галерея', 'gallery')->fields([
-
                                     Image::make('Изображение (30)', 'gallery_img')
-                                        //->hint('На витрину')
-                                        ->dir('gallery')/* Директория где будут хранится файлы в storage (по умолчанию /) */
-                                        ->disk('moonshine') // Filesystems disk
-                                        ->allowedExtensions(['jpg', 'gif', 'png', 'svg'])/* Допустимые расширения */
+                                        ->dir('gallery')
+                                        ->disk('moonshine')
+                                        ->allowedExtensions(['jpg', 'gif', 'png', 'svg'])
                                         ->removable(),
-                                    Text::make('Описание изображения', ''),
+                                Text::make('Описание изображения', 'gallery_img_title'),
                                 ])->vertical()->creatable(limit: 30)->removable(),
 
                                 TinyMce::make('Описание', 'gallery_desc'),

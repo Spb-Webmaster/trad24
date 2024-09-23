@@ -118,9 +118,10 @@ class FamilyMedia extends Model
         static::saving(function ($Moonshine) {
 
 
+           // dd($Moonshine->gallery);
+
+
             //    dd(json_decode($Moonshine->files));
-
-
 
             $slug = Str::of($Moonshine->title)->slug('-');
             $Moonshine->slug = 'id-' . $Moonshine->id . '-' . $slug->value;
