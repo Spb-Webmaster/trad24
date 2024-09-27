@@ -204,7 +204,7 @@ class FamilyResource extends ModelResource
 
 
                     ]),
-                    
+
 
                     Tab::make(__('Выдающиеся люди'), [
 
