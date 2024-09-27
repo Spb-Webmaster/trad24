@@ -59,6 +59,7 @@ class FamilyResource extends ModelResource
             ID::make()
                 ->sortable(),
             Image::make(__('Изображение'), 'img'),
+            Image::make(__('Логотип'), 'img_logo'),
             Text::make(__('Заголовок'), 'title'),
             Date::make(__('Дата публикации'), 'created_at')
                 ->format("d.m.Y")
@@ -94,6 +95,13 @@ class FamilyResource extends ModelResource
                                         ->allowedExtensions(['jpg', 'png', 'jpeg', 'gif', 'svg'])
                                         ->removable()
                                         ->hint('Только анонс'),
+                                    Image::make(__('Логопип'), 'img_logo')
+                                        ->showOnExport()
+                                        ->disk(config('moonshine.disk', 'moonshine'))
+                                        ->dir('objects')
+                                        ->allowedExtensions(['jpg', 'png', 'jpeg', 'gif', 'svg'])
+                                        ->removable()
+                                        ->hint('Должен быть квадратным. Минимальные размеры. Ширина 111, Высота 111'),
 
 
                                 ]),

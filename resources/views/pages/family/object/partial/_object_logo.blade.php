@@ -1,9 +1,9 @@
 <div class="ob_line_wrap logo_plus">
     <div class="ob_line">
-        @if($item->logo)
+        @if($item->img_logo)
             <div class="ob_logo">
                 <div class="ob_logo__img"
-                     style="background-image: url('{{Storage::disk('moonshine')->url($item->logo)}}')"></div>
+                     style="background-image: url('{{Storage::disk('moonshine')->url($item->img_logo)}}')"></div>
             </div>
         @else
             <div class="ob_logo">

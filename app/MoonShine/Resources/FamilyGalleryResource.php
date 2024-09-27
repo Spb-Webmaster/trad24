@@ -84,7 +84,7 @@ class FamilyGalleryResource extends ModelResource
             Block::make([
                 Tabs::make([
 
-                    Tab::make(__('Новости'), [
+                    Tab::make(__('Фотогалерея'), [
                         Grid::make([
                             Column::make([
 

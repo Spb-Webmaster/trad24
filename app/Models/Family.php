@@ -13,6 +13,7 @@ class Family extends Model
         'title',
         'slug',
         'img',
+        'img_logo',
 
         'f_title',
         'f_img',
