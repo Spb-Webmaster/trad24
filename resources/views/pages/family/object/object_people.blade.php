@@ -78,7 +78,7 @@
                                 </div>
                             @endif
 
-                            <div class="@if($item->_img3) page_r__right @endif">
+                            <div class="@if($item->p_img3) page_r__right @endif">
                                 <div class="page_page__desc1 desc pad_b33">
                                     {!! $item->p_text3 !!}
                                 </div>
@@ -87,11 +87,11 @@
                         </div>
                     @endif
 
-                    @if($item->_text4)
+                    @if($item->p_text4)
                         <hr class="p_hr">
                         <div class="block page_l2">
                             <div class="page_page__desc2 desc">
-                                {!! $item->_text4 !!}
+                                {!! $item->p_text4 !!}
                             </div>
                         </div>
                     @endif
