@@ -6,9 +6,15 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Support\Str;
+use Spatie\MediaLibrary\HasMedia;
+use Spatie\MediaLibrary\InteractsWithMedia;
+use Spatie\MediaLibrary\MediaCollections\FileAdder;
+use Spatie\MediaLibrary\MediaCollections\FileAdderFactory;
+use Spatie\MediaLibrary\MediaCollections\Models\Media;
 
-class FamilyMedia extends Model
+class FamilyMedia extends Model implements HasMedia
 {
+    use InteractsWithMedia;
 
     protected $table = 'family_media';
 
@@ -23,6 +29,7 @@ class FamilyMedia extends Model
         'gallery',
         'gallery_title',
         'gallery_desc',
+        'gallery_multiple',
 
         'video',
         'video_title',
@@ -46,9 +53,12 @@ class FamilyMedia extends Model
     protected $casts = [
         'params' => 'collection',
         'gallery' => 'collection',
+        'gallery_multiple' => 'collection',
         'video' => 'collection',
         'audio' => 'collection',
     ];
+
+
 
 
 
@@ -62,11 +72,23 @@ class FamilyMedia extends Model
 
         if($this->gallery) {
             foreach ($this->gallery as $g) {
-
                 if ($g['gallery_img']) { // если хоть одно фото, то нужно!
                     return true;
                 }
 
+            }
+        }
+        return false;
+
+    }
+    public function getGalleryMultipleVisibleAttribute()
+    {
+
+        if($this->gallery_multiple) {
+            foreach ($this->gallery_multiple as $g) {
+                if ($g) { // если хоть одно фото, то нужно!
+                    return true;
+                }
 
             }
         }
@@ -118,11 +140,18 @@ class FamilyMedia extends Model
         static::saving(function ($Moonshine) {
 
 
-           // dd($Moonshine->gallery);
-
-
-            //    dd(json_decode($Moonshine->files));
-
+          //  dd($Moonshine);
+                $gallery = false;
+                if($Moonshine->gallery) {
+                    foreach ($Moonshine->gallery as $g) {
+                        if ($g['gallery_img']) {
+                            $gallery = true;
+                        }
+                    }
+                    if (!$gallery) {
+                        $Moonshine->gallery = null;
+                    }
+                }
             $slug = Str::of($Moonshine->title)->slug('-');
             $Moonshine->slug = 'id-' . $Moonshine->id . '-' . $slug->value;
 

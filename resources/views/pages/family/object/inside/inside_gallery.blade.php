@@ -1,8 +1,8 @@
 @extends('layouts.layout')
 <x-seo.meta
-    title="{{(isset($new->metatitle))? $new->metatitle : $new->title}}"
-    description="{{(isset($new->description))? $new->metatitle : null}}"
-    keywords="{{(isset($new->keywords))? $new->keywords : null}}"
+    title="{{(isset($page->metatitle))? $page->metatitle : $page->title}}"
+    description="{{(isset($page->description))? $page->metatitle : null}}"
+    keywords="{{(isset($page->keywords))? $page->keywords : null}}"
 />
 @section('content')
 
@@ -21,30 +21,30 @@
 
             <div class="ob_main_pageHtml ob_main_new block block_1123">
 
-                @if($new->title)
+                @if($page->title)
                     <h2 class="_h2" align="center">
-                        {{ $new->title  }}
+                        {{ $page->title  }}
                     </h2>
 
                 @endif
 
 
 
-                @if($new->n_text)
-                    <div class="block  pad_t26_important  @if($new->n_img) page_l @endif">
-                        <div class="@if($new->n_img) page_l__left @endif">
+                @if($page->text)
+                    <div class="block  pad_t26_important  @if($page->img) page_l @endif">
+                        <div class="@if($page->img) page_l__left @endif">
                             <div class="page_page__desc1 desc">
-                                {!! $new->n_text !!}
+                                {!! $page->text !!}
                             </div>
                         </div>
-                        @if($new->n_img)
+                        @if($page->img)
                             <div class="page_l__right">
 
-                                @if($new->n_img)
+                                @if($page->img)
                                     <div class="desc desc_main__imgR pad_t33 pad_b33">
                                         <img class="pc_category_img" width="228" height="270" loading="lazy"
-                                             src="{{ asset(intervention('228x270', $new->n_img, 'objects')) }}"
-                                             alt="{{$new->title}}">
+                                             src="{{ asset(intervention('228x270', $page->img, 'objects')) }}"
+                                             alt="{{$page->title}}">
 
                                     </div>
 
@@ -56,41 +56,41 @@
 
                 @endif
 
-                @if($new->n_text2)
+                @if($page->text2)
                     <div class="block page_l2 pad_t20">
                         <div class="page_page__desc2 desc">
-                            {!! $new->n_text2 !!}
+                            {!! $page->text2 !!}
                         </div>
                     </div>
                 @endif
 
-                @if($new->n_img2)
+                @if($page->img2)
                     <div class="block pad_t26  pad_b20 ">
-                        <a href="{{ asset(Storage::disk('public')->url($new->n_img2)) }}" data-fancybox=""><img
+                        <a href="{{ asset(Storage::disk('public')->url($page->img2)) }}" data-fancybox=""><img
                                 class="pc_category_img" style="width: 100%; height: auto" loading="lazy"
-                                src="{{ asset(Storage::disk('public')->url($new->n_img2)) }}"
-                                alt="{{$new->title}}"></a>
+                                src="{{ asset(Storage::disk('public')->url($page->img2)) }}"
+                                alt="{{$page->title}}"></a>
                     </div>
                 @endif
 
-                @if($new->n_text3)
-                    <div class="block    @if($new->n_img3) page_r @endif">
-                        @if($new->n_img3)
+                @if($page->n_text3)
+                    <div class="block    @if($page->img3) page_r @endif">
+                        @if($page->img3)
                             <div class="page_r__left">
 
-                                @if($new->n_img3)
-                                    <a href="{{ asset(Storage::disk('public')->url($new->n_img3)) }}"
+                                @if($page->img3)
+                                    <a href="{{ asset(Storage::disk('public')->url($page->img3)) }}"
                                        data-fancybox=""><img class="pc_category_img" width="500" height="376" loading="lazy"
-                                                             src="{{ asset(intervention('500x376', $new->n_img3, 'objects')) }}"
-                                                             alt="{{$new->title}}"></a>
+                                                             src="{{ asset(intervention('500x376', $page->img3, 'objects')) }}"
+                                                             alt="{{$page->title}}"></a>
 
                                 @endif
                             </div>
                         @endif
 
-                        <div class="@if($new->n_img3) page_r__right @endif">
+                        <div class="@if($page->img3) page_r__right @endif">
                             <div class="page_page__desc1 desc pad_b33">
-                                {!! $new->n_text3 !!}
+                                {!! $page->text3 !!}
                             </div>
                         </div>
 
@@ -98,11 +98,11 @@
                 @endif
 
 
-                @include('pages.family.object.partial._gallery', ['page'=> $new])
+                @include('pages.family.object.partial._gallery', ['page'=> $page])
 
-                @include('pages.family.object.partial._video', ['page' => $new])
+                @include('pages.family.object.partial._video', ['page' => $page])
 
-                @include('pages.family.object.partial._audio', ['page'=> $new])
+                @include('pages.family.object.partial._audio', ['page'=> $page])
 
 
 

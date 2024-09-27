@@ -91,6 +91,11 @@ class Family extends Model
         return $this->hasMany(FamilyNew::class, 'family_id')->orderBy('created_at', 'desc');
     }
 
+    public function family_gallery(): HasMany
+    {
+        return $this->hasMany(FamilyGallery::class, 'family_id')->orderBy('created_at', 'desc');
+    }
+
 
 
     public function family_media(): HasMany

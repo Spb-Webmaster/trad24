@@ -122,16 +122,10 @@ class FamilyPageResource extends ModelResource
 
                                     BelongsTo::make('Фамилия', 'family', resource: new FamilyResource())->nullable()->searchable()->required(),
 
-
-
                                 ])->show(),
 
-
-                            ])
-                                ->columnSpan(6)
-
+                            ])->columnSpan(6)
                         ]),
-
 
 
                         Divider::make(),
@@ -152,23 +146,27 @@ class FamilyPageResource extends ModelResource
                                     ->removable()
                                     ->hint('Встраивается справа'),
 
-                            ])
-                                ->columnSpan(4),
+                            ])->columnSpan(4),
                         ]),
 
                         Divider::make(),
 
                         Grid::make([
-                        TinyMce::make('Описание', 'text2')
-                            ->hint('На всю ширину макета'),
+                            Column::make([
 
-                        Image::make(__('Изображение'), 'img2')
-                            ->showOnExport()
-                            ->disk(config('moonshine.disk', 'moonshine'))
-                            ->dir('objects')
-                            ->allowedExtensions(['jpg', 'png', 'jpeg', 'gif', 'svg'])
-                            ->removable()
-                            ->hint('Растягивается на 100% ширины'),
+                                TinyMce::make('Описание', 'text2')
+                                    ->hint('На всю ширину макета'),
+
+                                Image::make(__('Изображение'), 'img2')
+                                    ->showOnExport()
+                                    ->disk(config('moonshine.disk', 'moonshine'))
+                                    ->dir('objects')
+                                    ->allowedExtensions(['jpg', 'png', 'jpeg', 'gif', 'svg'])
+                                    ->removable()
+                                    ->hint('Растягивается на 100% ширины'),
+                            ])
+                                ->columnSpan(12),
+
                         ]),
 
                         Divider::make(),

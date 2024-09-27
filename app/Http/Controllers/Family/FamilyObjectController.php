@@ -58,6 +58,27 @@ class FamilyObjectController extends Controller
     }
 
 
+    /**
+     * @return array
+     * список гелерей
+     */
+
+    public function galleries($id){
+        return FamilyObjectsViewModel::make()->galleries($id);
+
+    }
+
+    /**
+     * @return array
+     * галерея
+     */
+
+    public function gallery($slug){
+        return FamilyObjectsViewModel::make()->gallery($slug);
+
+    }
+
+
 
     /**
      * Главная *
@@ -153,6 +174,59 @@ class FamilyObjectController extends Controller
             [
                 'item' => $item,
                 'new' => $new,
+            ]);
+    }
+
+
+ /**
+     * Фотогалереи  фамилии - Категория
+     */
+    public function family_galleries($family_slug) {
+
+        $item = $this->item($family_slug); /** фамилия  **/
+
+        if(!$item) {
+            abort(404);
+        }
+
+        $pages = $this->galleries($item->id); /** новости список с пагинацией   **/
+
+
+        if(!$pages) {
+            abort(404);
+        }
+
+
+         return view('pages.family.object.gallery_category',
+            [
+                'item' => $item,
+                'pages' => $pages,
+            ]);
+    }
+
+    /**
+     * Фотогалерея  фамилии - полная страница
+     */
+    public function family_gallery($family_slug, $slug) {
+
+        $item = $this->item($family_slug); /** фамилия  **/
+
+        if(!$item) {
+            abort(404);
+        }
+
+        $page = $this->gallery($slug); /** новости страница   **/
+
+
+        if(!$page) {
+            abort(404);
+        }
+
+
+         return view('pages.family.object.inside.inside_gallery',
+            [
+                'item' => $item,
+                'page' => $page,
             ]);
     }
 

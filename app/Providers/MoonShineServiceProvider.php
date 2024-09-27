@@ -6,6 +6,7 @@ namespace App\Providers;
 
 use App\MoonShine\Resources\AreaResource;
 use App\MoonShine\Resources\FamilyCultureResource;
+use App\MoonShine\Resources\FamilyGalleryResource;
 use App\MoonShine\Resources\FamilyMainResource;
 use App\MoonShine\Resources\FamilyMediaResource;
 use App\MoonShine\Resources\FamilyNewResource;
@@ -17,7 +18,6 @@ use App\MoonShine\Resources\ItemRegobjectResource;
 use App\MoonShine\Resources\MenuBottomResource;
 use App\MoonShine\Resources\MenuTopResource;
 use App\MoonShine\Resources\PageResource;
-use App\MoonShine\Resources\RegobjectInfoResource;
 use App\MoonShine\Resources\ReligionResource;
 use App\MoonShine\Resources\SeoResource;
 use App\MoonShine\Resources\UserResource;
@@ -28,6 +28,7 @@ use MoonShine\MoonShine;
 use MoonShine\Menu\MenuGroup;
 use MoonShine\Menu\MenuItem;
 use MoonShine\Resources\MoonShineUserRoleResource;
+use YuriZoom\MoonShineMediaManager\Pages\MediaManagerPage;
 
 class MoonShineServiceProvider extends MoonShineApplicationServiceProvider
 {
@@ -101,6 +102,11 @@ class MoonShineServiceProvider extends MoonShineApplicationServiceProvider
                     new FamilyNewResource()
                 )->icon('heroicons.newspaper'),
 
+                MenuItem::make(
+                    static fn() => __('Фотогалереи фамилий'),
+                    new FamilyGalleryResource()
+                )->icon('heroicons.newspaper'),
+
 
                 MenuItem::make(
                     static fn() => __('Медиа фамилий'),
@@ -119,13 +125,10 @@ class MoonShineServiceProvider extends MoonShineApplicationServiceProvider
                 )->icon('heroicons.clipboard-document-list'),
 
 
-
                 MenuItem::make(
                     static fn() => __('Культурное наследие'),
                     new FamilyCultureResource()
                 )->icon('heroicons.clipboard-document-list'),
-
-
 
 
             ]),
@@ -150,6 +153,11 @@ class MoonShineServiceProvider extends MoonShineApplicationServiceProvider
                     static fn() => __('SEO'),
                     new SeoResource()
                 )->icon('heroicons.outline.bug-ant'),
+
+                MenuItem::make(
+                    static fn () => __('Media manager'),
+                    new MediaManagerPage(),
+                ),
 
             ]),
             MenuGroup::make(static fn() => __('Меню'), [

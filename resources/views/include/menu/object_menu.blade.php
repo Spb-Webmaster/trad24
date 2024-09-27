@@ -74,10 +74,16 @@
                 @endif
             </li>
 
-            <li class="{{ active_linkMenu(asset(route('family_charity', ['family_slug' => $item->slug ])), 'find') }}">
+
+            <li class="{{ active_linkMenu(asset(route('family_galleries', ['family_slug' => $item->slug ])), 'find') }}">
                 <a class=" add__mobile_menu upper_level"
-                   href="{{ asset(route('family_charity', ['family_slug' => $item->slug])) }}"><span>Благотворительность</span></a>
+                   href="{{ route('family_galleries', ['family_slug' => $item->slug ]) }}"><span>Фотогалереи</span></a>
             </li>
+
+
+
+
+
 
             <li class="{{ active_linkMenu(asset(route('family_peoples', ['family_slug' => $item->slug])), 'find')}}">
                 <a class="@if(count($item->family_people)) arrow_down @endif" href="{{ asset(route('family_peoples', ['family_slug' => $item->slug])) }}"><span>Выдающиеся люди</span></a>

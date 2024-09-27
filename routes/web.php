@@ -401,6 +401,13 @@ Route::controller(FamilyObjectController::class)->group(function () {
     Route::get('/family/last-names/{family_slug}/news/{slug}', 'family_new')->name('family_new');
 
     /**
+     * Категороия  - Фотогалереи  фамилии
+     */
+    Route::get('/family/last-names/{family_slug}/galleries', 'family_galleries')->name('family_galleries');
+
+    Route::get('/family/last-names/{family_slug}/galleries/{slug}', 'family_gallery')->name('family_gallery');
+
+    /**
      * медиа
      */
     Route::get('/family/last-names/{family_slug}/media/{slug}', 'family_media')->name('family_media');

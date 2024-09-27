@@ -44,6 +44,20 @@ return [
             'throw' => false,
         ],
 
+        'backup' => [
+            'driver' => 'local',
+            'root' => storage_path('app/public'),
+            'url' => env('APP_URL').'/storage/backup',
+            'visibility' => 'public',
+            'throw' => false,
+        ],
+        'media' => [
+            'driver' => 'local',
+            'root' => storage_path('app/public'),
+            'url' => env('APP_URL').'/storage/media',
+
+        ],
+
         'moonshine' => [
             'driver' => 'local',
             'root' => storage_path('app/public'),

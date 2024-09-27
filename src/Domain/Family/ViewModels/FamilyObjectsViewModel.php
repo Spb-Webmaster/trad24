@@ -3,6 +3,7 @@
 namespace Domain\Family\ViewModels;
 
 use App\Models\Family;
+use App\Models\FamilyGallery;
 use App\Models\FamilyNew;
 use Illuminate\Database\Eloquent\Model;
 use Support\Traits\Makeable;
@@ -56,6 +57,27 @@ class FamilyObjectsViewModel
     public function new($slug)
     {
         return FamilyNew::query()
+            ->where('published', 1)
+            ->where('slug', $slug)
+            ->first();
+
+    }
+
+    public function galleries($id)
+    {
+        return FamilyGallery::query()
+            ->where('published', 1)
+            ->where('family_id', $id)
+            ->orderBy('created_at', 'desc')
+            ->paginate(30);
+
+
+    }
+
+
+    public function gallery($slug)
+    {
+        return FamilyGallery::query()
             ->where('published', 1)
             ->where('slug', $slug)
             ->first();

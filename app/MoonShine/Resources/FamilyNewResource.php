@@ -16,6 +16,7 @@ use MoonShine\Decorations\Tab;
 use MoonShine\Decorations\Tabs;
 use MoonShine\Enums\ClickAction;
 use MoonShine\Fields\Date;
+use MoonShine\Fields\File;
 use MoonShine\Fields\Image;
 use MoonShine\Fields\Json;
 use MoonShine\Fields\Position;
@@ -69,7 +70,7 @@ class FamilyNewResource extends ModelResource
         return [
             ID::make()
                 ->sortable(),
-            Image::make(__('Изображение'), 'img'),
+            Image::make(__('Изображение'), 'teaser'),
             Text::make(__('Заголовок'), 'title'),
               Date::make(__('Дата создания'), 'created_at')
                   ->format("d.m.Y")
@@ -94,7 +95,7 @@ class FamilyNewResource extends ModelResource
                                     Text::make('Заголовок', 'title')->required(),
                                     Slug::make('Алиас', 'slug')
                                         ->from('title')->unique(),
-                                    Image::make(__('Изображение'), 'img')
+                                    Image::make(__('Изображение'), 'teaser')
                                         ->disk(config('moonshine.disk', 'moonshine'))
                                         ->dir('object_news')
                                         ->allowedExtensions(['jpg', 'png', 'jpeg', 'gif', 'svg'])
@@ -176,6 +177,105 @@ class FamilyNewResource extends ModelResource
                         ]),
 
 
+
+                    ]),
+                    Tab::make(__('Галерея'), [
+
+                        Collapse::make('Заголовок', [
+
+                            Text::make(__('Заголовок фотогалереи'), 'gallery_title'),
+                        ]),
+                        Grid::make([
+
+                            Column::make([
+                                Collapse::make('Основная галерея', [
+                                    Json::make('Галерея', 'gallery')->fields([
+                                        Image::make('Изображение (30)', 'gallery_img')
+                                            ->dir('gallery')
+                                            ->disk('moonshine')
+                                            ->allowedExtensions(['jpg', 'gif', 'png', 'svg'])
+                                            ->removable(),
+                                        Text::make('Описание изображения', 'gallery_img_title'),
+                                    ])->vertical()->creatable(limit: 70)->removable(),
+
+
+                                ]),
+                            ])->columnSpan(6),
+
+
+                            Column::make([
+
+                                Collapse::make('Алтернативная галерея', [
+                                    Divider::make('Работает, при условии, что НЕ ЗАПОЛНЕНА основная галерея!'),
+                                    Image::make('Галерея', 'gallery_multiple')
+                                        ->dir('media')
+                                        ->allowedExtensions(['jpg', 'png', 'jpeg', 'gif', 'svg'])
+                                        ->multiple()
+                                        ->removable()
+                                ]),
+                            ])->columnSpan(6)
+
+                        ]),
+                        Collapse::make('Описание', [
+
+                            TinyMce::make('Описание', 'gallery_desc'),
+                        ]),
+
+
+                    ]),
+
+                    Tab::make(__('Видео'), [
+                        Grid::make([
+
+                            Column::make([
+
+
+                                Json::make('Видеоматериал', 'video')->fields([
+                                    Text::make('Заголовок  Видеоматериала', 'video_video_title'),
+
+                                    File::make('Видео', 'video_video_video')
+                                        ->dir('video')/* Директория где будут хранится файлы в storage (по умолчанию /) */
+                                        ->disk('moonshine') // Filesystems disk
+                                        //  ->allowedExtensions(['jpg', 'gif', 'png', 'svg'])/* Допустимые расширения */
+                                        ->removable(),
+                                    Text::make('Ссылка на видео (YouTube)', 'video_video_youtube'),
+
+                                    TinyMce::make('Описание Видеоматериала', 'video_video_desc'),
+                                ])->vertical()->creatable(limit: 30)->removable(),
+
+                                TinyMce::make('Описание', 'video_desc'),
+
+
+                            ])->columnSpan(12)
+
+                        ]),
+
+                    ]),
+
+                    Tab::make(__('Аудио'), [
+                        Grid::make([
+
+                            Column::make([
+
+
+                                Json::make('Аудиоматериал', 'audio')->fields([
+                                    Text::make('Заголовок  Аудиоматериала', 'audio_audio_title'),
+
+                                    File::make('Аудио', 'audio_audio_audio')
+                                        ->dir('audio')/* Директория где будут хранится файлы в storage (по умолчанию /) */
+                                        ->disk('moonshine') // Filesystems disk
+                                        ->allowedExtensions(['wma', 'mp3', 'wav'])/* Допустимые расширения */
+                                        ->removable(),
+
+                                    TinyMce::make('Описание Аудиоматериала', 'audio_audio_desc'),
+                                ])->vertical()->creatable(limit: 30)->removable(),
+
+                                TinyMce::make('Описание', 'audio_desc'),
+
+
+                            ])->columnSpan(12)
+
+                        ]),
 
                     ]),
 
