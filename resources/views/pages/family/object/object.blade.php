@@ -22,9 +22,9 @@
                 <div class="block">
                     <div class="page_l">
                         <div class="page_l__left">
-                                <h2 class="_h2">
-                                    {{ ( isset($item->f_title))?$item->f_title:$item->title  }}
-                                </h2>
+                            <h2 class="_h2">
+                                {{ ( isset($item->f_title))?$item->f_title:$item->title  }}
+                            </h2>
                             <div class="desc desc_main__content">
                                 {!! $item->f_text !!}
                             </div>
@@ -35,8 +35,8 @@
                             @if($item->f_img )
                                 <div class="desc desc_main__imgR pad_t33 pad_b33">
                                     <img class="pc_category_img" width="228" height="270" loading="lazy"
-                                                    src="{{ asset(intervention('228x270', $item->f_img, 'objects')) }}"
-                                                    alt="{{$item->f_img}}">
+                                         src="{{ asset(intervention('228x270', $item->f_img, 'objects')) }}"
+                                         alt="{{$item->f_img}}">
                                 </div>
 
                             @endif
@@ -44,10 +44,13 @@
 
                         </div>
                     </div>
-                   @if(isset($item->family_new))
+                    @if(isset($item->family_new))
 
-                        @include('pages.family.object.partial._news_slider', ['news' => $item->family_new])
+                        @if(count($item->family_new) > 2)
 
+                            @include('pages.family.object.partial._news_slider', ['news' => $item->family_new])
+
+                        @endif
                     @endif
 
                     @if($item->f_text2)
@@ -73,7 +76,8 @@
 
                                     @if($item->f_img3)
                                         <a href="{{ asset(Storage::disk('public')->url($item->f_img3)) }}"
-                                           data-fancybox=""><img class="pc_category_img" width="500" height="376" loading="lazy"
+                                           data-fancybox=""><img class="pc_category_img" width="500" height="376"
+                                                                 loading="lazy"
                                                                  src="{{ asset(intervention('500x376', $item->f_img3, 'objects')) }}"></a>
 
                                     @endif
@@ -103,14 +107,11 @@
                             <a href="{{ asset(Storage::disk('public')->url($item->f_img4)) }}" data-fancybox=""><img
                                     class="pc_category_img" style="width: 100%; height: auto" loading="lazy"
                                     src="{{ asset(Storage::disk('public')->url($item->f_img4)) }}"
-                                    ></a>
+                                ></a>
                         </div>
                     @endif
 
                 </div>
-
-
-
 
 
             </div>

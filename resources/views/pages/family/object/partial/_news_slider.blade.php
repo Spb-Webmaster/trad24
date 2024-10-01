@@ -1,4 +1,6 @@
 <section class="block slider family_slider">
+
+
     <div class="box_title_flex">
         <div class="_h2"><span>{{__('Новости')}}</span>
 
@@ -11,7 +13,6 @@
 
     </div>
     <div class="slick_slider__carusel">
-
         @if($news)
             @foreach($news as $new)
                 @if($new->published)
