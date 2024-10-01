@@ -70,6 +70,8 @@ class FamilyMainResource extends ModelResource
                 ->sortable(),
             Text::make(__('Заголовок'), 'title'),
             BelongsTo::make('Фамилия', 'family', resource: new FamilyResource())->nullable()->searchable(),
+            Switcher::make('Публикация', 'published'),
+
             Date::make(__('Дата создания'), 'created_at')
                 ->format("d.m.Y")
                 ->default(now()->toDateTimeString())

@@ -42,6 +42,17 @@ class FamilyObjectsViewModel
 
     }
 
+    public function slider_news($id)
+    {
+        return FamilyNew::query()
+            ->where('published', 1)
+            ->where('family_id', $id)
+            ->orderBy('created_at', 'desc')
+            ->paginate(30);
+
+
+    }
+
     public function news($id)
     {
         return FamilyNew::query()

@@ -90,6 +90,8 @@ class FamilyObjectController extends Controller
     public function family($slug) {
         $item = $this->item($slug); /** фамилия  **/
 
+
+
          return view('pages.family.object.object',
             [
                 'item' => $item,

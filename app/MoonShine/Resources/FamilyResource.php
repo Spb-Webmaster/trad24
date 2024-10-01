@@ -65,7 +65,7 @@ class FamilyResource extends ModelResource
                 ->format("d.m.Y")
                 ->default(now()->toDateTimeString())
                 ->sortable(),
-            Switcher::make('Публикация', 'published')->updateOnPreview(),
+            Switcher::make('Публикация', 'published'),
             Switcher::make('Title', 'title'),
             Switcher::make('Desc', 'description'),
             Switcher::make('Key', 'keywords'),

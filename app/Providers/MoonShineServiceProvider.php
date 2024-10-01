@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace App\Providers;
 
+
 use App\MoonShine\Resources\AreaResource;
 use App\MoonShine\Resources\FamilyCultureResource;
 use App\MoonShine\Resources\FamilyGalleryResource;
@@ -29,6 +30,7 @@ use MoonShine\Menu\MenuGroup;
 use MoonShine\Menu\MenuItem;
 use MoonShine\Resources\MoonShineUserRoleResource;
 use YuriZoom\MoonShineMediaManager\Pages\MediaManagerPage;
+
 
 class MoonShineServiceProvider extends MoonShineApplicationServiceProvider
 {
@@ -158,6 +160,7 @@ class MoonShineServiceProvider extends MoonShineApplicationServiceProvider
                     static fn () => __('Media manager'),
                     new MediaManagerPage(),
                 ),
+
 
             ]),
             MenuGroup::make(static fn() => __('Меню'), [

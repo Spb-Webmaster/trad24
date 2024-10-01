@@ -457,6 +457,7 @@ Route::controller(PageController::class)->group(function () {
     Route::get('/religion/religion-list', 'religionList')->name('religion.list');
 
 });
+
 /**
  * страницы
  */

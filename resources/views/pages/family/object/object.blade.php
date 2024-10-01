@@ -33,10 +33,10 @@
                         <div class="page_l__right">
 
                             @if($item->f_img )
-                                <div class="desc desc_main__imgR pad_t33">
-                                    <a href=""><img class="pc_category_img" width="228" height="270" loading="lazy"
+                                <div class="desc desc_main__imgR pad_t33 pad_b33">
+                                    <img class="pc_category_img" width="228" height="270" loading="lazy"
                                                     src="{{ asset(intervention('228x270', $item->f_img, 'objects')) }}"
-                                                    alt="{{$item->f_img}}"></a>
+                                                    alt="{{$item->f_img}}">
                                 </div>
 
                             @endif
@@ -44,7 +44,11 @@
 
                         </div>
                     </div>
+                   @if(isset($item->family_new))
 
+                        @include('pages.family.object.partial._news_slider', ['news' => $item->family_new])
+
+                    @endif
 
                     @if($item->f_text2)
                         <div class="block page_l2 pad_t20">
