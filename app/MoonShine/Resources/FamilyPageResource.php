@@ -98,10 +98,13 @@ class FamilyPageResource extends ModelResource
                                     Text::make('url', 'url')->hint('Введите полный url страницы для перехода.'),
                                 ])->show(),
 
-                                Collapse::make('CSS стили', [
+                                Collapse::make('CSS стили22', [
                                     Textarea::make('CSS стили для страницы', 'css')
-                                        ->hint('Все стили будут обернуты в тег style, писать <style> дополнительно – не нужно'),
+                                        ->hint('Все стили будут обернуты в тег style, писать style дополнительно – не нужно'),
                                 ])->show(),
+
+                                    Switcher::make('Публикация', 'published')->default(1),
+
 
 
                             ])->columnSpan(6),

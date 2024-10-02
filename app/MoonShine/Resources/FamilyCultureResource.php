@@ -101,7 +101,7 @@ class FamilyCultureResource extends ModelResource
 
                                 Collapse::make('CSS стили', [
                                     Textarea::make('CSS стили для страницы', 'css')
-                                        ->hint('Все стили будут обернуты в тег style, писать <style> дополнительно – не нужно'),
+                                        ->hint('Все стили будут обернуты в тег style, писать style дополнительно – не нужно'),
                                 ])->show(),
 
 
