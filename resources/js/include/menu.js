@@ -8,7 +8,12 @@ export function menu_js() {
             Href = $(h).attr('href');
             Text = $(h).text();
             Class = $(h).attr('class');
-            $('.ob_menu_hor__js').append('<a class="' + Class + '" href="' + Href + '">' + Text + '</a>');
+
+
+
+            $('.ob_menu_hor__js').append('<a  data-id="'+index+'" class="' + Class + '" href="' + Href + '">' + Text + '</a>');
+
+
         }
 
     })

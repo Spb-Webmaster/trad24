@@ -62,9 +62,9 @@
             <span>{{ __('Главная') }}</span>
         </a>
 
-        <a class="m_f m_f1 " href="{{ route('religion.list') }}">
+        <a class="m_f m_f1 " href="{{ route('familyCategory') }}">
             <div class="m_img"></div>
-            <span>{{ __('Религии') }}</span>
+            <span>{{ __('Фимилии') }}</span>
         </a>
         <div class="m_f m_f3">
             <div class="m_img"></div>

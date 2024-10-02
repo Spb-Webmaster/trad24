@@ -273,7 +273,7 @@ $maxWidth: 1440;
         width: 100%;
         background: #f0f1f3;
         position: relative;
-        padding-left: 30px;
+        padding-left: 19px;
         height: 52px;
         overflow: hidden;
 
@@ -294,7 +294,7 @@ $maxWidth: 1440;
     .ob_menu_hor__css {
         top: -15px;
 
-        a {
+        a  {
             width: 100%;
             padding: 0 10px 0 45px;
             height: 48px;
@@ -302,6 +302,38 @@ $maxWidth: 1440;
             display: flex;
             align-items: center;
             background: #fdf9f9;
+            position: relative;
+            &:after {
+                position: absolute;
+                content: '';
+                display: block;
+                height: 17px;
+                width: 1px;
+                background: $colorGrey;
+                top: 12px;
+                left: 29px;
+            }
+            &:before {
+                position: absolute;
+                content: '';
+                display: block;
+                height: 1px;
+                width: 6px;
+                background: $colorGrey;
+                top: 21px;
+                left: 29px;
+            }
+        }
+    a.arrow_down  {
+
+            padding: 0 10px 0 28px;
+        &:after {
+            display: none;
+        }
+        &:before {
+            display: none;
+        }
+
         }
 
         a.active {
