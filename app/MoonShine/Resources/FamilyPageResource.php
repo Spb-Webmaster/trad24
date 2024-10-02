@@ -98,7 +98,7 @@ class FamilyPageResource extends ModelResource
                                     Text::make('url', 'url')->hint('Введите полный url страницы для перехода.'),
                                 ])->show(),
 
-                                Collapse::make('CSS стили22', [
+                                Collapse::make('CSS стили', [
                                     Textarea::make('CSS стили для страницы', 'css')
                                         ->hint('Все стили будут обернуты в тег style, писать style дополнительно – не нужно'),
                                 ])->show(),
@@ -124,7 +124,6 @@ class FamilyPageResource extends ModelResource
                                         ->sortable(),
                                 ])->show(),
                                 Collapse::make('Вложенность', [
-
                                     BelongsTo::make('Фамилия', 'family', resource: new FamilyResource())->nullable()->searchable()->required(),
 
                                 ])->show(),

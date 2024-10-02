@@ -19,7 +19,7 @@
                 <div class=" slick_slide">
                     <div class="slide_link slick_slider__1">
                         <div class="s_img">
-                            <a href="#">
+                            <a href="{{ route('family_new' , ['family_slug' => $item->slug, 'slug' => $new->slug]) }}">
 
 
                                 @if($new->teaser)
@@ -35,7 +35,7 @@
                             </a>
                         </div>
                         <div class="s_title">
-                            <a href="#"><span>{{ $new->title }}</span></a>
+                            <a href="{{ route('family_new' , ['family_slug' => $item->slug, 'slug' => $new->slug]) }}"><span>{{ $new->title }}</span></a>
                         </div>
                         <div class="s_date">
                             <span>{{ rusdate3($new->created_at) }}</span>
