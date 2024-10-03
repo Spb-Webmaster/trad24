@@ -55,9 +55,12 @@ class FamilyMain extends Model
         # Проверка данных пользователя перед сохранением
         static::saving(function ($Moonshine) {
 
+            $f = FamilyMain::latest()->select('id')->first();
+            $id = (!is_null($f))?$f->id+1:1;
+
 
             $slug = Str::of($Moonshine->title)->slug('-');
-            $Moonshine->slug = 'id-'.$Moonshine->id . '-'.$slug->value;
+            $Moonshine->slug = 'id-'.$id . '-'.$slug->value;
         });
 
 

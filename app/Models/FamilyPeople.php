@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 
 class FamilyPeople extends Model
@@ -53,9 +54,12 @@ protected $table = 'family_people';
         # Проверка данных пользователя перед сохранением
         static::saving(function ($Moonshine) {
 
+             $f = FamilyPeople::latest()->select('id')->first();
+             $id = (!is_null($f))?$f->id+1:1;
+
 
             $slug = Str::of($Moonshine->title)->slug('-');
-            $Moonshine->slug = 'id-'.$Moonshine->id . '-'.$slug->value;
+            $Moonshine->slug = 'id-'.$id . '-'.$slug->value;
         });
 
 

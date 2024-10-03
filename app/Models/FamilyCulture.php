@@ -53,9 +53,13 @@ protected $table = 'family_cultures';
         # Проверка данных пользователя перед сохранением
         static::saving(function ($Moonshine) {
 
+            $f = FamilyCulture::latest()->select('id')->first();
+            $id = (!is_null($f))?$f->id+1:1;
+
 
             $slug = Str::of($Moonshine->title)->slug('-');
-            $Moonshine->slug = 'id-'.$Moonshine->id . '-'.$slug->value;
+            $Moonshine->slug = 'id-'.$id . '-'.$slug->value;
+
         });
 
 

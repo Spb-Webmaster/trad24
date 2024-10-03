@@ -148,9 +148,12 @@ class FamilyMedia extends Model
                         $Moonshine->gallery = null;
                     }
                 }
-            $slug = Str::of($Moonshine->title)->slug('-');
-            $Moonshine->slug = 'id-' . $Moonshine->id . '-' . $slug->value;
+            $f = FamilyMedia::latest()->select('id')->first();
+            $id = (!is_null($f))?$f->id+1:1;
 
+
+            $slug = Str::of($Moonshine->title)->slug('-');
+            $Moonshine->slug = 'id-'.$id . '-'.$slug->value;
         });
 
 
