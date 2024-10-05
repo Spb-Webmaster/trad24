@@ -6,6 +6,7 @@ namespace App\MoonShine\Resources;
 
 use App\Models\CatRegobject;
 use App\Models\FamilyMedia;
+use App\MoonShine\Fields\Slug;
 use GianTiaga\MoonshineFile\Fields\SpatieUppyFile;
 use Illuminate\Contracts\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
@@ -24,7 +25,6 @@ use MoonShine\Fields\Image;
 use MoonShine\Fields\Json;
 use MoonShine\Fields\Position;
 use MoonShine\Fields\Relationships\BelongsTo;
-use MoonShine\Fields\Slug;
 use MoonShine\Fields\Switcher;
 use MoonShine\Fields\Text;
 use MoonShine\Fields\Textarea;
@@ -97,7 +97,8 @@ class FamilyMediaResource extends ModelResource
 
                                 Collapse::make('Заголовок/Алиас', [
                                     Text::make('Заголовок', 'title')->required(),
-                                    Text::make('Алиас', 'slug')->readonly()->hint('Формируется автоматически! Менять не нужно!'),
+                                    Slug::make('Алиас', 'slug')
+                                        ->from('title')->unique(),
 
                                 ])->show(),
 

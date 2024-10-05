@@ -152,8 +152,6 @@ class FamilyMedia extends Model
             $id = (!is_null($f))?$f->id+1:1;
 
 
-            $slug = Str::of($Moonshine->title)->slug('-');
-            $Moonshine->slug = 'id-'.$id . '-'.$slug->value;
         });
 
 

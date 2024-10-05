@@ -473,3 +473,65 @@ if (!function_exists('a_url')) {
 }
 
 
+/* Формируем slug  Версия 2 */
+if (!function_exists('createSlug')) {
+    function createSlug($title, $model)
+    {
+        $slug = Str::slug($title, '-');
+        $count = $model::query()->where('slug', 'LIKE', "{$slug}%")->count();
+        $newCount = $count > 0 ? ++$count : '';
+        return $newCount > 0 ? "$slug-$newCount" : $slug;
+    }
+}
+
+/* Формируем slug Версия 1  */
+if (!function_exists('slugCheck')) {
+
+    function slugCheck($str, Model $model)
+    {
+        $placeObj = $model;
+
+        $businessName = $str; //Input from User
+        $businessNameURL = Str::slug($businessName, '-'); //Convert Input to Str Slug
+
+        //Check if this Slug already exists
+        $checkSlug = $placeObj->whereSlug($businessNameURL)->exists();
+
+        if ($checkSlug) {
+            //Slug уже существует.
+            //Добавьте числовой префикс в конце. Начиная с 1
+            $numericalPrefix = 1;
+
+            while (1) {
+                //Check if Slug with final prefix exists.
+
+                $newSlug = $businessNameURL . "-" . $numericalPrefix++; //new Slug with incremented Slug Numerical Prefix
+                $newSlug = Str::slug($newSlug); //String Slug
+
+
+                $checkSlug = $placeObj->whereSlug($newSlug)->exists(); //Check if already exists in DB
+                //This returns true if exists.
+
+                if (!$checkSlug) {
+
+                    //There is not more coincidence. Finally found unique slug.
+                    $slug = $newSlug; //New Slug
+
+                    break; //Break Loop
+
+                }
+
+
+            }
+
+        } else {
+            //Slug do not exists. Just use the selected Slug.
+            $slug = $businessNameURL;
+        }
+
+        return $slug;
+    }
+
+
+}
+

@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace App\MoonShine\Resources;
 
+use App\MoonShine\Fields\Slug;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\FamilyGallery;
 
@@ -19,7 +20,6 @@ use MoonShine\Fields\File;
 use MoonShine\Fields\Image;
 use MoonShine\Fields\Json;
 use MoonShine\Fields\Relationships\BelongsTo;
-use MoonShine\Fields\Slug;
 use MoonShine\Fields\Switcher;
 use MoonShine\Fields\Text;
 use MoonShine\Fields\Textarea;
@@ -96,6 +96,7 @@ class FamilyGalleryResource extends ModelResource
                                     Text::make('Заголовок', 'title')->required(),
                                     Slug::make('Алиас', 'slug')
                                         ->from('title')->unique(),
+
                                     Image::make(__('Изображение'), 'teaser')
                                         ->disk(config('moonshine.disk', 'moonshine'))
                                         ->dir('object_media')

@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace App\MoonShine\Resources;
 
 use App\Models\FamilyNew;
+use App\MoonShine\Fields\Slug;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\RegobjectNew;
 
@@ -21,7 +22,6 @@ use MoonShine\Fields\Image;
 use MoonShine\Fields\Json;
 use MoonShine\Fields\Position;
 use MoonShine\Fields\Relationships\BelongsTo;
-use MoonShine\Fields\Slug;
 use MoonShine\Fields\Switcher;
 use MoonShine\Fields\Text;
 use MoonShine\Fields\Textarea;

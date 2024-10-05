@@ -6,6 +6,7 @@ namespace App\MoonShine\Resources;
 
 use App\Models\FamilyPage;
 use App\Models\FamilyPeople;
+use App\MoonShine\Fields\Slug;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\RegobjectPage;
 
@@ -19,7 +20,6 @@ use MoonShine\Enums\ClickAction;
 use MoonShine\Fields\Date;
 use MoonShine\Fields\Image;
 use MoonShine\Fields\Relationships\BelongsTo;
-use MoonShine\Fields\Slug;
 use MoonShine\Fields\Switcher;
 use MoonShine\Fields\Text;
 use MoonShine\Fields\Textarea;
@@ -90,8 +90,10 @@ class FamilyPeopleResource extends ModelResource
 
 
                                 Collapse::make('Заголовок/Алиас', [
+
                                     Text::make('Заголовок', 'title')->required(),
-                                    Text::make('Алиас', 'slug')->readonly()->hint('Формируется автоматически! Менять не нужно!'),
+                                    Slug::make('Алиас', 'slug')
+                                        ->from('title')->unique(),
 
                                 ])->show(),
 

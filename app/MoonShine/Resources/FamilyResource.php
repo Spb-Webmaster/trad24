@@ -7,6 +7,7 @@ namespace App\MoonShine\Resources;
 use App\Models\CatRegobject;
 
 use App\Models\Family;
+use App\MoonShine\Fields\Slug;
 use Illuminate\Contracts\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\Regobject;
@@ -26,7 +27,6 @@ use MoonShine\Fields\Json;
 use MoonShine\Fields\Position;
 use MoonShine\Fields\Relationships\BelongsTo;
 use MoonShine\Fields\Relationships\HasOne;
-use MoonShine\Fields\Slug;
 use MoonShine\Fields\Switcher;
 use MoonShine\Fields\Text;
 use MoonShine\Fields\Textarea;
