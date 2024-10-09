@@ -39,7 +39,7 @@ class FamilyMainResource extends ModelResource
 {
     protected string $model = FamilyMain::class;
 
-    protected string $title = 'Главы фамилии';
+    protected string $title = 'О нас';
 
     protected string $column = 'created_at';
 

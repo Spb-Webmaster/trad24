@@ -95,7 +95,7 @@ class MoonShineServiceProvider extends MoonShineApplicationServiceProvider
                 )->icon('heroicons.bars-arrow-up'),
 
                 MenuItem::make(
-                    static fn() => __('Главы фамилии'),
+                    static fn() => __('О нас'),
                     new FamilyMainResource()
                 )->icon('heroicons.clipboard-document-list'),
 
