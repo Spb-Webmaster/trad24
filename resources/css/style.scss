@@ -1297,3 +1297,29 @@ breadcrumbs
     display: none;
 }
 
+.content_.family,
+.content_.family_charity,
+.content_.family_page,
+.content_.family_main ,
+.content_.family_news,
+.content_.family_new,
+.content_.family_media,
+.content_.family_galleries,
+.content_.family_gallery,
+.content_.family_peoples,
+.content_.family_people,
+.content_.family_cultures,
+.content_.family_culture ,
+
+
+{
+    .header_middle, .header_bottom {
+        display: none;
+    }
+    .page_object {
+        border-top: 3px solid #abdfdf;
+      }
+    .header_top__flex {
+        padding: 20px 0 20px 0;
+    }
+}

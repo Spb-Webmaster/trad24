@@ -15,7 +15,7 @@
         <ul class="top_menu">
             <li class="{{ active_linkMenu(asset(route('family', ['slug' => $item->slug])), 'find')}}">
                 <a class="{{ active_linkMenu(asset(route('family', ['slug' => $item->slug])), 'find')}} add__mobile_menu upper_level @if(count($item->family_main)) arrow_down @endif"
-                   href="{{ route('family', ['slug' => $item->slug]) }}"><span>Главы фамилии</span></a>
+                   href="{{ route('family', ['slug' => $item->slug]) }}"><span>О нас</span></a>
 
 
                 @if(count($item->family_main))

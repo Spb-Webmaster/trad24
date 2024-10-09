@@ -23,7 +23,7 @@
 @import "./click.scss";
 @import "chosen-js/chosen.css";
 @import "./chosen/chosen.css";
-/*@import "@selectize/selectize/dist/css/selectize.css";*/
+/* @import "@selectize/selectize/dist/css/selectize.css"; */
 @import "./ui/jquery-ui.min.css";
 @import "./general-style/paddind.scss";
 @import "./general-style/width.scss";

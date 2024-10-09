@@ -27,10 +27,10 @@
 @include('include.menu.left_menu')
 </nav>
 
-<div id="content" class="content_ ">
+<div id="content" class="content_ {{ route_name() }} ">
     <x-message.message/>
     <x-message.message_error/>
-    @include('include.header', ['route' => route_name()]) {{--{{ 'Для стиля главной' }}--}}
+    @include('include.header', ['route' => route_name()]){{--{{ 'Для стиля главной' }}--}}
     @yield('content')
 </div><!--.content_-->
 
