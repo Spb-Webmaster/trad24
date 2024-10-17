@@ -32,7 +32,8 @@
                                 <ul>
                                     @foreach($item->family_hero as $hero)
                                         <li class="{{ active_linkMenu(asset(route('family_hero', ['family_slug' => $item->slug, 'slug' => $hero->slug])), 'find') }}">
-                                            <a class="{{ active_linkMenu(asset(route('family_hero', ['family_slug' => $item->slug, 'slug' => $hero->slug])), 'find') }}" href="{{ route('family_hero', ['family_slug' => $item->slug, 'slug' => $hero->slug]) }}">{{ $hero->title }}</a>
+                                            <a class="{{ active_linkMenu(asset(route('family_hero', ['family_slug' => $item->slug, 'slug' => $hero->slug])), 'find') }}"
+                                               href="{{ route('family_hero', ['family_slug' => $item->slug, 'slug' => $hero->slug]) }}">{{ $hero->title }}</a>
                                         </li>
                                     @endforeach
                                 </ul>
@@ -84,102 +85,97 @@
                             {{ $page->title  }}
                         </h1>
                     @endif
+                        @if($page->text)
+                            <div class="block  pad_t26_important  @if($page->img) page_l @endif">
 
-                    @if($page->text)
-                        <div class="block  pad_t26_important  @if($page->img) page_l @endif">
-
-                            <div class="@if($page->img) page_l__left @endif">
-                                <div class="page_page__desc1 desc">
-                                    {!! $page->text !!}
+                                <div class="@if($page->img) page_l__left @endif">
+                                    <div class="page_page__desc1 desc">
+                                        {!! $page->text !!}
+                                    </div>
                                 </div>
+
+                                @if($page->img)
+                                    <div class="page_l__right">
+
+                                        @if($page->img)
+                                            <div class="desc desc_main__imgR pad_t33 pad_b33">
+                                                <img class="pc_category_img" width="228" height="270" loading="lazy"
+                                                     src="{{ asset(intervention('228x270', $page->img, 'objects')) }}"
+                                                     alt="{{$page->title}}">
+                                            </div>
+
+                                        @endif
+                                    </div>
+                                @endif
+
                             </div>
+                        @endif
 
-                            @if($page->img)
-                                <div class="page_l__right">
-
-                                    @if($page->img)
-                                        <div class="desc desc_main__imgR pad_t33 pad_b33">
-                                            <img class="pc_category_img" width="228" height="270" loading="lazy"
-                                                 src="{{ asset(intervention('228x270', $page->img, 'objects')) }}"
-                                                 alt="{{$page->title}}">
-                                        </div>
-
-                                    @endif
-                                </div>
-                            @endif
-
-                        </div>
-
-                    @endif
-
-
-
-
-
-
-
-                    @if($page->text2)
-                        <div class="block page_l2 pad_t20">
-                            <div class="page_page__desc2 desc">
-                                {!! $page->text2 !!}
-                            </div>
-                        </div>
-                    @endif
-
-                    @if($page->img2)
-                        <div class="block pad_t26  pad_b20 ">
-                            <a href="{{ asset(Storage::disk('public')->url($page->img2)) }}" data-fancybox=""><img
-                                    class="pc_category_img" style="width: 100%; height: auto" loading="lazy"
-                                    src="{{ asset(Storage::disk('public')->url($page->img2)) }}"
-                                    alt="{{$page->title}}"></a>
-                        </div>
-                    @endif
-
-                    @if($page->text3)
-                        <div class="block    @if($page->img3) page_r @endif">
-                            @if($page->img3)
-                                <div class="page_r__left">
-
-                                    @if($page->img3)
-                                        <a href="{{ asset(Storage::disk('public')->url($page->img3)) }}"
-                                           data-fancybox=""><img class="pc_category_img" width="500" height="376"
-                                                                 loading="lazy"
-                                                                 src="{{ asset(intervention('500x376', $page->img3, 'objects')) }}"
-                                                                 alt="{{$page->title}}"></a>
-
-                                    @endif
-                                </div>
-                            @endif
-
-                            <div class="@if($page->img3) page_r__right @endif">
-                                <div class="page_page__desc1 desc pad_b33">
-                                    {!! $page->text3 !!}
-                                </div>
-                            </div>
-
-                        </div>
-                    @endif
-
-
-                    @if($page->text4)
-                        <hr class="p_hr">
-                        <div class="block page_l2">
-                            <div class="page_page__desc2 desc">
-                                {!! $page->text4 !!}
-                            </div>
-                        </div>
-                    @endif
-
-                    @if($page->img4)
-                        <div class="block pad_t26  pad_b20 ">
-                            <a href="{{ asset(Storage::disk('public')->url($page->img4)) }}" data-fancybox=""><img
-                                    class="pc_category_img" style="width: 100%; height: auto" loading="lazy"
-                                    src="{{ asset(Storage::disk('public')->url($page->img4)) }}"
-                                    alt="{{$page->title}}"></a>
-                        </div>
-                    @endif
                 @endif
 
+
+
+
+                @if($page->text2)
+                    <div class="block page_l2 pad_t20">
+                        <div class="page_page__desc2 desc">
+                            {!! $page->text2 !!}
+                        </div>
+                    </div>
+                @endif
+
+                @if($page->img2)
+                    <div class="block pad_t26  pad_b20 ">
+                        <a href="{{ asset(Storage::disk('public')->url($page->img2)) }}" data-fancybox=""><img
+                                class="pc_category_img" style="width: 100%; height: auto" loading="lazy"
+                                src="{{ asset(Storage::disk('public')->url($page->img2)) }}"
+                                alt="{{$page->title}}"></a>
+                    </div>
+                @endif
+
+                @if($page->text3)
+                    <div class="block    @if($page->img3) page_r @endif">
+                        @if($page->img3)
+                            <div class="page_r__left">
+
+                                @if($page->img3)
+                                    <a href="{{ asset(Storage::disk('public')->url($page->img3)) }}"
+                                       data-fancybox=""><img class="pc_category_img" width="500" height="376"
+                                                             loading="lazy"
+                                                             src="{{ asset(intervention('500x376', $page->img3, 'objects')) }}"
+                                                             alt="{{$page->title}}"></a>
+
+                                @endif
+                            </div>
+                        @endif
+
+                        <div class="@if($page->img3) page_r__right @endif">
+                            <div class="page_page__desc1 desc pad_b33">
+                                {!! $page->text3 !!}
+                            </div>
+                        </div>
+
+                    </div>
+                @endif
+
+
+                @if($page->text4)
+                    <hr class="p_hr">
+                    <div class="block page_l2">
+                        <div class="page_page__desc2 desc">
+                            {!! $page->text4 !!}
+                        </div>
+                    </div>
+                @endif
+
+                @if($page->img4)
+                    <div class="block pad_t26  pad_b20 ">
+                        <a href="{{ asset(Storage::disk('public')->url($page->img4)) }}" data-fancybox=""><img
+                                class="pc_category_img" style="width: 100%; height: auto" loading="lazy"
+                                src="{{ asset(Storage::disk('public')->url($page->img4)) }}"
+                                alt="{{$page->title}}"></a>
+                    </div>
+                @endif
 
             </div>
 
