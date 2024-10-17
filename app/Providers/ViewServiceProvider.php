@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use App\View\Composers\AreaComposer;
+use App\View\Composers\CityRusComposer;
 use App\View\Composers\InfoComposer;
 
 use App\View\Composers\MenuBottomComposer;
@@ -36,6 +37,7 @@ class ViewServiceProvider extends ServiceProvider
         View::composer(['include.menu.top_menu'], MenuTopComposer::class);
         View::composer(['include.menu.bottom_menu'], MenuBottomComposer::class);
         View::composer(['layouts.layout'], MenuLeftComposer::class);
+        View::composer(['dashboard.forms.edit_profile'], CityRusComposer::class);
 
     }
 }

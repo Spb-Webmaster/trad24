@@ -1,0 +1,80 @@
+@charset "utf-8";
+$color: #282828;
+$colorRed: #EF533F;
+$colorCCC: #CCCCCC;
+$colorGrey: #667085;
+$colorBlue: #00AFEF;
+$colorGreen: #0f6567;
+
+
+$maxWidth: 1440;
+@mixin adaptiv-font($pcSize, $mobSize) {
+    $addSize: $pcSize - $mobSize;
+    $maxWidth: $maxWidth - 320;
+    font-size: calc(#{$mobSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidth}));
+}
+
+@mixin family {
+    font-family: 'Source Sans Pro', "Arial Narrow", Arial, Helvetica, sans-serif;
+
+}
+
+@mixin family_Philosopher {
+    font-family: "Philosopher", "Arial Narrow", Arial, Helvetica, sans-serif;
+}
+
+@mixin Inter {
+    font-family: 'Inter Variable', sans-serif;
+}
+
+@mixin Roboto {
+    font-family: 'Roboto Flex Variable', sans-serif;
+}
+
+.h_contant {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    position: relative;
+
+    .h_contant__left {
+        width: 25%;
+        padding-top: 24px;
+    }
+
+    .h_contant__right {
+        width: 75%;
+        padding: 0 0 0 3%;
+
+        .page_l__left {
+            padding-top: 0;
+
+        }
+
+        .page_l__right {
+            min-width: 202px;
+        }
+
+    }
+
+    .__left_bar {
+        ul {
+            padding: 3px 0;
+        }
+
+        li {
+            a {
+                display: block;
+                padding: 6px 0;
+                color: $color;
+                text-decoration: none;
+
+                &.active,
+                &:hover {
+                    color: $colorRed;
+
+                }
+            }
+        }
+    }
+}

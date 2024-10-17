@@ -116,3 +116,22 @@ position: absolute;
 
     }
 }
+
+
+.selectClass label{
+    border-radius: 4px;
+    color: #00AFEF;
+    left: 0.8em;
+    padding: 0 0.15em;
+    top: 1em;
+    font-size: 12px;
+}
+
+.selectClass a.chosen-single{
+    min-height: 46px;
+    margin: 2px 0;
+    border-radius: 12px;
+}
+.selectClass a.chosen-single span{
+    padding-top: 9px;
+}

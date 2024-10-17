@@ -8,6 +8,7 @@ namespace App\Providers;
 use App\MoonShine\Resources\AreaResource;
 use App\MoonShine\Resources\FamilyCultureResource;
 use App\MoonShine\Resources\FamilyGalleryResource;
+use App\MoonShine\Resources\FamilyHeroResource;
 use App\MoonShine\Resources\FamilyMainResource;
 use App\MoonShine\Resources\FamilyMediaResource;
 use App\MoonShine\Resources\FamilyNewResource;
@@ -124,6 +125,11 @@ class MoonShineServiceProvider extends MoonShineApplicationServiceProvider
                 MenuItem::make(
                     static fn() => __('Выдающиеся люди'),
                     new FamilyPeopleResource()
+                )->icon('heroicons.clipboard-document-list'),
+
+                MenuItem::make(
+                    static fn() => __('Герои'),
+                    new FamilyHeroResource()
                 )->icon('heroicons.clipboard-document-list'),
 
 

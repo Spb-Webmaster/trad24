@@ -76,6 +76,8 @@ class DashboardController extends Controller
                     'name' => $request->name,
                     'phone' => $request->phone,
                     'birthdate' => ($request->birthdate) ?: auth()->user()->birthdate,
+                    'fio' => ($request->fio) ?: auth()->user()->fio,
+                    'city' => ($request->city) ?: auth()->user()->city,
                 ]);
         }
         return redirect()->intended(route('cabinet'));

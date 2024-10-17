@@ -40,6 +40,20 @@
                 </div>
 
 
+                <div class="text_input">
+                    <x-forms.text-input_fromLabel
+                        type="text"
+                        id="registerFio"
+                        name="fio"
+                        placeholder="ФИО"
+                        value="{{ (old('fio'))?:$user->fio }}"
+                        class="input fio"
+                        :isError="$errors->has('fio')"
+                    />
+                    <x-forms.error class="error_fio"/>
+
+                </div>
+
             </div><!--.c__flex_50_left-->
             <div class="c__flex_50 c__flex_50_right">
 
@@ -67,8 +81,10 @@
                                 {{ __('Дата рождения') }}
 
                                 <div class="birthdate_pic">
-                                    <input type="text" name="birthdate" class="datepicker-birthdate" value="{{ $user->birthdate }}" />
-                                    <a href="javascript:void(0);"  class="datepicker-birthdate_result" id="alternate">{{ rusdate3($user->birthdate) }}</a>
+                                    <input type="text" name="birthdate" class="datepicker-birthdate"
+                                           value="{{ $user->birthdate }}"/>
+                                    <a href="javascript:void(0);" class="datepicker-birthdate_result"
+                                       id="alternate">{{ rusdate3($user->birthdate) }}</a>
                                 </div>
                             </div>
                         @else
@@ -77,15 +93,34 @@
                                 <span>{{ __('Дата рождения') }}</span>
 
                                 <div class="birthdate_pic">
-                                    <input type="text" name="birthdate" class="datepicker-birthdate" value="1970-01-01" />
-                                    <a href="javascript:void(0);"  class="datepicker-birthdate_result" id="alternate">{{ __('Добавить') }}</a>
+                                    <input type="text" name="birthdate" class="datepicker-birthdate"
+                                           value="1970-01-01"/>
+                                    <a href="javascript:void(0);" class="datepicker-birthdate_result"
+                                       id="alternate">{{ __('Добавить') }}</a>
                                 </div>
                             </div>
                         @endif
                     </div>
                 </div>
 
+                <div class="text_input">
+                    <div class="selectClass">
+                        <select class="js-chosen " name="city" id="registerCity">
+                            <optgroup label="Города">
+                                <option value="{{ ($user->city)?:'' }}">{{ ($user->city)?:'--' }}</option>
+                                @foreach($departures as $departure)
+                                    <option value="{{$departure->city}}">{{$departure->city}}</option>
+                                @endforeach
+                            </optgroup>
+                        </select>
+                        <label class="labelInput show" for="registerCity">Город</label>
+                    </div>
+
+                </div>
+
+
             </div><!--.c__flex_50_right-->
+
         </div><!--.c__flex-->
 
 

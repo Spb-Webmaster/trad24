@@ -1,4 +1,3 @@
-
 import { upload_f,upload_photo,delete_photo } from './include/ajax';
 import { imask } from './include/imask';
 import { slick } from './include/slick';

@@ -36,9 +36,9 @@
 
                             @if($item->p_img )
                                 <div class="desc desc_main__imgR pad_t33">
-                                    <a href=""><img class="pc_category_img" width="228" height="270" loading="lazy"
+                                    <img class="pc_category_img" width="228" height="270" loading="lazy"
                                                     src="{{ asset(intervention('228x270', $item->p_img, 'objects')) }}"
-                                                    alt="{{$item->p_img}}"></a>
+                                                    alt="{{$item->p_img}}">
                                 </div>
 
                             @endif

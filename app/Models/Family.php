@@ -70,6 +70,22 @@ class Family extends Model
         'k_text4',
 
 
+
+        'h_title',
+        'h_img',
+        'h_text',
+
+        'h_img2',
+        'h_text2',
+
+        'h_img3',
+        'h_text4',
+
+        'h_img4',
+        'h_text4',
+        'h_published',
+
+
         'files',
 
         'params',
@@ -123,6 +139,11 @@ class Family extends Model
     public function family_culture(): HasMany
     {
         return $this->hasMany(FamilyCulture::class, 'family_id')->orderBy('created_at', 'desc');
+    }
+
+    public function family_hero(): HasMany
+    {
+        return $this->hasMany(FamilyHero::class, 'family_id')->orderBy('created_at', 'desc');
     }
 
     public function family_main(): HasMany

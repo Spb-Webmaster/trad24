@@ -11,9 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::table('families', function (Blueprint $table) {
-            $table->string('img_logo')->nullable();
-
+        Schema::create('rus_cities', function (Blueprint $table) {
+            $table->id();
+            $table->string('city')->unique();
+            $table->timestamps();
         });
     }
 
@@ -22,8 +23,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::table('families', function (Blueprint $table) {
-            //
-        });
+        Schema::dropIfExists('rus_cities');
     }
 };

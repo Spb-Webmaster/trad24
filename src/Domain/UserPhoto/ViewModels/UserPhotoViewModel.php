@@ -10,19 +10,21 @@ class UserPhotoViewModel
 {
     use Makeable;
 
-    public function userPhotos($user_id) {
-       return UserPhoto::query()->where('user_id', $user_id)
+    public function userPhotos($user_id)
+    {
+        return UserPhoto::query()->where('user_id', $user_id)
             ->orderBy('created_at', 'desc')
             ->paginate(50);
     }
 
-    public function create($user_id, $filename ) {
-       return  UserPhoto::create([
-               'user_id' => $user_id,
-               'img' => $filename
-           ]);
+    public function create($user_id, $filename)
+    {
+        return UserPhoto::create([
+            'user_id' => $user_id,
+            'img' => $filename
+        ]);
     }
 
 
-
 }
+

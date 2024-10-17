@@ -11,8 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::table('family_media', function (Blueprint $table) {
-            $table->longText('gallery_multiple')->nullable();
+        Schema::table('users', function (Blueprint $table) {
+
+            $table->string('city')->nullable();
+            $table->string('fio')->nullable();
+
         });
     }
 
@@ -21,7 +24,7 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::table('family_media', function (Blueprint $table) {
+        Schema::table('users', function (Blueprint $table) {
             //
         });
     }

@@ -27,6 +27,7 @@ class UpdateFormRequest extends FormRequest
         return [
             'name' => ['required', 'string' , 'min:2'],
             'phone' => ['string', 'min:5',  Rule::unique('users')->ignore(auth()->user()->id)],
+            'fio' => ['string', 'min:5', 'nullable'],
             'birthdate' => ['date', 'nullable'],
             'id' => ['required','integer'],
         ];

@@ -564,7 +564,8 @@ end responce -------------------------------------------------------------------
   position: relative;
   line-height: 1.4em; }
 .desc ol {
-  padding-left: 15px; }
+  padding-left: 15px;
+  margin-left: 10px; }
 .desc ol li {
   padding: 5px 5px 5px 5px;
   font-size: 16px;
@@ -891,5 +892,68 @@ breadcrumbs
 
 .mob_menu_content, .mobile_menu {
   display: none; }
+
+.content_.family .header_middle, .content_.family .header_bottom,
+.content_.family_charity .header_middle,
+.content_.family_charity .header_bottom,
+.content_.family_page .header_middle,
+.content_.family_page .header_bottom,
+.content_.family_main .header_middle,
+.content_.family_main .header_bottom,
+.content_.family_news .header_middle,
+.content_.family_news .header_bottom,
+.content_.family_new .header_middle,
+.content_.family_new .header_bottom,
+.content_.family_media .header_middle,
+.content_.family_media .header_bottom,
+.content_.family_galleries .header_middle,
+.content_.family_galleries .header_bottom,
+.content_.family_gallery .header_middle,
+.content_.family_gallery .header_bottom,
+.content_.family_peoples .header_middle,
+.content_.family_peoples .header_bottom,
+.content_.family_people .header_middle,
+.content_.family_people .header_bottom,
+.content_.family_cultures .header_middle,
+.content_.family_cultures .header_bottom,
+.content_.family_culture .header_middle,
+.content_.family_culture .header_bottom,
+.content_.family_heroes .header_middle,
+.content_.family_heroes .header_bottom,
+.content_.family_hero .header_middle,
+.content_.family_hero .header_bottom {
+  display: none; }
+.content_.family .page_object,
+.content_.family_charity .page_object,
+.content_.family_page .page_object,
+.content_.family_main .page_object,
+.content_.family_news .page_object,
+.content_.family_new .page_object,
+.content_.family_media .page_object,
+.content_.family_galleries .page_object,
+.content_.family_gallery .page_object,
+.content_.family_peoples .page_object,
+.content_.family_people .page_object,
+.content_.family_cultures .page_object,
+.content_.family_culture .page_object,
+.content_.family_heroes .page_object,
+.content_.family_hero .page_object {
+  border-top: 3px solid #abdfdf; }
+.content_.family .header_top__flex,
+.content_.family_charity .header_top__flex,
+.content_.family_page .header_top__flex,
+.content_.family_main .header_top__flex,
+.content_.family_news .header_top__flex,
+.content_.family_new .header_top__flex,
+.content_.family_media .header_top__flex,
+.content_.family_galleries .header_top__flex,
+.content_.family_gallery .header_top__flex,
+.content_.family_peoples .header_top__flex,
+.content_.family_people .header_top__flex,
+.content_.family_cultures .header_top__flex,
+.content_.family_culture .header_top__flex,
+.content_.family_heroes .header_top__flex,
+.content_.family_hero .header_top__flex {
+  padding: 20px 0 20px 0; }
 
 /*# sourceMappingURL=style.css.map */

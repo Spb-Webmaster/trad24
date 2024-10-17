@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Family;
 use App\Http\Controllers\Controller;
 use App\Models\Family;
 use App\Models\FamilyCulture;
+use App\Models\FamilyHero;
 use App\Models\FamilyMain;
 use App\Models\FamilyMedia;
 use App\Models\FamilyPage;
@@ -327,8 +328,6 @@ class FamilyObjectController extends Controller
     }
 
 
-
-
     /**
      * Культурное настледие
      */
@@ -352,6 +351,7 @@ class FamilyObjectController extends Controller
      */
     public function family_culture($family_slug, $slug) {
 
+
         $item = $this->item($family_slug); /** фамилия  **/
 
         $page = $this->page(FamilyCulture::class, $slug); /** внутреннии   **/
@@ -367,6 +367,55 @@ class FamilyObjectController extends Controller
 
 
         return view('pages.family.object.inside.inside_page',
+            [
+                'item' => $item,
+                'page' => $page,
+            ]);
+    }
+
+    /**
+     * Культурное настледие - герои
+     */
+    public function family_heroes($family_slug) {
+
+
+        $item = $this->item($family_slug);
+
+
+        $item = $this->item($family_slug); /** фамилия  **/
+
+
+        if(!$item) {
+            abort(404);
+        }
+
+
+
+         return view('pages.family.object.object_hero',
+            [
+                'item' => $item,
+           ]);
+    }
+
+    /**
+     * Культурное наследие внутренняя - герои
+     */
+    public function family_hero($family_slug, $slug) {
+
+        $item = $this->item($family_slug); /** фамилия  **/
+
+        $page = $this->page(FamilyHero::class, $slug); /** внутреннии   **/
+
+
+        if(!$item) {
+            abort(404);
+        }
+
+        if(!$page) {
+            abort(404);
+        }
+
+        return view('pages.family.object.inside.inside_hero',
             [
                 'item' => $item,
                 'page' => $page,

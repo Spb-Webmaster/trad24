@@ -1,0 +1,26 @@
+.h_contant {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  position: relative; }
+  .h_contant .h_contant__left {
+    width: 25%;
+    padding-top: 24px; }
+  .h_contant .h_contant__right {
+    width: 75%;
+    padding: 0 0 0 3%; }
+    .h_contant .h_contant__right .page_l__left {
+      padding-top: 0; }
+    .h_contant .h_contant__right .page_l__right {
+      min-width: 202px; }
+  .h_contant .__left_bar ul {
+    padding: 3px 0; }
+  .h_contant .__left_bar li a {
+    display: block;
+    padding: 6px 0;
+    color: #282828;
+    text-decoration: none; }
+    .h_contant .__left_bar li a.active, .h_contant .__left_bar li a:hover {
+      color: #EF533F; }
+
+/*# sourceMappingURL=hero.css.map */

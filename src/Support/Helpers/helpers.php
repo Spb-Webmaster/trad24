@@ -54,6 +54,7 @@ if (!function_exists('cache_clear ')) {
         Cache::forget('slider_infos');
         Cache::forget('religion_list');
         Cache::forget('area_list');
+        Cache::forget('cities_list');
 
     }
 }

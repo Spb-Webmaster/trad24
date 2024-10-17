@@ -82,8 +82,6 @@ class FamilyResource extends ModelResource
                     Tab::make(__('Общие настройки'), [
                         Grid::make([
                             Column::make([
-
-
                                 Collapse::make('Заголовок/Алиас', [
                                     Text::make('Заголовок', 'title')->required(),
                                     Slug::make('Алиас', 'slug')
@@ -129,14 +127,13 @@ class FamilyResource extends ModelResource
 
                     ]),
 
-
-                    Tab::make(__('Главы фамилии'), [
+                    Tab::make(__('О фамилии'), [
 
 
                         Grid::make([
                             Column::make([
 
-                                Text::make(__('Заголовок страницы "Главы фамилии"'), 'f_title'),
+                                Text::make(__('Заголовок страницы "О фамилии"'), 'f_title'),
                                 TinyMce::make('Описание', 'f_text')
                                     ->hint('Встраивается слева, не оптекает'),
 
@@ -159,18 +156,18 @@ class FamilyResource extends ModelResource
 
                         Grid::make([
                             Column::make([
-                            TinyMce::make('Описание', 'f_text2')
-                                ->hint('На всю ширину макета'),
+                                TinyMce::make('Описание', 'f_text2')
+                                    ->hint('На всю ширину макета'),
 
-                            Image::make(__('Изображение'), 'f_img2')
-                                ->showOnExport()
-                                ->disk(config('moonshine.disk', 'moonshine'))
-                                ->dir('objects')
-                                ->allowedExtensions(['jpg', 'png', 'jpeg', 'gif', 'svg'])
-                                ->removable()
-                                ->hint('Растягивается на 100% ширины'),
-                        ])->columnSpan(12),
-                    ]),
+                                Image::make(__('Изображение'), 'f_img2')
+                                    ->showOnExport()
+                                    ->disk(config('moonshine.disk', 'moonshine'))
+                                    ->dir('objects')
+                                    ->allowedExtensions(['jpg', 'png', 'jpeg', 'gif', 'svg'])
+                                    ->removable()
+                                    ->hint('Растягивается на 100% ширины'),
+                            ])->columnSpan(12),
+                        ]),
 
                         Divider::make(),
 
@@ -212,7 +209,6 @@ class FamilyResource extends ModelResource
 
 
                     ]),
-
 
                     Tab::make(__('Выдающиеся люди'), [
 
@@ -295,11 +291,9 @@ class FamilyResource extends ModelResource
                         ]),
 
 
-
                     ]),
 
                     Tab::make(__('Культурное наследие'), [
-
 
 
                         Grid::make([
@@ -380,10 +374,100 @@ class FamilyResource extends ModelResource
                         ]),
 
 
+                    ]),
+
+                    Tab::make(__('Герои'), [
+
+
+                        Grid::make([
+
+                            Column::make([
+                                Collapse::make('Публикация раздела  - герои', [
+
+                                    Switcher::make('Публикация в меню', 'h_published')->default(1),
+                                ]),
+
+                            ])
+                                ->columnSpan(12),
+                            Column::make([
+
+                                Text::make(__('Заголовок страницы "Герои"'), 'h_title'),
+                                TinyMce::make('Описание', 'h_text')
+                                    ->hint('Встраивается слева, не оптекает'),
+
+                            ])->columnSpan(8),
+                            Column::make([
+
+                                Image::make(__('Изображение'), 'h_img')
+                                    ->showOnExport()
+                                    ->disk(config('moonshine.disk', 'moonshine'))
+                                    ->dir('objects')
+                                    ->allowedExtensions(['jpg', 'png', 'jpeg', 'gif', 'svg'])
+                                    ->removable()
+                                    ->hint('Встраивается справа'),
+
+
+                            ])
+                                ->columnSpan(4),
+                        ]),
+
+                        Divider::make(),
+
+                        Grid::make([
+                            Column::make([
+                                TinyMce::make('Описание', 'h_text2')
+                                    ->hint('На всю ширину макета'),
+
+                                Image::make(__('Изображение'), 'h_img2')
+                                    ->showOnExport()
+                                    ->disk(config('moonshine.disk', 'moonshine'))
+                                    ->dir('objects')
+                                    ->allowedExtensions(['jpg', 'png', 'jpeg', 'gif', 'svg'])
+                                    ->removable()
+                                    ->hint('Растягивается на 100% ширины'),
+                            ])->columnSpan(12),
+                        ]),
+
+                        Divider::make(),
+
+                        Grid::make([
+                            Column::make([
+                                Image::make(__('Изображение'), 'h_img3')
+                                    ->showOnExport()
+                                    ->disk(config('moonshine.disk', 'moonshine'))
+                                    ->dir('objects')
+                                    ->allowedExtensions(['jpg', 'png', 'jpeg', 'gif', 'svg'])
+                                    ->removable()
+                                    ->hint('Встраивается слева'),
+
+                            ])->columnSpan(6),
+                            Column::make([
+                                TinyMce::make('Текст', 'h_text3')
+                                    ->hint('Встраивается справа, не оптекает'),
+                            ])
+                                ->columnSpan(6)
+                        ]),
+
+                        Divider::make(),
+
+                        Grid::make([
+
+                            Column::make([
+                                TinyMce::make('Описание', 'h_text4')
+                                    ->hint('На всю ширину макета'),
+
+                                Image::make(__('Изображение'), 'h_img4')
+                                    ->showOnExport()
+                                    ->disk(config('moonshine.disk', 'moonshine'))
+                                    ->dir('objects')
+                                    ->allowedExtensions(['jpg', 'png', 'jpeg', 'gif', 'svg'])
+                                    ->removable()
+                                    ->hint('Растягивается на 100% ширины'),
+                            ])->columnSpan(12)
+                        ]),
 
 
                     ]),
-
 
                     Tab::make(__('Файлы'), [
 

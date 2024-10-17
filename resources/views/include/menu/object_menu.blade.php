@@ -15,7 +15,7 @@
         <ul class="top_menu">
             <li class="{{ active_linkMenu(asset(route('family', ['slug' => $item->slug])), 'find')}}">
                 <a class="{{ active_linkMenu(asset(route('family', ['slug' => $item->slug])), 'find')}} add__mobile_menu upper_level @if(count($item->family_main)) arrow_down @endif"
-                   href="{{ route('family', ['slug' => $item->slug]) }}"><span>О нас</span></a>
+                   href="{{ route('family', ['slug' => $item->slug]) }}"><span>О фамилии</span></a>
 
 
                 @if(count($item->family_main))
@@ -87,9 +87,19 @@
 
             <li class="{{ active_linkMenu(asset(route('family_peoples', ['family_slug' => $item->slug])), 'find')}}">
                 <a class="add__mobile_menu @if(count($item->family_people)) arrow_down @endif {{ active_linkMenu(asset(route('family_peoples', ['family_slug' => $item->slug])), 'find')}}" href="{{ asset(route('family_peoples', ['family_slug' => $item->slug])) }}"><span>Выдающиеся люди</span></a>
+
                 @if(count($item->family_people))
 
                     <ul class="submenu">
+                        <li class="{{ active_linkMenu(asset(route('family_heroes', ['family_slug' => $item->slug])), 'find')}}
+                        {{ active_linkParse('/family/last-names/'. $item->slug .'/people/hero/v/', 'find')}}">
+
+                            <a class="add__mobile_menu {{ active_linkMenu(asset(route('family_heroes', ['family_slug' => $item->slug])), 'find')}}  {{ active_linkParse('/family/last-names/'. $item->slug .'/people/hero/v/', 'find')}}"
+                               href="{{ asset(route('family_heroes', ['family_slug' => $item->slug])) }}">
+                                {{__('Герои')  }}
+                            </a>
+
+                        </li>
                         @foreach($item->family_people as $s)
 
                             @if($s->url)
@@ -107,6 +117,7 @@
 
                     </ul>
                 @endif
+
             </li>
 
             <li class="{{ active_linkMenu(asset(route('family_cultures', ['family_slug' => $item->slug])), 'find')}}">

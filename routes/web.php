@@ -10,6 +10,7 @@ use App\Http\Controllers\Catalog\CatalogController;
 use App\Http\Controllers\Catalog\ObjectController;
 use App\Http\Controllers\Dashboard\DashboardController;
 use App\Http\Controllers\Dashboard\UserArticle\UserArticleController;
+use App\Http\Controllers\Dashboard\UserPeoples\UserPeopleController;
 use App\Http\Controllers\Dashboard\UserPhoto\UserPhotoAjaxController;
 use App\Http\Controllers\Dashboard\UserPhoto\UserPhotoController;
 use App\Http\Controllers\Dashboard\UserVideo\UserVideoController;
@@ -129,9 +130,23 @@ Route::controller(UserPhotoController::class)->group(function () {
         ->middleware('auth.published')
         ->name('cabinet.photos');
 
+
     Route::post('/cabinet/photos/{id}/upload', 'upload')
         ->middleware('auth.published')
         ->name('cabinet.photos.upload');
+
+});
+
+/**
+ *  UserPeopleController - фото
+ */
+Route::controller(UserPeopleController::class)->group(function () {
+
+    Route::get('/cabinet/peoples/{id}', 'peoples')
+        ->middleware('auth.published')
+        ->name('cabinet.peoples');
+
+
 
 });
 
@@ -424,10 +439,17 @@ Route::controller(FamilyObjectController::class)->group(function () {
     Route::get('/family/last-names/{family_slug}/people/{slug}', 'family_people')->name('family_people');
 
     /**
+     * Люди - герои (подкатегория)
+     */
+    Route::get('/family/last-names/{family_slug}/people/v/hero', 'family_heroes')->name('family_heroes');
+    Route::get('/family/last-names/{family_slug}/people/hero/v/{slug}', 'family_hero')->name('family_hero');
+
+    /**
      * Культурное наследие
      */
     Route::get('/family/last-names/{family_slug}/culture', 'family_cultures')->name('family_cultures');
     Route::get('/family/last-names/{family_slug}/culture/{slug}', 'family_culture')->name('family_culture');
+
 
 
     /**

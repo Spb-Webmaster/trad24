@@ -12,7 +12,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('family_galleries', function (Blueprint $table) {
+        Schema::create('family_heroes', function (Blueprint $table) {
             $table->id();
 
 
@@ -20,6 +20,7 @@ return new class extends Migration
             $table->string('slug')->unique();
 
             $table->string('teaser')->nullable();
+            $table->string('url')->nullable();
 
             $table->string('img')->nullable();
             $table->longText('text')->nullable();
@@ -30,33 +31,24 @@ return new class extends Migration
             $table->string('img3')->nullable();
             $table->longText('text3')->nullable();
 
-
-                        $table->foreignIdFor(Family::class)
-                            ->nullable()
-                            ->constrained()
-                            ->cascadeOnUpdate()
-                            ->cascadeOnDelete();
+            $table->string('img4')->nullable();
+            $table->longText('text4')->nullable();
 
 
-            $table->longText('gallery')->nullable();
-            $table->string('gallery_title')->nullable();
-            $table->longText('gallery_desc')->nullable();
-            $table->longText('gallery_multiple')->nullable();
+            $table->foreignIdFor(Family::class)
+                ->nullable()
+                ->constrained()
+                ->cascadeOnUpdate()
+                ->cascadeOnDelete();
 
-            $table->longText('video')->nullable();
-            $table->string('video_title')->nullable();
-            $table->longText('video_desc')->nullable();
 
-            $table->longText('audio')->nullable();
-            $table->string('audio_title')->nullable();
-            $table->longText('audio_desc')->nullable();
-
+            $table->longText('css')->nullable();
             $table->json('params')->nullable();
             $table->string('published')->default(1);
             $table->text('metatitle')->nullable();
             $table->text('description')->nullable();
             $table->text('keywords')->nullable();
-                        $table->integer('sorting')->default(999);
+            $table->integer('sorting')->default(999);
 
             $table->timestamps();
         });
@@ -67,6 +59,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('family_galleries');
+        Schema::dropIfExists('family_heroes');
     }
 };
