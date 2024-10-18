@@ -379,13 +379,14 @@ class FamilyObjectController extends Controller
     public function family_heroes($family_slug) {
 
 
-        $item = $this->item($family_slug);
-
 
         $item = $this->item($family_slug); /** фамилия  **/
 
 
         if(!$item) {
+            abort(404);
+        }
+        if(!$item->h_published) {
             abort(404);
         }
 

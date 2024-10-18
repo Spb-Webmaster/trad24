@@ -34,7 +34,6 @@
                                        href="{{ asset(route('family_main', ['family_slug' => $item->slug, 'slug' => $s->slug] )) }}">{{ $s->title  }}</a>
                                 </li>
                             @endif
-
                         @endforeach
 
                     </ul>
@@ -91,6 +90,9 @@
                 @if(count($item->family_people))
 
                     <ul class="submenu">
+                        @if($item->h_published)
+
+
                         <li class="{{ active_linkMenu(asset(route('family_heroes', ['family_slug' => $item->slug])), 'find')}}
                         {{ active_linkParse('/family/last-names/'. $item->slug .'/people/hero/v/', 'find')}}">
 
@@ -100,6 +102,8 @@
                             </a>
 
                         </li>
+
+                        @endif
                         @foreach($item->family_people as $s)
 
                             @if($s->url)

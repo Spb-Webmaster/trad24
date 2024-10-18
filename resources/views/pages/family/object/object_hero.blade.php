@@ -32,9 +32,12 @@
                                 <div class="__left_bar">
                                     <ul>
                                         @foreach($item->family_hero as $hero)
+                                            @if($hero->published)
+
                                             <li>
-                                                <a href="{{ route('family_hero', ['family_slug' => $item->slug, 'slug' => $hero->slug]) }}">{{ $hero->title }}</a>
+                                                <a  {{($hero->url)?'target=_blank':''}} href="{{ ($hero->url)?: route('family_hero', ['family_slug' => $item->slug, 'slug' => $hero->slug]) }}">{{ $hero->title }}</a>
                                             </li>
+                                            @endif
                                         @endforeach
                                     </ul>
                                 </div>

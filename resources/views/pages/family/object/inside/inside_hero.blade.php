@@ -31,10 +31,13 @@
                             <div class="__left_bar">
                                 <ul>
                                     @foreach($item->family_hero as $hero)
+
+                                        @if($hero->published)
                                         <li class="{{ active_linkMenu(asset(route('family_hero', ['family_slug' => $item->slug, 'slug' => $hero->slug])), 'find') }}">
-                                            <a class="{{ active_linkMenu(asset(route('family_hero', ['family_slug' => $item->slug, 'slug' => $hero->slug])), 'find') }}"
-                                               href="{{ route('family_hero', ['family_slug' => $item->slug, 'slug' => $hero->slug]) }}">{{ $hero->title }}</a>
+                                            <a  {{($hero->url)?'target=_blank':''}} class="{{ active_linkMenu(asset(route('family_hero', ['family_slug' => $item->slug, 'slug' => $hero->slug])), 'find') }}"
+                                               href="{{($hero->url)?: route('family_hero', ['family_slug' => $item->slug, 'slug' => $hero->slug]) }}">{{ $hero->title }}</a>
                                         </li>
+                                        @endif
                                     @endforeach
                                 </ul>
                             </div>
