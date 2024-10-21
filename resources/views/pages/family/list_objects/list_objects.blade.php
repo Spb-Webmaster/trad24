@@ -9,7 +9,9 @@
     <main>
 
 
-   @include('include.blocks.content.teaser.teaser_4')
+
+
+    @include('include.blocks.content.teaser.teaser_1')
 
     </main>
 @endsection

@@ -100,6 +100,7 @@ class FamilyResource extends ModelResource
                                         ->allowedExtensions(['jpg', 'png', 'jpeg', 'gif', 'svg'])
                                         ->removable()
                                         ->hint('Должен быть квадратным. Минимальные размеры. Ширина 111, Высота 111'),
+                                    Textarea::make('Краткое описание анонса', 'teaser'),
 
 
                                 ]),
