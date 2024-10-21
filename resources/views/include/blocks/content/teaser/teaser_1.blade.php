@@ -9,10 +9,10 @@
                     <div class="tmg__img">
 
                         <a href="{{ route('family', ['slug' => $item->slug ]) }}">
-                            @if($item->f_img)
+                            @if($item->img)
                                 <img
                                     width="70" height="70" loading="lazy"
-                                    src="{{ asset(intervention('70x70', $item->f_img, 'objects')) }}"
+                                    src="{{ asset(intervention('70x70', $item->img, 'objects')) }}"
                                     alt="{{$item->title}}"/>
                             @else
                                 <img
