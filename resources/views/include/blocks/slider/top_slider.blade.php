@@ -2,7 +2,7 @@
 
     <div class="slick_slider">
 
-    @if(isset($top_slider))
+    @if($top_slider)
 
 
         @foreach($top_slider as $slide)
