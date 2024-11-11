@@ -2,7 +2,8 @@
 
     <div class="slick_slider">
 
-    @if($top_slider)
+    @if(isset($top_slider) and count($top_slider))
+
 
 
         @foreach($top_slider as $slide)
