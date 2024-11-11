@@ -6,6 +6,7 @@ use App\Http\Controllers\Auth\LogoutController;
 use App\Http\Controllers\Auth\ResetPasswordController;
 use App\Http\Controllers\Auth\SignInController;
 use App\Http\Controllers\Auth\SignUpController;
+use App\Http\Controllers\Calendar\CalendarEventController;
 use App\Http\Controllers\Catalog\CatalogController;
 use App\Http\Controllers\Catalog\ObjectController;
 use App\Http\Controllers\Dashboard\DashboardController;
@@ -19,6 +20,7 @@ use App\Http\Controllers\Family\FamilyObjectController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\Info\InfoController;
 use App\Http\Controllers\Pages\PageController;
+use App\Http\Controllers\TestController;
 use App\Http\Controllers\Video\VideoController;
 use Illuminate\Support\Facades\Route;
 
@@ -467,7 +469,18 @@ Route::controller(FamilyObjectController::class)->group(function () {
  * * /////////// фамилии
  */
 
+Route::controller(TestController::class)->group(function () {
 
+    Route::get('/test', 'test')->name('test');
+
+});
+
+Route::controller(CalendarEventController::class)->group(function () {
+
+    Route::get('/calendar-events', 'calendarEvents')->name('calendarEvents');
+    Route::get('/calendar-events/{slug}', 'calendarEvent')->name('calendarEvent');
+
+});
 
 /**
  * страницы

@@ -10,6 +10,7 @@ use App\View\Composers\MenuBottomComposer;
 use App\View\Composers\MenuLeftComposer;
 use App\View\Composers\MenuTopComposer;
 use App\View\Composers\ReligionComposer;
+use App\View\Composers\TopSliderComposer;
 use App\View\Composers\VideoComposer;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\ServiceProvider;
@@ -38,6 +39,7 @@ class ViewServiceProvider extends ServiceProvider
         View::composer(['include.menu.bottom_menu'], MenuBottomComposer::class);
         View::composer(['layouts.layout'], MenuLeftComposer::class);
         View::composer(['dashboard.forms.edit_profile'], CityRusComposer::class);
+        View::composer(['include.blocks.slider.top_slider'], TopSliderComposer::class);
 
     }
 }

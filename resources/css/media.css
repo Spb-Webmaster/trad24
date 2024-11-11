@@ -26,6 +26,11 @@
     .ob_main_new_cat .ob_category_teaser .slick_slide {
       width: 270px; } }
 @media screen and (max-width: 1168px) {
+  .page_calendar .page_l .page_l__right {
+    width: 32%;
+    background: #f9f9fa;
+    min-width: 361px !important; }
+
   .f_icon__region {
     background-size: 14px; }
 
@@ -73,6 +78,9 @@
     font-size: calc(20px + 9 * ((100vw - 320px) / 1120)); }
 
   .ob_title h1 {
+    font-size: calc(20px + 9 * ((100vw - 320px) / 1120)); }
+
+  .page_calendar ._h2 {
     font-size: calc(20px + 9 * ((100vw - 320px) / 1120)); }
 
   .box_title_flex ._h2 {
@@ -138,7 +146,7 @@
     width: 100%;
     background: #f0f1f3;
     position: relative;
-    padding-left: 30px;
+    padding-left: 19px;
     height: 52px;
     overflow: hidden; }
     .ob_gamburger .ob_gamburger__menu {
@@ -156,7 +164,32 @@
       border-bottom: 1px solid #fff;
       display: flex;
       align-items: center;
-      background: #fdf9f9; }
+      background: #fdf9f9;
+      position: relative; }
+      .ob_menu_hor__css a:after {
+        position: absolute;
+        content: '';
+        display: block;
+        height: 17px;
+        width: 1px;
+        background: #667085;
+        top: 12px;
+        left: 29px; }
+      .ob_menu_hor__css a:before {
+        position: absolute;
+        content: '';
+        display: block;
+        height: 1px;
+        width: 6px;
+        background: #667085;
+        top: 21px;
+        left: 29px; }
+    .ob_menu_hor__css a.arrow_down {
+      padding: 0 10px 0 28px; }
+      .ob_menu_hor__css a.arrow_down:after {
+        display: none; }
+      .ob_menu_hor__css a.arrow_down:before {
+        display: none; }
     .ob_menu_hor__css a.active {
       color: #EF533F;
       background: #abdfdf; }
@@ -611,6 +644,16 @@
 /* pocofon  x3 */
 /* xiaomi pro6 */
 @media (max-width: 742px) {
+  .page_calendar .page_l {
+    padding-top: 40px;
+    flex-direction: column-reverse; }
+    .page_calendar .page_l .page_l__left {
+      padding: 30px 0 0 0;
+      width: 100%; }
+    .page_calendar .page_l .page_l__right {
+      padding: 0;
+      width: 100%; }
+
   ._articles__foreach ._articles_h2_title {
     font-size: 22px;
     max-width: 85%; }

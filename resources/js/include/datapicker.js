@@ -41,3 +41,44 @@ export function datepicker_birthdate() {
         });
 
 }
+export function datepicker_event() {
+    //var calendarEvents = [[10, 22, 2024], [10, 24, 2024]];
+    var calendarEvents = $('.calendarEvents__js').data('events');
+
+    //var calendarHref = ["https://stackoverflow.com", "https://google.com"];
+    var calendarHref = $('.calendarHref__js').data('link');
+    //var calendarHover = ["stackoverflow", "google.com"];
+    var calendarHtml = $('.calendarHtml__js').data('html');
+
+    $("#datepicker1").datepicker({
+        changeMonth: true,
+        changeYear: true,
+        numberOfMonths: [1, 1],
+        showCurrentAtPos: 0,
+        beforeShowDay: function (date) {
+            var i;
+            for (i = 0; i < calendarEvents.length; i++) {
+                if (date.getMonth() == calendarEvents[i][0] - 1 && date.getDate() == calendarEvents[i][1] && date.getFullYear() == calendarEvents[i][2]) {
+
+                    return [true, "ui-state-active", calendarEvents[i][3]];
+                }
+            }
+            return [true, ""];
+        },
+        onSelect: function (dateText, inst) {
+            var i;
+            for (i = 0; i < calendarEvents.length; i++) {
+                if (inst.selectedMonth == calendarEvents[i][0] - 1 && inst.selectedDay == ("" + calendarEvents[i][1]) && inst.selectedYear == calendarEvents[i][2]) {
+
+
+                    $('.datepicker_display').html('<a href="' + calendarHref[i] + '">' + calendarHtml[i] + '</a>');
+                    $('.datepicker_display').show();
+
+                }
+
+            }
+        }
+    });
+
+}
+

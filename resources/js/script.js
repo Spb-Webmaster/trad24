@@ -8,7 +8,7 @@ import {sel_religion , chosen} from "./include/select";
 import {autocomplete} from "./include/autocomplete";
 import {menu_js} from "./include/menu";
 import {yandex_map_object} from "./include/yandex_map";
-import {localDataPicker, datepicker_birthdate} from "./include/datapicker";
+import {localDataPicker, datepicker_birthdate,  datepicker_event} from "./include/datapicker";
 import {grid} from "./include/image-loaded";
 import {mobile_menu, add__mobile_menu, mobile_menu_close} from "./include/mobile";
 import {article_toggle} from "./include/toggle";
@@ -38,4 +38,10 @@ document.addEventListener('DOMContentLoaded', function () {
     add__mobile_menu() // добавить нужные пункты в меню
     mobile_menu_close() // закрытие мобильного меню
     article_toggle() // ЛК открыть-закрытиь иконка в статьях пользователя
+    datepicker_event() // datepicker - события event
+
+
+
+
+
 });

@@ -113,7 +113,7 @@
                                 @endforeach
                             </optgroup>
                         </select>
-                        <label class="labelInput show" for="registerCity">Город</label>
+                        <label class="labelInput show" for="registerCity">Вид страхования</label>
                     </div>
 
                 </div>

@@ -6,6 +6,7 @@ namespace App\Providers;
 
 
 use App\MoonShine\Resources\AreaResource;
+use App\MoonShine\Resources\CalendarEventResource;
 use App\MoonShine\Resources\FamilyCultureResource;
 use App\MoonShine\Resources\FamilyGalleryResource;
 use App\MoonShine\Resources\FamilyHeroResource;
@@ -80,6 +81,10 @@ class MoonShineServiceProvider extends MoonShineApplicationServiceProvider
                 MenuItem::make(
                     static fn() => __('Статичные страницы'),
                     new PageResource()
+                )->icon('heroicons.newspaper')     ,
+                MenuItem::make(
+                    static fn() => __('Календарь событий'),
+                    new CalendarEventResource()
                 )->icon('heroicons.newspaper')
 
 

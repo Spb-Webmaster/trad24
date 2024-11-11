@@ -2,9 +2,9 @@
 /* composer install*/
 /* npm i sass*/
 /* https://fontsource.org/docs/getting-started/variable */
-/* https://fancyapps.com/fancybox/getting-started/ установка fancybox5*/
+/* https://fancyapps.com/fancybox/getting-started/ установка fancybox5  npm install --save @fancyapps/ui */
 /* composer require rap2hpoutre/fast-excel установка fast-excel*/
-/* composer require intervention/image установка intervention */
+/* composer require intervention/image (установка intervention) + composer require intervention/image-laravel */
 /* composer require spatie/laravel-honeypot - анти спам (@honeypot) https://codebrisk.com/blog/laravel-honeypot-prevent-spam-submitted-through-forms
 composer require barryvdh/laravel-debugbar --dev
 * php artisan lang:publish

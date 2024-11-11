@@ -19,7 +19,7 @@
 
                 <div class="h_t_right">
                     <div class="calendal_events">
-                        <a href="#">
+                        <a href="{{ route('calendarEvents') }}">
                             <span>{{__('Календарь событий')}}</span>
                         </a>
                     </div>

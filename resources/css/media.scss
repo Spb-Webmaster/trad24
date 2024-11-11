@@ -84,6 +84,16 @@ $maxWidth: 1440;
 
 @media screen and (max-width: 1168px) {
 
+    .page_calendar {
+        .page_l {
+            .page_l__right {
+                width: 32%;
+                background: #f9f9fa;
+                min-width: 361px !important;
+            }
+        }
+    }
+
     .f_icon__region {
 
         background-size: 14px;
@@ -166,6 +176,12 @@ $maxWidth: 1440;
     .ob_title h1 {
         @include adaptiv-font(29, 20);
 
+    }
+    .page_calendar {
+        ._h2 {
+            @include adaptiv-font(29, 20);
+
+        }
     }
 
 
@@ -294,7 +310,7 @@ $maxWidth: 1440;
     .ob_menu_hor__css {
         top: -15px;
 
-        a  {
+        a {
             width: 100%;
             padding: 0 10px 0 45px;
             height: 48px;
@@ -303,6 +319,7 @@ $maxWidth: 1440;
             align-items: center;
             background: #fdf9f9;
             position: relative;
+
             &:after {
                 position: absolute;
                 content: '';
@@ -313,6 +330,7 @@ $maxWidth: 1440;
                 top: 12px;
                 left: 29px;
             }
+
             &:before {
                 position: absolute;
                 content: '';
@@ -324,15 +342,18 @@ $maxWidth: 1440;
                 left: 29px;
             }
         }
-    a.arrow_down  {
+
+        a.arrow_down {
 
             padding: 0 10px 0 28px;
-        &:after {
-            display: none;
-        }
-        &:before {
-            display: none;
-        }
+
+            &:after {
+                display: none;
+            }
+
+            &:before {
+                display: none;
+            }
 
         }
 
@@ -993,6 +1014,7 @@ $maxWidth: 1440;
             border-bottom: none;
 
         }
+
         li.active {
             a {
                 color: $colorRed;
@@ -1081,6 +1103,21 @@ $maxWidth: 1440;
 
 /* xiaomi pro6 */
 @media (max-width: 742px) {
+
+    .page_calendar {
+        .page_l {
+            padding-top: 40px;
+            flex-direction: column-reverse;
+            .page_l__left {
+                padding: 30px 0 0 0;
+                width: 100%;
+            }
+            .page_l__right {
+                padding: 0;
+                width: 100%;
+            }
+        }
+    }
     ._articles__foreach {
         ._articles_h2_title {
 
@@ -1099,371 +1136,371 @@ $maxWidth: 1440;
         }
     }
 
-        .drob_container {
-            width: 100%;
-            min-width: 1px;
+    .drob_container {
+        width: 100%;
+        min-width: 1px;
 
-        }
-
-        .ob_main_contact__flex {
-            padding-bottom: 26px;
-        }
-
-        .teaser_4 {
-
-            .teaser_4__item {
-                width: 50%;
-
-                .t_item_4__img {
-
-                    width: 100%;
-                    height: auto;
-                    min-width: 1px;
-
-
-                    img {
-                        width: 100% !important;
-                        height: auto !important;
-
-                    }
-                }
-            }
-        }
-
-        .h_b_right__text {
-            display: none !important;
-        }
-
-        .calendal_events {
-            padding: 0 10px 0 0;
-        }
     }
 
-    /* xiaomi pro6 */
+    .ob_main_contact__flex {
+        padding-bottom: 26px;
+    }
 
-    @media (max-width: 666px) {
+    .teaser_4 {
 
-        .cabinet input[type=text].input, .cabinet input[type=email].input, .cabinet input[type=date].input, .cabinet input[type=number].input, .cabinet input[type=password].input, .cabinet .birthdate_wrap .birthdate, .cabinet .labelInput {
-            font-size: 14px;
-        }
-
-        .slotButtons .w_30 {
-            width: 100%;
-        }
-
-        .slotButtons .w_30 {
-            width: 100%
-        }
-
-        .cabinet .c__flex {
-            display: block
-        }
-
-        .cabinet .c__flex .c__flex_50_left {
-            width: 100%
-        }
-
-        .cabinet .c__flex .c__flex_50_right {
-            width: 100%;
-            padding-left: 0
-        }
-        ._lefttext {
-            min-width: auto !important;
-            width: 35% !important;
-        }
-        ._righttext {
-            min-width: auto !important;
-            width: 60% !important;
-
-        }
-
-        ._rel_cat .s_box {
-            width: 337px !important;
-        }
-        .religion_select__axeld .s_box .s_box__rel span {
-            border-bottom: 2px solid #999;
-            padding-bottom: 1px;
-            line-height: 1.3em;
-        }
-
-        .page_r {
-            display: block !important;
-
-            .page_r__left {
-                width: 100%;
-
-            }
-
-            .page_r__right {
-                width: 100%;
-                padding-top: 26px;
-            }
-        }
-
-        .sections__flex {
-            flex-wrap: wrap;
-            height: auto;
-            padding-left: 30px;
-            padding-top: 30px;
-
-            .sect {
-                height: 74px;
-            }
-
-            .sect_hristianstvo {
-
-                width: 100% !important;
-                min-width: 100% !important;
-                padding-bottom: 26px;
-
-                .sect__background-image {
-                    width: 35px !important;
-                    height: 50px !important;
-                    background-size: 100%;
-                }
-            }
-
-            .sect_islam {
-
-                width: 100% !important;
-                min-width: 100% !important;
-                padding-bottom: 26px;
-
-                .sect__background-image {
-                    width: 40px !important;
-                    height: 50px !important;
-                    background-size: 100%;
-                    background-position: 0 5px;
-
-                }
-            }
-
-            .sect_buddizm {
-
-                width: 100% !important;
-                min-width: 100% !important;
-                padding-bottom: 26px;
-
-                .sect__background-image {
-                    width: 40px !important;
-                    height: 50px !important;
-                    background-size: 100%;
-                    background-position: 0 7px;
-
-                }
-
-            }
-
-            .sect_iudaizm {
-
-                width: 100% !important;
-                min-width: 100% !important;
-
-                .sect__background-image {
-                    width: 40px !important;
-                    height: 50px !important;
-                    background-size: 100%;
-
-                }
-
-
-            }
-
-            .sect .sect__img {
-                padding: 0 45px 0 0;
-            }
-        }
-
-        .calendal_events {
-            display: none !important;
-
-        }
-        .h_t_center {
-            max-width: 590px;
+        .teaser_4__item {
             width: 50%;
-        }
-        .h_t_right {
-            width: 40%;
-            justify-content: flex-end;
-            padding-right: 0;
 
+            .t_item_4__img {
+
+                width: 100%;
+                height: auto;
+                min-width: 1px;
+
+
+                img {
+                    width: 100% !important;
+                    height: auto !important;
+
+                }
+            }
         }
     }
 
-    @media (max-width: 568px) {
+    .h_b_right__text {
+        display: none !important;
+    }
 
+    .calendal_events {
+        padding: 0 10px 0 0;
+    }
+}
 
-        .formLogin__wrapp {
-            width: 96%;
-            padding: 10px;
-        }
-        .formLogin {
-            .slotButtons__left {
-                width: 60%;
-            }
+/* xiaomi pro6 */
 
-            .slotButtons__right {
-                width: 35%;
-                padding-left: 5%;
-            }
-        }
-        .formLogin__enter {
+@media (max-width: 666px) {
+
+    .cabinet input[type=text].input, .cabinet input[type=email].input, .cabinet input[type=date].input, .cabinet input[type=number].input, .cabinet input[type=password].input, .cabinet .birthdate_wrap .birthdate, .cabinet .labelInput {
+        font-size: 14px;
+    }
+
+    .slotButtons .w_30 {
+        width: 100%;
+    }
+
+    .slotButtons .w_30 {
+        width: 100%
+    }
+
+    .cabinet .c__flex {
+        display: block
+    }
+
+    .cabinet .c__flex .c__flex_50_left {
+        width: 100%
+    }
+
+    .cabinet .c__flex .c__flex_50_right {
+        width: 100%;
+        padding-left: 0
+    }
+    ._lefttext {
+        min-width: auto !important;
+        width: 35% !important;
+    }
+    ._righttext {
+        min-width: auto !important;
+        width: 60% !important;
+
+    }
+
+    ._rel_cat .s_box {
+        width: 337px !important;
+    }
+    .religion_select__axeld .s_box .s_box__rel span {
+        border-bottom: 2px solid #999;
+        padding-bottom: 1px;
+        line-height: 1.3em;
+    }
+
+    .page_r {
+        display: block !important;
+
+        .page_r__left {
             width: 100%;
-            padding: 36px 20px 40px 20px;
-            border-radius: 16px;
-            background: #fff;
-            position: relative;
-        }
-        .slotButtons a.button_big, .slotButtons button.button_big {
-
-            padding: 0 3px;
 
         }
-        .ob_main_contact__flex {
-            padding-top: 10px;
+
+        .page_r__right {
+            width: 100%;
+            padding-top: 26px;
+        }
+    }
+
+    .sections__flex {
+        flex-wrap: wrap;
+        height: auto;
+        padding-left: 30px;
+        padding-top: 30px;
+
+        .sect {
+            height: 74px;
+        }
+
+        .sect_hristianstvo {
+
+            width: 100% !important;
+            min-width: 100% !important;
+            padding-bottom: 26px;
+
+            .sect__background-image {
+                width: 35px !important;
+                height: 50px !important;
+                background-size: 100%;
+            }
+        }
+
+        .sect_islam {
+
+            width: 100% !important;
+            min-width: 100% !important;
+            padding-bottom: 26px;
+
+            .sect__background-image {
+                width: 40px !important;
+                height: 50px !important;
+                background-size: 100%;
+                background-position: 0 5px;
+
+            }
+        }
+
+        .sect_buddizm {
+
+            width: 100% !important;
+            min-width: 100% !important;
+            padding-bottom: 26px;
+
+            .sect__background-image {
+                width: 40px !important;
+                height: 50px !important;
+                background-size: 100%;
+                background-position: 0 7px;
+
+            }
+
+        }
+
+        .sect_iudaizm {
+
+            width: 100% !important;
+            min-width: 100% !important;
+
+            .sect__background-image {
+                width: 40px !important;
+                height: 50px !important;
+                background-size: 100%;
+
+            }
+
+
+        }
+
+        .sect .sect__img {
+            padding: 0 45px 0 0;
+        }
+    }
+
+    .calendal_events {
+        display: none !important;
+
+    }
+    .h_t_center {
+        max-width: 590px;
+        width: 50%;
+    }
+    .h_t_right {
+        width: 40%;
+        justify-content: flex-end;
+        padding-right: 0;
+
+    }
+}
+
+@media (max-width: 568px) {
+
+
+    .formLogin__wrapp {
+        width: 96%;
+        padding: 10px;
+    }
+    .formLogin {
+        .slotButtons__left {
+            width: 60%;
+        }
+
+        .slotButtons__right {
+            width: 35%;
+            padding-left: 5%;
+        }
+    }
+    .formLogin__enter {
+        width: 100%;
+        padding: 36px 20px 40px 20px;
+        border-radius: 16px;
+        background: #fff;
+        position: relative;
+    }
+    .slotButtons a.button_big, .slotButtons button.button_big {
+
+        padding: 0 3px;
+
+    }
+    .ob_main_contact__flex {
+        padding-top: 10px;
+        display: block;
+
+        .ob_main_contact__left {
+            width: 100%;
+            padding: 5px 0;
+
+        }
+
+        .ob_main_contact__right {
+            width: 100%;
+            padding: 5px 0;
+        }
+    }
+
+    .teaser_4 {
+
+        .teaser_4__item {
+            width: 100%;
+            display: flex;
+
+            .t_item_4__img {
+
+                width: 30%;
+                height: auto;
+                min-width: 1px;
+
+
+                img {
+                    width: 100% !important;
+                    height: auto !important;
+
+                }
+            }
+
+            .t_item_4__title {
+                width: 70%;
+                padding: 10px;
+            }
+
+
+        }
+    }
+    .footer__flex .footer__right p {
+        font-size: 12px;
+    }
+
+    .h_t_right {
+        display: none !important;
+    }
+    .h_t_center {
+        max-width: 568px;
+        width: 100%;
+    }
+}
+
+@media (max-width: 468px) {
+
+    ._lefttext {
+        width: 50% !important;
+    }
+    ._righttext {
+        width: 50% !important;
+    }
+    .r_filter__flex {
+        padding: 30px 0 13px 10px;
+    }
+
+    .ob_main_page, .ob_main_new, .page_page {
+        .page_l {
+            flex-direction: column-reverse;
+
+            .page_l__left {
+                width: 100%;
+                padding: 20px 0 0 0;
+            }
+
+            .page_l__right {
+                width: 100%;
+
+            }
+        }
+
+    }
+
+
+    .teaser_mini_img .tmg__titleText a {
+        font-size: 16px;
+        padding: 0 0 10px 0;
+    }
+    .__contacts {
+        span {
             display: block;
+            padding: 6px 0;
 
-            .ob_main_contact__left {
-                width: 100%;
-                padding: 5px 0;
-
+            .sle {
+                display: none;
             }
-
-            .ob_main_contact__right {
-                width: 100%;
-                padding: 5px 0;
-            }
-        }
-
-        .teaser_4 {
-
-            .teaser_4__item {
-                width: 100%;
-                display: flex;
-
-                .t_item_4__img {
-
-                    width: 30%;
-                    height: auto;
-                    min-width: 1px;
-
-
-                    img {
-                        width: 100% !important;
-                        height: auto !important;
-
-                    }
-                }
-
-                .t_item_4__title {
-                    width: 70%;
-                    padding: 10px;
-                }
-
-
-            }
-        }
-        .footer__flex .footer__right p {
-            font-size: 12px;
-        }
-
-        .h_t_right {
-            display: none !important;
-        }
-        .h_t_center {
-            max-width: 568px;
-            width: 100%;
         }
     }
+}
 
-    @media (max-width: 468px) {
+@media (max-width: 416px) {
+    .drob_container {
+        padding: 4px;
 
-        ._lefttext {
-            width: 50% !important;
-        }
-        ._righttext {
-            width: 50% !important;
-        }
-        .r_filter__flex {
-            padding: 30px 0 13px 10px;
-        }
+        .camera_button {
+            display: flex;
+            justify-content: center;
+            align-items: center;
 
-        .ob_main_page, .ob_main_new, .page_page {
-            .page_l {
-                flex-direction: column-reverse;
-
-                .page_l__left {
-                    width: 100%;
-                    padding: 20px 0 0 0;
-                }
-
-                .page_l__right {
-                    width: 100%;
-
-                }
+            .button {
+                margin: 0 10px;
             }
-
         }
 
+        .camera_format {
+            padding-left: 16px;
+            padding-right: 16px;
+            line-height: 1em;
 
-        .teaser_mini_img .tmg__titleText a {
-            font-size: 16px;
-            padding: 0 0 10px 0;
-        }
-        .__contacts {
             span {
-                display: block;
-                padding: 6px 0;
-
-                .sle {
-                    display: none;
-                }
+                color: #8D8D8D;
+                padding: 10px 0;
+                text-align: center;
+                font-size: 13px;
             }
         }
-    }
-
-    @media (max-width: 416px) {
-        .drob_container {
-            padding: 4px;
-
-            .camera_button {
-                display: flex;
-                justify-content: center;
-                align-items: center;
-
-                .button {
-                    margin: 0 10px;
-                }
-            }
-
-            .camera_format {
-                padding-left: 16px;
-                padding-right: 16px;
-                line-height: 1em;
-
-                span {
-                    color: #8D8D8D;
-                    padding: 10px 0;
-                    text-align: center;
-                    font-size: 13px;
-                }
-            }
-
-        }
-        .teaser_4 .t_item_4__title a {
-            font-size: 14px;
-        }
-        .r_filter__flex {
-            padding: 20px 0 13px 10px;
-            display: block;
-        }
-        .r_filter__flex_nopadding {
-            padding-left: 15px !important;
-        }
-
-
 
     }
+    .teaser_4 .t_item_4__title a {
+        font-size: 14px;
+    }
+    .r_filter__flex {
+        padding: 20px 0 13px 10px;
+        display: block;
+    }
+    .r_filter__flex_nopadding {
+        padding-left: 15px !important;
+    }
+
+
+}
+
 @media (max-width: 375px) {
     ._articles_options__date_create {
         max-width: 100px !important;
