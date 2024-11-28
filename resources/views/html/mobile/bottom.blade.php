@@ -64,7 +64,7 @@
 
         <a class="m_f m_f1 " href="{{ route('familyCategory') }}">
             <div class="m_img"></div>
-            <span>{{ __('Фимилии') }}</span>
+            <span>{{ __('Фамилии') }}</span>
         </a>
         <div class="m_f m_f3">
             <div class="m_img"></div>
