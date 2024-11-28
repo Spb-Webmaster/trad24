@@ -23,6 +23,7 @@ use App\Http\Controllers\Pages\PageController;
 use App\Http\Controllers\TestController;
 use App\Http\Controllers\Video\VideoController;
 use Illuminate\Support\Facades\Route;
+use Spatie\Honeypot\ProtectAgainstSpam;
 
 /**
  * страницы
@@ -54,9 +55,7 @@ Route::controller(SignUpController::class)->group(function () {
     Route::get('/sign-up', 'page')
         ->middleware('guest')
         ->name('register');
-    Route::post('/sign-up', 'handle')
-
-        ->name('register.handle');
+    Route::post('/sign-up', 'handle')->middleware(ProtectAgainstSpam::class)->name('register.handle');
 
 });
 

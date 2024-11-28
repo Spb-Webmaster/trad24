@@ -16,6 +16,7 @@
 
         >
             @csrf
+            @honeypot
             {{ $slot  }}
             {{ $buttons  }}
         </form>
