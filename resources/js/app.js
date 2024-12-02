@@ -10,6 +10,7 @@ composer require barryvdh/laravel-debugbar --dev
 * php artisan lang:publish
 npm i imask
 npm i slick
+npm i jquery
 * */
 
 //import './bootstrap';

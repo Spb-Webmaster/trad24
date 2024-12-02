@@ -33,11 +33,12 @@
                         <div class="page_l__right">
 
                             @if($item->f_img )
-                                <div class="desc desc_main__imgR pad_t33 pad_b33">
+                                <div class="desc desc_main__imgR pad_t33 pad_b10">
                                     <img class="pc_category_img" width="228" height="270" loading="lazy"
                                          src="{{ asset(intervention('228x270', $item->f_img, 'objects')) }}"
                                          alt="{{$item->f_img}}">
                                 </div>
+                                <div class="desc pad_b33 pad_l26 pad_r26">{!!  $item->f_img_text!!}</div>
 
                             @endif
 
@@ -108,6 +109,13 @@
                                     class="pc_category_img" style="width: 100%; height: auto" loading="lazy"
                                     src="{{ asset(Storage::disk('public')->url($item->f_img4)) }}"
                                 ></a>
+                        </div>
+                    @endif
+                    @if($item->f_text5)
+                        <div class="block page_l2">
+                            <div class="page_page__desc2 desc">
+                                {!! $item->f_text5 !!}
+                            </div>
                         </div>
                     @endif
 

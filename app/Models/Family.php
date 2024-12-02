@@ -8,7 +8,6 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Family extends Model
 {
-    protected $table = 'families';
     protected $fillable = [
         'title',
         'slug',
@@ -17,6 +16,7 @@ class Family extends Model
 
         'f_title',
         'f_img',
+        'f_img_text',
         'f_text',
         'f_img2',
         'f_text2',
@@ -25,7 +25,7 @@ class Family extends Model
         'f_text4',
 
         'f_img4',
-        'f_text4',
+        'f_text5',
 
 
         'b_title',
@@ -95,6 +95,7 @@ class Family extends Model
         'keywords',
         'sorting',
     ];
+    protected $table = 'families';
 
     protected $casts = [
         'params' => 'collection',

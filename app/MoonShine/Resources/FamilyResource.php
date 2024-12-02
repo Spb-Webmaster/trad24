@@ -148,6 +148,7 @@ class FamilyResource extends ModelResource
                                     ->allowedExtensions(['jpg', 'png', 'jpeg', 'gif', 'svg'])
                                     ->removable()
                                     ->hint('Встраивается справа'),
+                                Textarea::make('Описание под изображением', 'f_img_text')->hint('Выводится при условии загрузки изображения')
 
                             ])
                                 ->columnSpan(4),
@@ -205,7 +206,10 @@ class FamilyResource extends ModelResource
                                     ->allowedExtensions(['jpg', 'png', 'jpeg', 'gif', 'svg'])
                                     ->removable()
                                     ->hint('Растягивается на 100% ширины'),
-                            ])->columnSpan(12)
+                                TinyMce::make('Описание', 'f_text5')
+                                    ->hint('На всю ширину макета'),
+                            ])->columnSpan(12),
+
                         ]),
 
 
