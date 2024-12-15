@@ -41,16 +41,7 @@
 
 
                 <div class="text_input">
-                    <x-forms.text-input_fromLabel
-                        type="text"
-                        id="registerFio"
-                        name="fio"
-                        placeholder="ФИО"
-                        value="{{ (old('fio'))?:$user->fio }}"
-                        class="input fio"
-                        :isError="$errors->has('fio')"
-                    />
-                    <x-forms.error class="error_fio"/>
+
 
                 </div>
 
@@ -104,17 +95,7 @@
                 </div>
 
                 <div class="text_input">
-                    <div class="selectClass">
-                        <select class="js-chosen " name="city" id="registerCity">
-                            <optgroup label="Города">
-                                <option value="{{ ($user->city)?:'' }}">{{ ($user->city)?:'--' }}</option>
-                                @foreach($departures as $departure)
-                                    <option value="{{$departure->city}}">{{$departure->city}}</option>
-                                @endforeach
-                            </optgroup>
-                        </select>
-                        <label class="labelInput show" for="registerCity">Вид страхования</label>
-                    </div>
+
 
                 </div>
 
