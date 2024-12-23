@@ -16,7 +16,7 @@ class FamilyObjectsViewModel
     {
         $query = Family::query();
         $query->where('published', 1);
-        $query->orderBy('created_at', 'desc');
+        $query->orderBy('title', 'asc');
         $result = $query->paginate(30);
         return $result;
 

@@ -28,6 +28,8 @@ class FamilyCatalogController extends Controller
 
         $items = FamilyObjectsViewModel::make()->objects();
 
+        //dd($items);
+
         return view('pages.family.list_objects.list_objects',
             [
                 'items' => $items,
