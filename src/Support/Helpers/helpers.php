@@ -460,6 +460,47 @@ if (!function_exists('youtube')) {
 
     }
 }
+
+/**
+ * операции с rutube
+ */
+
+if (!function_exists('rutube')) {
+    function rutube($html, $w = null, $h = null)
+    {
+        $style = 'style="width:';
+        $wi = ($w) ? $w . 'px' : '100%';
+        $style .= $wi . '"';
+        $he = ($h) ?: 'auto';
+        $style .= 'height="' . $he . '"';
+
+        $url  = $html;
+        $s = substr($url, -1); // returns "s"
+        if($s == '/') {
+            $uri  = rtrim($url,'/');
+        } else {
+            $uri = $url;
+        }
+
+
+         preg_match("/[^\/]+$/", $uri, $matches);
+         $rutube = $matches[0]; // ID rutube
+        return  '<iframe  '. $style .'  src="https://rutube.ru/play/embed/'. $rutube .'"  frameBorder="0"  allow="clipboard-write; autoplay"  webkitAllowFullScreen  mozallowfullscreen  allowFullScreen></iframe>';
+
+
+    }
+}
+/**
+ * операции с rutube
+ */
+
+
+
+
+
+
+
+
 if (!function_exists('a_url')) {
     function a_url($url = null)
     {

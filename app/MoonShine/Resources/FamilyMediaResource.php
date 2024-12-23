@@ -210,6 +210,7 @@ class FamilyMediaResource extends ModelResource
                                         //  ->allowedExtensions(['jpg', 'gif', 'png', 'svg'])/* Допустимые расширения */
                                         ->removable(),
                                     Text::make('Ссылка на видео (YouTube)', 'video_video_youtube'),
+                                    Text::make('Ссылка на видео (RuTube)', 'video_video_rutube'),
 
                                     TinyMce::make('Описание Видеоматериала', 'video_video_desc'),
                                 ])->vertical()->creatable(limit: 30)->removable(),

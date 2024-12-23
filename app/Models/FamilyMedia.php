@@ -77,6 +77,7 @@ class FamilyMedia extends Model
         return false;
 
     }
+
     public function getGalleryMultipleVisibleAttribute()
     {
 
@@ -101,6 +102,9 @@ class FamilyMedia extends Model
                     return true;
                 }
                 if ($g['video_video_youtube']) { // если хоть одно фото, то нужно!
+                    return true;
+                }
+                if ($g['video_video_rutube']) { // если хоть одно фото, то нужно!
                     return true;
                 }
 

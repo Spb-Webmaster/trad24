@@ -18,12 +18,20 @@
                             </video>
                         @endif
 
-                        @if($v['video_video_youtube'])
+                       @if($v['video_video_youtube'])
                             {!!   youtube($v['video_video_youtube'], 840,473) !!}
                         @endif
 
+                        @if($v['video_video_rutube'])
+                            {!!   rutube($v['video_video_rutube'], 840,473) !!}
+                        @endif
 
-                        <div class="video_video_desc desc">
+
+
+
+
+
+                            <div class="video_video_desc desc">
                             @if($v['video_video_desc'])
                                 {!! $v['video_video_desc'] !!}
                             @endif
