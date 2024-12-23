@@ -16,7 +16,7 @@
                             id="big_search"
                             class="autocomplete-ajax"
                             name="top_search"
-                            placeholder="Поиск по организациям. Введите название."
+                            placeholder="Поиск по фамилиям. Введите название."
                             type="text"
                             :isError="$errors->has('top_search')"
                         />

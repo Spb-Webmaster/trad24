@@ -16,7 +16,7 @@
                 type="text"
                 id="searchSearch"
                 name="top_search"
-                placeholder="Поиск по организациям"
+                placeholder="Ввести фамилию"
                 value=""
                 class="input search"
              {{-- // можно добавить - будет посветка autocomplete-ajax--}}
