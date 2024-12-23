@@ -22,9 +22,9 @@
                             {!!   youtube($v['video_video_youtube'], 840,473) !!}
                         @endif
 
-                        @if($v['video_video_rutube'])
+                        @isset($v['video_video_rutube'])
                             {!!   rutube($v['video_video_rutube'], 840,473) !!}
-                        @endif
+                        @endisset
 
 
 
