@@ -13,7 +13,7 @@
 
             @include('pages.catalog.object.partial._object_title')
 
-            @include('pages.catalog.object.partial._object_logo')
+            @include('pages.family.object.partial._object_logo')
 
             @include('include.menu.object_menu')
 

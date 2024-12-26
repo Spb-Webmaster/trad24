@@ -27,10 +27,6 @@
                         @endisset
 
 
-
-
-
-
                             <div class="video_video_desc desc">
                             @if($v['video_video_desc'])
                                 {!! $v['video_video_desc'] !!}
