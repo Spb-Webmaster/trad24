@@ -85,7 +85,7 @@
 
 
             <li class="{{ active_linkMenu(asset(route('family_peoples', ['family_slug' => $item->slug])), 'find')}}">
-                <a class="add__mobile_menu @if(count($item->family_people)) arrow_down @endif {{ active_linkMenu(asset(route('family_peoples', ['family_slug' => $item->slug])), 'find')}}" href="{{ asset(route('family_peoples', ['family_slug' => $item->slug])) }}"><span>Выдающиеся люди</span></a>
+                <a class="add__mobile_menu @if(count($item->family_people)) arrow_down @endif {{ active_linkMenu(asset(route('family_peoples', ['family_slug' => $item->slug])), 'find')}}" href="#"><span>Выдающиеся люди</span></a>
 
                 @if(count($item->family_people))
 
@@ -125,7 +125,7 @@
             </li>
 
             <li class="{{ active_linkMenu(asset(route('family_cultures', ['family_slug' => $item->slug])), 'find')}}">
-                <a class="add__mobile_menu @if(count($item->family_culture)) arrow_down @endif {{ active_linkMenu(asset(route('family_cultures', ['family_slug' => $item->slug])), 'find')}}" href="{{ asset(route('family_cultures', ['family_slug' => $item->slug])) }}"><span>Культурное наследие</span></a>
+                <a class="add__mobile_menu @if(count($item->family_culture)) arrow_down @endif {{ active_linkMenu(asset(route('family_cultures', ['family_slug' => $item->slug])), 'find')}}" href="#"><span>Культурное наследие</span></a>
                 @if(count($item->family_culture))
 
                     <ul class="submenu">
