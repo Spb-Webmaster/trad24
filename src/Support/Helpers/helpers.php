@@ -291,7 +291,7 @@ if (!function_exists('rusdate3')) {
         $y = date('Y', $timestump);
         $d = date('d', $timestump);
 
-        return $d . ' ' . $m . ' ' . $y . ' г.';
+        return $d . ' ' . $m . ' ' . $y . 'г.';
 
     }
 }

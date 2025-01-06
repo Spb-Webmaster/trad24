@@ -16,6 +16,7 @@ use App\Http\Controllers\Dashboard\UserPhoto\UserPhotoAjaxController;
 use App\Http\Controllers\Dashboard\UserPhoto\UserPhotoController;
 use App\Http\Controllers\Dashboard\UserVideo\UserVideoController;
 use App\Http\Controllers\Family\FamilyCatalogController;
+use App\Http\Controllers\Family\FamilyHeadController;
 use App\Http\Controllers\Family\FamilyObjectController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\Info\InfoController;
@@ -463,7 +464,11 @@ Route::controller(FamilyObjectController::class)->group(function () {
 
 // familyObjects
 
+Route::controller(FamilyHeadController::class)->group(function () {
 
+    Route::get('/head-family-name', 'head_familyname')->name('head_familyname');
+
+});
 /**
  * * /////////// фамилии
  */

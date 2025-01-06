@@ -20,6 +20,10 @@ class Family extends Model
         'f_text',
         'f_img2',
         'f_text2',
+        'f_name',
+        'f_birthday',
+        'f_phone',
+        'f_city',
 
         'f_img3',
         'f_text4',

@@ -1,0 +1,74 @@
+.head_family {
+  padding-top: 20px; }
+  .head_family .teaser_mini_img {
+    margin-bottom: 14px; }
+  .head_family .tmg__img {
+    min-width: 100px; }
+  .head_family .tmg__flex {
+    justify-content: space-between;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 12px; }
+  .head_family .tmg__title {
+    width: 315px;
+    min-width: 315px;
+    max-width: 315px;
+    height: 74px; }
+  .head_family .tmg__birthday {
+    min-width: 180px;
+    height: 74px;
+    color: #282828;
+    font-size: 18px;
+    display: block;
+    padding: 10px 15px; }
+  .head_family .tmg__phone_city {
+    width: 220px;
+    min-width: 220px;
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    height: 74px;
+    color: #282828;
+    font-size: 18px;
+    padding: 10px 15px; }
+  .head_family .tmg__city {
+    padding: 4px 0 0 0;
+    color: #667085; }
+
+@media screen and (max-width: 850px) {
+  .contener__222 {
+    width: 100%;
+    overflow-x: scroll; }
+
+  .head_family {
+    width: 800px;
+    font-size: calc(15px + 3 * ((100vw - 320px) / 1120)) !important; }
+    .head_family a {
+      font-size: calc(15px + 3 * ((100vw - 320px) / 1120)) !important; }
+    .head_family .tmg__title {
+      font-size: calc(15px + 3 * ((100vw - 320px) / 1120)) !important; }
+    .head_family .tmg__phone_city {
+      font-size: calc(15px + 3 * ((100vw - 320px) / 1120)) !important; }
+    .head_family .tmg__birthday {
+      font-size: calc(15px + 3 * ((100vw - 320px) / 1120)) !important; }
+
+  .teaser_mini_img .tmg__titleText a {
+    font-size: calc(15px + 3 * ((100vw - 320px) / 1120)) !important;
+    padding: 10px 0 !important; } }
+@media screen and (max-width: 650px) {
+  .contener__222 {
+    width: 100%;
+    overflow-x: scroll; }
+
+  .head_family {
+    width: 700px; }
+    .head_family .tmg__birthday {
+      min-width: 100px; }
+    .head_family .tmg__birthday {
+      min-width: 100px; }
+    .head_family .tmg__phone_city {
+      min-width: 100px;
+      width: 200px; }
+      .head_family .tmg__phone_city .tmg__city {
+        text-align: end; } }
+
+/*# sourceMappingURL=head_family.css.map */

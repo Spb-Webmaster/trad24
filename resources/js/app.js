@@ -8,6 +8,7 @@
 /* composer require spatie/laravel-honeypot - анти спам (@honeypot) https://codebrisk.com/blog/laravel-honeypot-prevent-spam-submitted-through-forms
 composer require barryvdh/laravel-debugbar --dev
 * php artisan lang:publish
+composer require "maatwebsite/excel:^3.1"
 npm i imask
 npm i slick
 npm i jquery

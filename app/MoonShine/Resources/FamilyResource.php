@@ -148,10 +148,19 @@ class FamilyResource extends ModelResource
                                     ->allowedExtensions(['jpg', 'png', 'jpeg', 'gif', 'svg'])
                                     ->removable()
                                     ->hint('Встраивается справа'),
-                                Textarea::make('Описание под изображением', 'f_img_text')->hint('Выводится при условии загрузки изображения')
+                                Textarea::make('Описание под изображением', 'f_img_text')->hint('Выводится при условии загрузки изображения'),
+                                Collapse::make('Главы фамилий', [
 
-                            ])
-                                ->columnSpan(4),
+                                    Text::make(__('Имя Главы'), 'f_name')->hint('Если оставить порле пустым то выведется заголовок фамилии (Заголовок*)'),
+                                    Date::make(__('Дата рождения'), 'f_birthday')
+                                        ->format("d.m.Y")
+                                        ->sortable(),
+                                    Text::make(__('Телефон'), 'f_phone'),
+                                    Text::make(__('Город'), 'f_city'),
+
+
+                                ]),
+                            ])->columnSpan(4),
                         ]),
 
                         Divider::make(),
