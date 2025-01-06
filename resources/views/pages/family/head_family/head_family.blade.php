@@ -76,9 +76,9 @@
             </div>
             </div>
 
-
+            <div class="block">
             {{ $items->withQueryString()->links('pagination::default') }}
-
+            </div>
         </div><!--.page_page-->
     </main>
 @endsection
