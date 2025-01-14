@@ -11,7 +11,7 @@ return [
 
     'mail_admin' => env('MAIL_ADMIN'),
 
-    'app_url' => env('APP_URL'),
+    '' => env('APP_URL'),
 
     'app_name' => env('APP_NAME'),
 
