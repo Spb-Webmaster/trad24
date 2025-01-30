@@ -31,6 +31,7 @@ class UserVideoController extends Controller
     public function video($user_id, $id)
     {
 
+
         $user = auth()->user();
 
         if ($user->id == $user_id) {
@@ -102,6 +103,9 @@ class UserVideoController extends Controller
 
     public function videoUpdate(VideoFormRequest $request)
     {
+
+        //dd($request->all());
+
         $user = auth()->user();
 
         if($request->user_id == $user->id) {

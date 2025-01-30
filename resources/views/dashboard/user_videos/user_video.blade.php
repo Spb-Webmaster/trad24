@@ -29,9 +29,9 @@
                         <div class="cabinet_radius12_fff">
 
                             <div class="c__title_subtitle">
-                                <h3 class="F_h1">{{ __('Публикация') }}</h3>
+                                <h3 class="F_h1">{{ __('Ваши видео') }}</h3>
                                 <div class="F_h2 pad_t5">
-                                    <span>{{__('Страница публикации - ')}} {{ $item->title }}</span>
+                                    <span>{{__('Страница видео - ')}} {{ $item->title }}</span>
                                 </div>
                             </div>
 
@@ -65,6 +65,9 @@
                                                     </span>
                                             </div>
                                             <h2 class="_articles_h2_title">{{ $item->title }}</h2>
+                                            <div class="_video_emb">
+                                                {!!   youtube(fullYoutube($item->video),  658, 345) !!}
+                                            </div>
                                             <div class="_articles_text desc">{!!   $item->article !!}</div>
                                         </div>
                                         <div class="_articles_options">

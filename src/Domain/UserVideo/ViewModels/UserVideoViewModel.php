@@ -48,6 +48,7 @@ class UserVideoViewModel
             ->update([
                 'title' => $request->title_video,
                 'video' => codeYoutube($request->video),
+                'article' => $request->article,
             ]);
 
     }
