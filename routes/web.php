@@ -7,10 +7,11 @@ use App\Http\Controllers\Auth\ResetPasswordController;
 use App\Http\Controllers\Auth\SignInController;
 use App\Http\Controllers\Auth\SignUpController;
 use App\Http\Controllers\Calendar\CalendarEventController;
-use App\Http\Controllers\Catalog\CatalogController;
-use App\Http\Controllers\Catalog\ObjectController;
 use App\Http\Controllers\Dashboard\DashboardController;
 use App\Http\Controllers\Dashboard\UserArticle\UserArticleController;
+use App\Http\Controllers\Dashboard\UserPeoples\People\UserPeopleArticleController;
+use App\Http\Controllers\Dashboard\UserPeoples\People\UserPeoplePhotosController;
+use App\Http\Controllers\Dashboard\UserPeoples\People\UserPeopleVideosController;
 use App\Http\Controllers\Dashboard\UserPeoples\UserPeopleController;
 use App\Http\Controllers\Dashboard\UserPhoto\UserPhotoAjaxController;
 use App\Http\Controllers\Dashboard\UserPhoto\UserPhotoController;
@@ -118,6 +119,15 @@ Route::controller(DashboardController::class)->group(function () {
 
 });
 
+Route::controller(UserPhotoAjaxController::class)->group(function () {
+
+    /** удаление фото - кабинет user */
+    Route::post('/cabinet/photo-delete', 'deletePhoto')
+        ->middleware('auth.published');
+
+
+});
+
 
 /**
  *  //////DashboardController - общее
@@ -139,32 +149,59 @@ Route::controller(UserPhotoController::class)->group(function () {
 
 });
 
+
 /**
- *  UserPeopleController - фото
+ *  UserPeopleController список дюдей (пользователи)
  */
 Route::controller(UserPeopleController::class)->group(function () {
 
-    Route::get('/cabinet/peoples/{id}', 'peoples')
+    Route::get('/cabinet/peoples', 'peoples')
         ->middleware('auth.published')
         ->name('cabinet.peoples');
 
-
-
 });
 
+/**
+ *  UserPeoplePhotosController photos
+ */
+Route::controller(UserPeoplePhotosController::class)->group(function () {
 
-Route::controller(UserPhotoAjaxController::class)->group(function () {
-
-    /* удаление фото - кабинет user */
-    Route::post('/cabinet/photo-delete', 'deletePhoto')
-        ->middleware('auth.published');
-
-
+    Route::get('/cabinet/peoples/people/photos/{user_id}', 'people_photos')
+        ->middleware('auth.published')
+        ->name('cabinet.people_photos');
 });
+/**
+ *  UserPeopleVideosController videos
+ */
+Route::controller(UserPeopleVideosController::class)->group(function () {
+
+    Route::get('/cabinet/peoples/people/videos/{user_id}', 'people_videos')
+        ->middleware('auth.published')
+        ->name('cabinet.people_videos');
+
+    Route::get('/cabinet/peoples/people/videos/{user_id}/video/{id}', 'people_video')
+        ->middleware('auth.published')
+        ->name('cabinet.people_video');
+});
+
+/**
+ *  UserPeopleArticleController article
+ */
+Route::controller(UserPeopleArticleController::class)->group(function () {
+
+    Route::get('/cabinet/peoples/people/articles/{user_id}', 'people_articles')
+        ->middleware('auth.published')
+        ->name('cabinet.people_articles');
+
+    Route::get('/cabinet/peoples/people/articles/{user_id}/article/{id}', 'people_article')
+        ->middleware('auth.published')
+        ->name('cabinet.people_article');
+});
+
 
 
 /**
- *  ///////UserPhotoController - фото
+ *  ///////UserPhotoController
  */
 
 /**
@@ -269,96 +306,7 @@ Route::controller(VideoController::class)->group(function () {
 /**
  * каталог
  */
-Route::controller(CatalogController::class)->group(function () {
 
-    Route::get('/r-{slug}', 'religion')
-        ->name('religion');
-
-    Route::post('/form.submit.religion', 'religionSubmit')
-        ->name('form.submit.religion');
-
-    Route::post('/form.submit.religion_category', 'religion_categorySubmit')
-        ->name('form.submit.religion_category');
-
-    Route::post('/form.submit.area', 'areaSubmit')
-        ->name('form.submit.area');
-
-    Route::get('/r-{slug}/area-{id}', 'religionAreaListObjects')
-        ->name('religion.area.list');
-
-    Route::get('/r-{religion_slug}/area-{area_id}/{religion_gategory_slug}', 'religionAreaListCategoryObjects')
-        ->name('religion.area.category.list');
-
-
-    /** search */
-
-    Route::post('/search/big-search', 'bigSearch')
-        ->name('form.search.big_search');
-
-    Route::post('/search/top-search', 'topSearch')
-        ->name('form.search.top_search');
-
-    /** //search */
-
-});
-
-Route::controller(ObjectController::class)->group(function () {
-
-    /**  о нас  */
-    Route::get('/r-{religion_slug}/{object_slug}/about', 'pageObjectAbout')
-        ->name('page.object.about');
-
-    Route::get('/r-{religion_slug}/{object_slug}/about/{slug}', 'pageObjectAboutPage')
-        ->name('page.object.about.page');
-
-    /**  деятельность  */
-    Route::get('/r-{religion_slug}/{object_slug}/activity', 'pageObjectActivity')
-        ->name('page.object.activity');
-
-    Route::get('/r-{religion_slug}/{object_slug}/activity/{slug}', 'pageObjectActivityPage')
-        ->name('page.object.activity.page');
-
-    /**  обряды  */
-    Route::get('/r-{religion_slug}/{object_slug}/ritual', 'pageObjectRitual')
-        ->name('page.object.ritual');
-
-    Route::get('/r-{religion_slug}/{object_slug}/ritual/{slug}', 'pageObjectRitualPage')
-        ->name('page.object.ritual.page');
-
-
-    /*
-        Route::get('/r-{religion_slug}/{object_slug}/gallery', 'pageObjectGallery')
-            ->name('page.object.gallery');  // удалил */
-
-
-    Route::get('/r-{religion_slug}/{object_slug}/media/{slug}', 'pageObjectMedia')
-        ->name('page.object.media');
-
-    Route::get('/r-{religion_slug}/{object_slug}/faq', 'pageObjectFaq')
-        ->name('page.object.faq');
-
-    Route::get('/r-{religion_slug}/{object_slug}/info', 'pageObjectInfo')
-        ->name('page.object.info');
-
-    Route::get('/r-{religion_slug}/{object_slug}/info/{slug}', 'pageObjectInfoPage')
-        ->name('page.object.info.page');
-    /*
-        Route::get('/r-{religion_slug}/{object_slug}/video', 'pageObjectVideo')
-            ->name('page.object.video'); // удалил */
-
-
-    Route::get('/r-{religion_slug}/{object_slug}/contacts', 'pageObjectContact')
-        ->name('page.object.contact');
-
-    Route::get('/r-{religion_slug}/{object_slug}/news', 'pageObjectNewCategory')
-        ->name('page.object.new_category');
-    Route::get('/r-{religion_slug}/{object_slug}/news/{new_slug}', 'pageObjectNew')
-        ->name('page.object.new');
-    Route::get('/r-{religion_slug}/{object_slug}/page/{page_slug}', 'pageObjectPage')
-        ->name('page.object.page');
-
-
-});
 
 Route::controller(AjaxController::class)->group(function () {
     /* подставка в input в поиске */
@@ -469,6 +417,7 @@ Route::controller(FamilyHeadController::class)->group(function () {
     Route::get('/head-family-name', 'head_familyname')->name('head_familyname');
 
 });
+
 /**
  * * /////////// фамилии
  */

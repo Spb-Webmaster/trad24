@@ -1,7 +1,9 @@
 @extends('layouts.layout_cabinet')
-@section('title', ($seo_title) ?? __('Кабинет пользователя (редактирование) / '. $item->title) )
-@section('description', ($seo_description)?? __('Кабинет пользователя  (редактирование) / ' . $item->title ) )
-@section('keywords', ($seo_keywords)?? __('Кабинет пользователя  (редактирование) / Публикации' . $item->title) )
+<x-seo.meta
+    title="Кабинет пользователя (редактирование)"
+    description="Кабинет пользователя (редактирование)"
+    keywords="Кабинет пользователя (редактирование)"
+/>
 @section('cabinet')
     <div class="auth">
         <div class="cabinet">

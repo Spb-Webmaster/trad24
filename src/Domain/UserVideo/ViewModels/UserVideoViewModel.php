@@ -26,7 +26,7 @@ class UserVideoViewModel
         return  UserVideo::query()
             ->where('user_id', $user_id)
             ->orderBy('created_at', 'desc')
-            ->paginate(50);
+            ->paginate(config('site.constants.paginate'));
     }
 
     public function video($id) {

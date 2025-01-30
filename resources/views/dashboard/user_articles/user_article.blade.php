@@ -68,7 +68,7 @@
                                         <div class="_articles_options">
                                             <div class="_art_m _articles_options__more"><i></i><span>{!!   $item->viewer !!}</span></div>
                                             <div class="_art_m _articles_options__date_create"><i></i><span>{{rusdate3($item->created_at)}}</span> </div>
-                                            <div class="_art_m _articles_options__date_update"><i></i><span>{{rusdate2($item->updated_at)}}</span></div>
+                                            {{--<div class="_art_m _articles_options__date_update"><i></i><span>{{rusdate2($item->updated_at)}}</span></div>--}}
                                         </div>
 
 

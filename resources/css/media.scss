@@ -1098,7 +1098,6 @@ $maxWidth: 1440;
 
 
 }
-
 /* pocofon  x3 */
 
 /* xiaomi pro6 */
@@ -1175,7 +1174,6 @@ $maxWidth: 1440;
         padding: 0 10px 0 0;
     }
 }
-
 /* xiaomi pro6 */
 
 @media (max-width: 666px) {
@@ -1328,7 +1326,9 @@ $maxWidth: 1440;
 }
 
 @media (max-width: 568px) {
-
+    .hbox__top .h1, .hbox__top h1, .hbox__top h2, .hbox__top h3 {
+        font-size: 38px;
+    }
 
     .formLogin__wrapp {
         width: 96%;

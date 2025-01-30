@@ -28,7 +28,7 @@ class CalendarEventViewModel
         $events = CalendarEvent::query()
             ->where('published', true)
             ->orderBy('created_at', 'desc')
-            ->paginate(20);
+            ->paginate(config('site.constants.paginate'));
         return $events;
     }
     public function events20()

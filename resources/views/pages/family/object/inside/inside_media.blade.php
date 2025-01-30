@@ -9,12 +9,11 @@
     <main>
         <div class="page_object">
 
-            @include('pages.catalog.object.partial._object_breadcrumbs')
+            @include('pages.family.object.partial._object_breadcrumbs')
 
-            @include('pages.catalog.object.partial._object_title')
+            @include('pages.family.object.partial._object_title')
 
             @include('pages.family.object.partial._object_logo')
-
 
             @include('include.menu.object_menu')
 

@@ -72,7 +72,7 @@ if (!function_exists('format_phone')) {
                 substr($from, 7, 2),
                 substr($from, 9)
             );
-            return $to;
+            return '+' . $to;
         }
         return '';
     }
@@ -170,9 +170,9 @@ if (!function_exists('active_linkMenu')) {
 
 
 if (!function_exists('active_linkParse')) {
+
     function active_linkParse($url, string $find = null, string $class = 'active'): string|null
     {
-
 
         $parse_url = parse_url(url()->current(), PHP_URL_PATH) ?? '/';
 

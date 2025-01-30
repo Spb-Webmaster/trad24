@@ -25,7 +25,7 @@ class VideoViewModel
             $videos =  Video::query()
                 ->get_videos()
                 ->orderBy('created_at', 'desc')
-                ->paginate(20);
+                ->paginate(config('site.constants.paginate'));
         return $videos;
     }
 

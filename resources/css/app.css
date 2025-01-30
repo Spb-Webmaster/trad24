@@ -29,6 +29,8 @@
 @import "./general-style/width.scss";
 @import "./fancybox.scss";
 @import "./blocks/select.scss";
+@import "./admin-users/users.scss";
+@import "./admin-users/user.scss";
 @import "./cabinet/articles.scss";
 @import "./cabinet/cabinet.scss";
 @import "./forms/file.scss";

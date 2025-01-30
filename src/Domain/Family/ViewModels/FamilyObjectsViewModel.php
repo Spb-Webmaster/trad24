@@ -17,7 +17,7 @@ class FamilyObjectsViewModel
         $query = Family::query();
         $query->where('published', 1);
         $query->orderBy('title', 'asc');
-        $result = $query->paginate(30);
+        $result = $query->paginate(config('site.constants.paginate'));
         return $result;
 
     }
@@ -48,7 +48,7 @@ class FamilyObjectsViewModel
             ->where('published', 1)
             ->where('family_id', $id)
             ->orderBy('created_at', 'desc')
-            ->paginate(30);
+            ->paginate(config('site.constants.paginate'));
 
 
     }
@@ -59,7 +59,7 @@ class FamilyObjectsViewModel
             ->where('published', 1)
             ->where('family_id', $id)
             ->orderBy('created_at', 'desc')
-            ->paginate(30);
+            ->paginate(config('site.constants.paginate'));
 
 
     }
@@ -80,7 +80,7 @@ class FamilyObjectsViewModel
             ->where('published', 1)
             ->where('family_id', $id)
             ->orderBy('created_at', 'desc')
-            ->paginate(30);
+            ->paginate(config('site.constants.paginate'));
 
 
     }

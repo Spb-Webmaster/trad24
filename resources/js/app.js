@@ -12,6 +12,7 @@ composer require "maatwebsite/excel:^3.1"
 npm i imask
 npm i slick
 npm i jquery
+очереди - https://phpqa.ru/post/ocheredi-v-laravel
 * */
 
 //import './bootstrap';
@@ -31,7 +32,6 @@ import './ckeditor5/ckeditor5';
 import 'slick-carousel/slick/slick';
 import './ui/jquery-ui.min';
 import './chosen/chosen.jquery';
-
 
 
 import './script';

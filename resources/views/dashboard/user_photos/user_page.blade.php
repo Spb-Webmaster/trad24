@@ -1,7 +1,9 @@
 @extends('layouts.layout_cabinet')
-@section('title', ($seo_title) ?? __('Кабинет пользователя / Фотогалерея') )
-@section('description', ($seo_description)?? __('Кабинет пользователя / Фотогалерея') )
-@section('keywords', ($seo_keywords)?? __('Кабинет пользователя / Фотогалерея') )
+<x-seo.meta
+    title="Кабинет пользователя / Фотогалерея"
+    description="Кабинет пользователя / Фотогалерея"
+    keywords="Кабинет пользователя / Фотогалерея"
+/>
 @section('cabinet')
     <div class="auth">
         <div class="cabinet">
@@ -82,12 +84,15 @@
 
 
                                                 <a class="co" href="{{ asset(Storage::disk('public')->url($item['img'])) }}"
-                                                   data-fancybox="gallery">
+                                                   data-fancybox="gallery"
+                                                   data-caption=""
+
+                                                >
                                                     <img  class="pc_category_img"
                                                          style="width: auto; height: auto"
                                                          loading="lazy"
                                                          src="{{ asset(intervention('252x0', $item['img'], 'users/' . $user->id  . '/photos', 'scaleDown')) }}"
-                                                         alt="photo_{{ $k }}">
+                                                         alt="photo_{{ $k }}" title="">
 
 
                                                 </a></div>

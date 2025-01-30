@@ -1,7 +1,9 @@
 @extends('layouts.layout_cabinet')
-@section('title', ($seo_title) ?? __('Кабинет пользователя / '. $item->title) )
-@section('description', ($seo_description)?? __('Кабинет пользователя / ' . $item->title ) )
-@section('keywords', ($seo_keywords)?? __('Кабинет пользователя / Публикации' . $item->title) )
+<x-seo.meta
+    title="Кабинет пользователя / {{ $item->title}}"
+    description="Кабинет пользователя / {{ $item->title}}"
+    keywords="Кабинет пользователя / {{ $item->title}}"
+/>
 @section('cabinet')
     <div class="auth">
         <div class="cabinet">
@@ -68,7 +70,7 @@
                                         <div class="_articles_options">
                                             <div class="_art_m _articles_options__more"><i></i><span>{!!   $item->viewer !!}</span></div>
                                             <div class="_art_m _articles_options__date_create"><i></i><span>{{rusdate3($item->created_at)}}</span> </div>
-                                            <div class="_art_m _articles_options__date_update"><i></i><span>{{rusdate2($item->updated_at)}}</span></div>
+                                         {{--   <div class="_art_m _articles_options__date_update"><i></i><span>{{rusdate2($item->updated_at)}}</span></div>--}}
                                         </div>
 
 

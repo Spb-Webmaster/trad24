@@ -41,7 +41,4 @@ document.addEventListener('DOMContentLoaded', function () {
     datepicker_event() // datepicker - события event
 
 
-
-
-
 });

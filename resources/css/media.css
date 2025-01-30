@@ -786,6 +786,9 @@
     justify-content: flex-end;
     padding-right: 0; } }
 @media (max-width: 568px) {
+  .hbox__top .h1, .hbox__top h1, .hbox__top h2, .hbox__top h3 {
+    font-size: 38px; }
+
   .formLogin__wrapp {
     width: 96%;
     padding: 10px; }

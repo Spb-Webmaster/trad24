@@ -8,13 +8,18 @@ use Domain\UserPhoto\ViewModels\UserPhotoViewModel;
 
 class UserPeopleController extends Controller
 {
-    public function peoples($id)
+
+    /**
+     * @return []
+     * список пользователей для всех
+     */
+    public function peoples()
     {
         $user = auth()->user();
         $items = [];
 
 
-        if ($user->id == $id) {
+        if ($user->id) {
             $items =  UserPeopleViewModel::make()->userPeoples();
 
             return view('dashboard.user_peoples.user_peoples', [

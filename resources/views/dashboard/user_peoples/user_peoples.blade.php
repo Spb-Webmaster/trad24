@@ -1,7 +1,9 @@
 @extends('layouts.layout_cabinet')
-@section('title', ($seo_title) ?? __('Кабинет пользователя / Пользователи') )
-@section('description', ($seo_description)?? __('Кабинет пользователя / Пользователи') )
-@section('keywords', ($seo_keywords)?? __('Кабинет пользователя / Пользователи') )
+<x-seo.meta
+    title="Кабинет пользователя / Пользователи"
+    description="Кабинет пользователя / Пользователи"
+    keywords="Кабинет пользователя / Пользователи"
+/>
 @section('cabinet')
     <div class="auth">
         <div class="cabinet">
@@ -39,16 +41,16 @@
 
                             @if(isset($items))
                                 <div class="cabinet_ob_peoles pad_t20  pad_b20 desc">
+
                                         @foreach($items as $k => $item)
+
+{{--
+                                        <p><a href="{{ route('cabinet.people_photos', ['user_id' => $item->id]) }}">{{ $item->name }}</a></p>
+                                        --}}
 
                                         <p>{{ $item->name }}</p>
 
                                         @endforeach
-
-
-
-
-
 
                                 </div>
                                 <div class="display_none__">{{ $items->withQueryString()->links('pagination::default') }}</div>

@@ -25,7 +25,7 @@ class InfoViewModel
             $infos =  Info::query()
                 ->get_infos()
                 ->orderBy('created_at', 'desc')
-                ->paginate(20);
+                ->paginate(config('site.constants.paginate'));
         return $infos;
     }
 

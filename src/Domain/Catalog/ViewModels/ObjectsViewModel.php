@@ -32,7 +32,7 @@ class ObjectsViewModel
        }
        $query->where('published', 1);
        $query->orderBy('created_at', 'desc');
-       $result = $query->paginate(20);
+       $result = $query->paginate(config('site.constants.paginate'));
         return $result;
 
     }

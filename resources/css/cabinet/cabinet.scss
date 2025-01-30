@@ -766,7 +766,6 @@ $maxWidth: 1440;
     }
 
 
-
     /* user photo = скачать и удалить */
     .mItemDelete {
         position: absolute;
@@ -778,6 +777,7 @@ $maxWidth: 1440;
         transform: translateY(-100%);
         opacity: 0;
         cursor: pointer;
+
         img {
             transition: 0.2s;
             border-radius: 50%;
@@ -822,6 +822,7 @@ $maxWidth: 1440;
         border-radius: 8px;
         padding: 4px;
         right: 0;
+
         a {
             color: $colorGrey;
             text-decoration: none;
@@ -834,9 +835,11 @@ $maxWidth: 1440;
             font-size: 13px;
             padding: 0 10px;
         }
+
         a:hover {
             background-color: #f5fbff;
         }
+
         ul {
             li:last-child {
                 a {
@@ -869,3 +872,20 @@ $maxWidth: 1440;
 }
 
 /* ////////// фото галерея  в ЛК  */
+
+
+@media screen and (max-width: 742px) {
+
+    .cabinet__right {
+        .hbox__submenu.top {
+              display: none;
+        }
+    }
+}
+@media screen and (max-width: 468px) {
+
+    .cabinet_radius12_fff {
+        padding-right: 16px;
+        padding-left: 16px;
+    }
+}

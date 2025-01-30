@@ -51,7 +51,7 @@ class FamilyCatalogController extends Controller
             $items = Family::query()
                 ->where('published', 1)
                 ->where("title", "like", "%" . $search . "%")
-                ->paginate(20);
+                ->paginate(config('site.constants.paginate'));
         }
 
         return view('pages.family.list_search.list',

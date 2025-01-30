@@ -1,0 +1,83 @@
+.dashboardBox__a_user .dashboardBox__col {
+  display: flex;
+  align-items: center; }
+.dashboardBox__a_user .dashboardBox__left {
+  width: 30%; }
+.dashboardBox__a_user .dashboardBox__right {
+  width: 70%; }
+
+.d_llabel {
+  font-weight: 600;
+  font-size: 18px; }
+
+.d_ltext {
+  font-size: 18px; }
+
+.dashboardBox__a_user__workers {
+  padding: 26px 0 19px 0;
+  display: flex;
+  flex-wrap: wrap; }
+  .dashboardBox__a_user__workers .dashboardBox {
+    width: 32%;
+    margin: 0 16px 16px 0; }
+  .dashboardBox__a_user__workers .dashboardBox:nth-child(3n) {
+    width: 31%;
+    margin: 0 0 16px 0; }
+
+.cli_hot_user_Flex {
+  display: flex;
+  align-items: flex-start;
+  width: 100%; }
+  .cli_hot_user_Flex .cli_hot_user_left {
+    width: 136px;
+    min-width: 136px; }
+  .cli_hot_user_Flex .cli_hot_user_right {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    min-height: 100px; }
+  .cli_hot_user_Flex .hot_user_username {
+    font-weight: 600;
+    font-size: 18px; }
+  .cli_hot_user_Flex .hot_user_email {
+    color: #667085; }
+
+.hot_user_phone a {
+  color: #282828;
+  text-decoration: none; }
+.hot_user_phone a:hover {
+  color: #EF533F;
+  text-decoration: none; }
+
+.hbox__submenuBorder {
+  border-bottom: 2px solid #E0E0E0;
+  margin-top: 20px;
+  margin-bottom: 20px; }
+  .hbox__submenuBorder .v_s_c__flex {
+    height: 64px; }
+    .hbox__submenuBorder .v_s_c__flex .v_s_c__item {
+      height: 64px; }
+      .hbox__submenuBorder .v_s_c__flex .v_s_c__item span, .hbox__submenuBorder .v_s_c__flex .v_s_c__item a {
+        height: 64px;
+        color: #282828;
+        text-decoration: none !important;
+        top: 2px;
+        position: relative; }
+      .hbox__submenuBorder .v_s_c__flex .v_s_c__item span:hover, .hbox__submenuBorder .v_s_c__flex .v_s_c__item a:hover {
+        color: #EF533F; }
+      .hbox__submenuBorder .v_s_c__flex .v_s_c__item.active a {
+        color: #0969A4;
+        border-bottom: 2px solid #0969A4; }
+
+@media screen and (max-width: 468px) {
+  .cli_hot_user_Flex .site_avatar {
+    width: 90px !important;
+    min-width: 90px !important;
+    height: 90px !important;
+    min-height: 90px !important; }
+  .cli_hot_user_Flex .cli_hot_user_left {
+    width: 116px;
+    min-width: 116px; } }
+
+/*# sourceMappingURL=user.css.map */

@@ -14,7 +14,7 @@ class UserPhotoViewModel
     {
         return UserPhoto::query()->where('user_id', $user_id)
             ->orderBy('created_at', 'desc')
-            ->paginate(50);
+            ->paginate(config('site.constants.paginate'));
     }
 
     public function create($user_id, $filename)

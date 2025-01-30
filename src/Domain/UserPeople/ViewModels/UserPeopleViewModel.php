@@ -2,6 +2,9 @@
 namespace Domain\UserPeople\ViewModels;
 
 use App\Models\User;
+use Illuminate\Database\Eloquent\Collection;
+use Illuminate\Pagination\LengthAwarePaginator;
+use Illuminate\Database\Eloquent\Model;
 use Storage;
 use Support\Traits\Makeable;
 
@@ -9,10 +12,35 @@ class UserPeopleViewModel
 {
     use Makeable;
 
-    public function userPeoples() {
-        return User::query()->where('published', 1)
+    /**
+     * @return array|LengthAwarePaginator
+     * все польтзователи
+     */
+    public function userPeoples():array | LengthAwarePaginator
+    {
+        $users =  User::query()->where('published', 1)
             ->orderBy('created_at', 'desc')
-            ->paginate(20);
+            ->paginate(config('site.constants.paginate'));
+
+        if($users) {
+            return $users;
+        }
+        return [];
+    }
+
+
+
+    public function userPeople($id):model | bool
+    {
+        $user =  User::query()
+            ->where('published', 1)
+            ->where('id', $id)
+            ->first();
+
+        if($user) {
+            return $user;
+        }
+        return false;
     }
 
 }
