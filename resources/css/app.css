@@ -25,6 +25,7 @@
 @import "./chosen/chosen.css";
 /* @import "@selectize/selectize/dist/css/selectize.css"; */
 @import "./ui/jquery-ui.min.css";
+@import "./comment/comment.scss";
 @import "./general-style/paddind.scss";
 @import "./general-style/width.scss";
 @import "./fancybox.scss";

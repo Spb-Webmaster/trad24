@@ -37,27 +37,29 @@
                             </div>
                             <div class="dashboardBox dashboardBox__a_user ">
 
-                                @include('dashboard.user_peoples.people._partial.user')
+                                <x-dashboard.user.user_avatar_email_phone :user="$item" />
 
                                 @include('dashboard.user_peoples.people._partial.menu')
 
 
                                 <div class="_articles__foreach">
-                                        <div class="_articles__item">
+                                    <div class="_articles__item">
 
-                                            <h2 class="_articles_h2_title">{{ $it->title }}</h2>
-                                            <div class="_articles_text desc">{!!   $it->article !!}</div>
-                                        </div>
-                                        <div class="_articles_options">
-                                            <div class="_art_m _articles_options__more"><i></i><span>{!!   $it->viewer !!}</span></div>
-                                            <div class="_art_m _articles_options__date_create"><i></i><span>{{rusdate3($it->created_at)}}</span> </div>
-                                            {{--  <div class="_art_m _articles_options__date_update"><i></i><span>{{rusdate2($item->updated_at)}}</span></div>--}}
-                                        </div>
-                                        <hr>
+                                        <h2 class="_articles_h2_title">{{ $it->title }}</h2>
+                                        <div class="_articles_text desc">{!!   $it->article !!}</div>
+                                    </div>
 
+                               </div>
+                                    <x-dashboard.user.options.options_article :item="$it" model="App\Models\UserArticleComment" prefix="article"/>
+
+                                    <hr>
+
+                                <div class="web_comments">
+
+                                    @livewire('comments.comment', ['article_id' => $it->id,'user_id' => $user->id, 'model'=>"App\Models\UserArticleComment",  'prefix' => "article"])
+                                    @livewire('comments.comment-text', ['article_id' => $it->id,'user_id' => $user->id, 'model'=>"App\Models\UserArticleComment", 'prefix' =>"article"])
 
                                 </div>
-
 
                             </div>
 

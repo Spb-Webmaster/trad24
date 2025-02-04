@@ -28,7 +28,5 @@ class UserArticle extends Model
     public function getTeaserTextAttribute() {
 
                  return '<p>' . Str::limit(strip_tags($this->article), 300) . '</p>';
-
-
     }
 }

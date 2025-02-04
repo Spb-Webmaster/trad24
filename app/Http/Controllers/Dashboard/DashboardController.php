@@ -3,16 +3,24 @@
 namespace App\Http\Controllers\Dashboard;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\DashboardHandleFormRequest;
 use App\Http\Requests\UpdateFormRequest;
 use App\Http\Requests\UpdatePasswordFormRequest;
 use App\Models\User;
 
 use Domain\User\ViewModels\UserViewModel;
+use Domain\UserArticle\ViewModels\UserArticleViewModel;
+use Domain\UserPhoto\ViewModels\UserPhotoViewModel;
+use Domain\UserVideo\ViewModels\UserVideoViewModel;
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\RedirectResponse;
 
 class DashboardController extends Controller
 {
+
+
+    /**
+     * настройки
+     */
     public function page()
     {
 
@@ -37,6 +45,9 @@ class DashboardController extends Controller
 
 
     }
+
+
+
 
     public function blocked()
     {
@@ -140,5 +151,137 @@ class DashboardController extends Controller
 
 
 
+
+    /**
+     * профиль
+     */
+    /**
+     * профиль
+     */
+    /**
+     * профиль
+     */
+    /**
+     * профиль
+     */
+    /**
+     * профиль
+     */
+
+
+    public function profile()
+    {
+
+      return redirect(route('cabinet.profile_photos'));
+
+    }
+
+
+    /**
+     * фото
+     */
+
+    public function profile_photos()
+    {
+
+        $user   = auth()->user();
+        $items = [];
+
+        $items =  UserPhotoViewModel::make()->userPhotos($user->id);
+
+        return view('dashboard.profile.profile_photos',[
+                'user' => $user,
+                'items' => $items
+            ]);
+
+    }
+
+
+    /**
+     * профиль
+     */
+    /**
+     * много видоефайлов
+     */
+
+    public function profile_videos()
+    {
+
+        $user   = auth()->user();
+        $items = [];
+
+        $items = UserVideoViewModel::make()->videos($user->id);
+
+        return view('dashboard.profile.profile_videos',
+            [
+                'user' => $user,
+                'items' => $items,
+
+            ]);
+
+    }
+
+    /**
+     * одно видое
+     */
+
+    public function profile_video($user_id, $id)
+    {
+
+        $user   = auth()->user();
+
+        $item = UserVideoViewModel::make()->video($id);
+        return view('dashboard.profile.inside.user_people_video',
+            [
+                'user' => $user,
+                'item' => $item,
+
+            ]);
+
+    }
+
+
+    /**
+     * профиль
+     */
+    /**
+     * статья
+     */
+
+    public function profile_articles()
+    {
+
+        $user   = auth()->user();
+        $items = [];
+
+        $items = UserArticleViewModel::make()->articles($user->id);
+
+
+        return view('dashboard.profile.profile_article',
+            [
+                'user' => $user,
+                'items' => $items,
+            ]);
+
+    }
+
+    /**
+     * одна статья
+     */
+
+    public function profile_article($user_id, $id)
+    {
+
+        $user   = auth()->user();
+
+        $item = UserArticleViewModel::make()->article($id);
+        return view('dashboard.profile.inside.user_people_article',
+            [
+                'user' => $user,
+                'item' => $item,
+
+            ]);
+
+    }
 
 }

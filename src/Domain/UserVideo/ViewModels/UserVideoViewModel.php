@@ -6,6 +6,7 @@ use App\Models\UserPhoto;
 use App\Models\UserVideo;
 use Storage;
 use Support\Traits\Makeable;
+use function Laravel\Prompts\textarea;
 
 class UserVideoViewModel
 {
@@ -17,7 +18,7 @@ class UserVideoViewModel
             'user_id' => $user->id,
             'title' => $request->title_video,
             'video' => codeYoutube($request->video),
-            'article' => $request->article,
+           'article' => \textarea($request->article),
         ]);
     }
 
@@ -48,7 +49,7 @@ class UserVideoViewModel
             ->update([
                 'title' => $request->title_video,
                 'video' => codeYoutube($request->video),
-                'article' => $request->article,
+                'article' => \textarea($request->article),
             ]);
 
     }

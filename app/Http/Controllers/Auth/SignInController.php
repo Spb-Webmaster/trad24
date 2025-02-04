@@ -34,7 +34,7 @@ class SignInController extends Controller
 
       //  flash()->info('test');
         $request->session()->regenerate();
-        return redirect()->intended(route('cabinet')); // intended - назад или route
+        return redirect()->intended(route('cabinet.profile_photos')); // intended - назад или route
     }
 
 

@@ -60,7 +60,7 @@ class UserPhotoController extends Controller
         $image_successes = str_replace("{image}", count($request->photos), config('message_flash.info.user_img_successes'));
         flash()->info($image_successes);
 
-        return redirect()->route('cabinet.photos', ['id' => $user->id]);
+        return redirect()->route('cabinet.photos', ['user_id' => $user->id]);
     }
 
 

@@ -77,13 +77,31 @@
                                         </div>
                                     </div>
 
-                            <div class="main-container">
-                                <div class="editor-container editor-container_classic-editor" id="editor-container">
-                                    <div class="editor-container__editor">
-                                        <textarea name="article" id="editor">{!! (old('article'))?:'' !!}</textarea>
+
+                                <div class="c__flex_100">
+                                    <div class="text_input textarea_input pad_t0_important">
+                                        <x-forms.textarea
+                                            type="textarea"
+                                            name="article"
+                                            placeholder="Описание"
+                                            value="{!!  (isset($item->article))? strip_tags($item->article, '<code><b><i><strong>') : (old('article')?:'') !!}"
+                                            class="input article"
+                                        />
+                                        <x-forms.error class="error_article"/>
+
                                     </div>
+
+
                                 </div>
-                            </div>
+
+
+                                {{--                            <div class="main-container">
+                                                                <div class="editor-container editor-container_classic-editor" id="editor-container">
+                                                                    <div class="editor-container__editor">
+                                                                        <textarea name="article" id="editor">{!! (old('article'))?:'' !!}</textarea>
+                                                                    </div>
+                                                                </div>
+                                                            </div>--}}
 
                             <div class="slotButtons slotButtons__right pad_t15">
                                 <div class=" text_input w_30">
@@ -134,11 +152,7 @@
                                                 <div class="_articles_text desc">{!!   $item->teasertext !!}</div>
                                             </div>
 
-                                    <div class="_articles_options">
-                                        <div class="_art_m _articles_options__more"><i></i><span>{!!   $item->viewer !!}</span></div>
-                                        <div class="_art_m _articles_options__date_create"><i></i><span>{{rusdate3($item->created_at)}}</span> </div>
-                                       {{-- <div class="_art_m _articles_options__date_update"><i></i><span>{{rusdate2($item->updated_at)}}</span></div>--}}
-                                    </div>
+                                        <x-dashboard.user.options.options_article :item="$item"/>
                                         <hr>
 
 

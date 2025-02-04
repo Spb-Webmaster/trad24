@@ -98,7 +98,7 @@ class CalendarEventResource extends ModelResource
                                 Image::make(__('Изображение'), 'teaser_img')
                                     ->disk(config('moonshine.disk', 'moonshine'))
                                     ->dir('calendar_events')
-                                    ->allowedExtensions(['jpg', 'png', 'jpeg', 'gif', 'svg'])
+                                    ->allowedExtensions(['jpg', 'png', 'jpeg', 'gif', 'svg', 'webp' ])
                                     ->removable()
                                     ->hint('Основное изображение. Обязательное поле.'),
 
@@ -144,7 +144,7 @@ class CalendarEventResource extends ModelResource
                                     ->showOnExport()
                                     ->disk(config('moonshine.disk', 'moonshine'))
                                     ->dir('calendar_events')
-                                    ->allowedExtensions(['jpg', 'png', 'jpeg', 'gif', 'svg'])
+                                    ->allowedExtensions(['jpg', 'png', 'jpeg', 'gif', 'svg' , 'webp'])
                                     ->removable()
                                     ->hint('На всю ширину макета'),
 
@@ -156,7 +156,7 @@ class CalendarEventResource extends ModelResource
                                     ->showOnExport()
                                     ->disk(config('moonshine.disk', 'moonshine'))
                                     ->dir('calendar_events')
-                                    ->allowedExtensions(['jpg', 'png', 'jpeg', 'gif', 'svg'])
+                                    ->allowedExtensions(['jpg', 'png', 'jpeg', 'gif', 'svg' , 'webp'])
                                     ->removable()
                                     ->hint('На всю ширину макета'),
 

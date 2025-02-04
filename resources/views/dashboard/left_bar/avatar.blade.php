@@ -1,5 +1,4 @@
     <x-forms.form-multipart
-
         action="{{ route('uploadAvatar') }}"
         method="POST"
         enctype="multipart/form-data"
@@ -12,9 +11,9 @@
     </div>
     </x-forms.form-multipart>
 
-<div id="result">
-    <!-- Результат из upload.php -->
-</div>
+    <div id="result">
+        <!-- Результат из upload.php -->
+    </div>
 
 
 

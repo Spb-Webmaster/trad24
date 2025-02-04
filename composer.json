@@ -14,6 +14,7 @@
         "laravel/sanctum": "^3.2",
         "laravel/tinker": "^2.8",
         "lee-to/moonshine-tree-resource": "^1.2",
+        "livewire/livewire": "^3.5",
         "moonshine/moonshine": "^2.20",
         "rap2hpoutre/fast-excel": "^5.4",
         "spatie/laravel-backup": "^9.1",

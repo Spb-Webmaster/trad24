@@ -15,7 +15,7 @@ class UserArticleViewModel
        return UserArticle::create([
             'user_id' => $user->id,
             'title' => $request->title_article,
-            'article' => $request->article,
+            'article' => textarea($request->article),
         ]);
     }
 
@@ -45,7 +45,7 @@ class UserArticleViewModel
             ->where('user_id', $user->id)
             ->update([
                 'title' => $request->title_article,
-                'article' => $request->article,
+                'article' => textarea($request->article),
             ]);
 
     }

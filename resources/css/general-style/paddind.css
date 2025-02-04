@@ -1,3 +1,27 @@
+.pad_t0 {
+  padding-top: 0px; }
+
+.pad_t0_important {
+  padding-top: 0px !important; }
+
+.pad_l0 {
+  padding-left: 0px; }
+
+.pad_l0_important {
+  padding-left: 0px !important; }
+
+.pad_b0 {
+  padding-bottom: 0px; }
+
+.pad_b0_important {
+  padding-bottom: 0px !important; }
+
+.pad_r0 {
+  padding-right: 0px; }
+
+.pad_r0_important {
+  padding-right: 0px !important; }
+
 .pad_t1 {
   padding-top: 1px; }
 

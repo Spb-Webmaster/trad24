@@ -17,9 +17,12 @@ input[type=text].inputClass, input[type=email].inputClass, input[type=date].inpu
 .labelInput {
   left: .8em;
   position: absolute;
-  top: 1.5em;
+  top: 1.3em;
   transition: all .1s linear;
   color: #667085; }
+
+textarea + .labelInput {
+  top: 11px !important; }
 
 .inputClass:focus + .labelInput,
 .inputClass + .labelInput.show {
@@ -27,8 +30,9 @@ input[type=text].inputClass, input[type=email].inputClass, input[type=date].inpu
   color: #00AFEF;
   left: .8em;
   padding: 0 .15em;
-  top: 1em;
-  font-size: 12px; }
+  font-size: 12px;
+  background: #fff;
+  top: 1em; }
 
 .errorBlade {
   font-size: 12px;
@@ -58,6 +62,11 @@ textarea.input {
   align-items: center;
   padding: 10px 10px 0 10px;
   margin: 2px 0; }
+
+textarea.inputClass {
+  padding-top: 26px !important;
+  white-space: pre-wrap;
+  position: relative; }
 
 #textarea_responce {
   min-height: 160px; }

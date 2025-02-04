@@ -17,14 +17,14 @@
                     <div class="cabinet__left">
                         <div class="cl">
 
-                            @include('dashboard.left_bar.left')
+                            @include('dashboard.left_bar.left', ['profile' => true])
 
                         </div>
                     </div>
 
                     <div class="cabinet__right">
 
-                        @include('dashboard.menu.cabinet_menu')
+                 {{--       @include('dashboard.menu.cabinet_menu')--}}
 
                         <div class="cabinet_radius12_fff">
 
@@ -38,14 +38,11 @@
 
 
 
-                                @include('dashboard.user_peoples.people._partial.user')
+                                <x-dashboard.user.user_avatar_email_phone :user="$item" />
 
                                 @include('dashboard.user_peoples.people._partial.menu')
 
-
-
-
-                                @if(isset($items))
+                             @if(isset($items))
                                     <div class="cabinet_ob_gallery grid pad_t20  pad_b20 ">
                                         @foreach($items as $k => $it)
                                             <div class="mItem" style="background-image: url('{{ asset(intervention('252x0', $it['img'], 'users/' . $item->id  . '/photos', 'scaleDown')) }}')"  >

@@ -13,9 +13,16 @@ npm i imask
 npm i slick
 npm i jquery
 очереди - https://phpqa.ru/post/ocheredi-v-laravel
+composer require livewire/livewire
+php artisan livewire:publish --config
+php artisan vendor:publish --tag=livewire:assets
+php artisan vendor:publish --tag=livewire:assets --force
 * */
 
 //import './bootstrap';
+
+
+
 import jQuery from 'jquery';
 window.$ = window.jQuery = jQuery;
 

@@ -19,6 +19,9 @@ class UserPeopleViewModel
     public function userPeoples():array | LengthAwarePaginator
     {
         $users =  User::query()->where('published', 1)
+            ->with('user_photo')
+            ->with('user_video')
+            ->with('user_article')
             ->orderBy('created_at', 'desc')
             ->paginate(config('site.constants.paginate'));
 

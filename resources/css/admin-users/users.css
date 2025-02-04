@@ -284,5 +284,63 @@
       width: 100%;
       padding: 5px 8px 10px 8px;
       border-bottom: 1px solid #dedede; } }
+.user25 {
+  display: flex;
+  justify-content: space-between;
+  min-height: 52px;
+  margin-bottom: 2px;
+  border-radius: 8px;
+  text-decoration: none;
+  color: #282828; }
+  .user25 .user25__avatar {
+    width: 5%;
+    min-width: 50px;
+    display: flex;
+    align-items: start;
+    justify-content: center;
+    flex-direction: column;
+    padding-left: 8px; }
+    .user25 .user25__avatar .user25__avatar_img {
+      border-radius: 30px;
+      border: 1px solid #ccc;
+      width: 30px;
+      height: 30px;
+      min-width: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-size: contain; }
+  .user25 .user25__name_birthday {
+    position: relative;
+    padding: 8px;
+    width: 45%; }
+    .user25 .user25__name_birthday .user25__birthday {
+      padding: 1px 0; }
+  .user25 .user25__email_phone {
+    position: relative;
+    padding: 8px;
+    width: 35%; }
+    .user25 .user25__email_phone .user25__phone {
+      color: #EF533F;
+      font-size: 14px;
+      padding: 1px 0; }
+  .user25 .user25__icons {
+    position: relative;
+    padding: 8px;
+    width: 15%;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    min-height: 52px;
+    color: #0969A4; }
+    .user25 .user25__icons div {
+      padding: 6px; }
+      .user25 .user25__icons div svg {
+        width: 20px;
+        height: 20px; }
+  .user25:nth-child(even) {
+    background: #dffefe; }
+  .user25:hover .user25__icons {
+    color: #EF533F; }
 
 /*# sourceMappingURL=users.css.map */

@@ -1,0 +1,211 @@
+@charset "utf-8";
+$color: #282828;
+$colorRed: #EF533F;
+$colorBlue: #0969A4;
+$colorCCC: #CCCCCC;
+$colorGrey: #667085;
+$colorBlue2: #00AFEF;
+$colorGreen: #00A357;
+
+
+$maxWidth: 1440;
+@mixin adaptiv-font($pcSize, $mobSize) {
+    $addSize: $pcSize - $mobSize;
+    $maxWidth: $maxWidth - 320;
+    font-size: calc(#{$mobSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidth}));
+}
+
+@mixin family {
+    font-family: 'Source Sans Pro', "Arial Narrow", Arial, Helvetica, sans-serif;
+
+}
+
+@mixin family_Philosopher {
+    font-family: "Philosopher", "Arial Narrow", Arial, Helvetica, sans-serif;
+}
+
+@mixin Inter {
+    font-family: 'Inter Variable', sans-serif;
+}
+
+@mixin Roboto {
+    font-family: 'Roboto Flex Variable', sans-serif;
+}
+
+.web_c_flex {
+    display: flex;
+    justify-content: space-between;
+
+    .web_c__left {
+        width: 11%;
+        min-width: 88px;
+    }
+
+    .web_c__center {
+        width: 78%;
+    }
+
+    .web_c__right {
+        width: 10%;
+        min-width: 80px;
+    }
+
+    .paper {
+        cursor: pointer;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 10px 0 0 0;
+        border: none !important;
+        background: none !important;
+        width: 100% !important;
+
+        svg {
+            transition: 0.2s;
+
+            width: 30px;
+            height: 30px;
+            color: $colorGrey;
+
+        }
+
+        &:hover {
+            svg {
+                width: 30px;
+                height: 30px;
+                color: $colorRed;
+            }
+        }
+    }
+
+
+}
+.web_comments_wrap {
+    padding:20px 0  10px 0;
+}
+.web_comment_wrap {
+    padding: 11px 0 0 0;
+}
+
+.web_comment {
+    padding: 1px 0 0 0;
+
+    .web_comment__flex {
+        display: flex;
+        padding: 0 0 20px 0;
+        margin: 0;
+    }
+
+    .web_comment__avatar {
+        width: 50px;
+        min-width: 50px;
+
+        .user25__avatar_img {
+            border-radius: 26px;
+            display: block;
+        }
+    }
+    .web_comment__text_wrap {
+        width: 100%;
+        min-height: 50px;
+        margin: 0 0 0 10px;
+        padding: 0 35px 24px 0;
+        line-height: 1.4em;
+        border-bottom: 1px solid rgb(224, 224, 224);
+    }
+    .web_comment__text {
+
+
+    }
+
+    .web_comment_date__flex {
+        display: flex;
+        min-height: 30px;
+        position: relative;
+        .web_comment__date {
+            color: #999999;
+            font-size: 15px;
+            position: relative;
+            top: 10px;
+            margin-right: 26px;
+            display: flex;
+            align-items: center;
+        }
+        .web_comment__answer {
+            color: $colorBlue;
+            font-size: 15px;
+            position: relative;
+            top: 10px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+        }
+        .web_comment__answer:hover {
+            text-decoration: underline;
+        }
+    }
+    .show_answer_form {
+        padding: 10px 0;
+    }
+}
+
+.comment_answer {
+    padding: 10px 0 0 0;
+    .web_c_answer_left {
+      width: 100%;
+
+    }
+    .web_c_answer_right {
+        min-width: 80px;
+
+    }
+
+}
+
+.livewire_component__comment {
+    padding: 20px 0 0 0;
+}
+
+.web_comment__delete {
+    position: relative;
+    button {
+        width: 30px;
+        min-width: 30px;
+        height: 30px;
+        color: $colorRed;
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        cursor: pointer;
+        z-index: 10;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        padding: 0;
+        border: none !important;
+        background: none !important;
+
+    }
+    svg {
+        width: 20px;
+        min-width: 20px;
+        height: 20px;
+        color: $colorRed;
+        position: absolute;
+        cursor: pointer;
+    }
+    svg:hover {
+        color: red;
+    }
+}
+
+.error_comment {
+    position: relative;
+    width: 100%;
+
+    .errorBlade {
+        padding: 0 !important;
+    }
+}

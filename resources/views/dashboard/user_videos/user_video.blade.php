@@ -39,7 +39,7 @@
 
                             @if(isset($item))
 
-                                <div class="_articles__foreach">
+                                <div class="_articles_full _articles__foreach">
                                         <div class="_articles__item">
                                             <div class="edit__absolute">
                                                 <div class="editMenuEdit">
@@ -68,14 +68,10 @@
                                             <div class="_video_emb">
                                                 {!!   youtube(fullYoutube($item->video),  658, 345) !!}
                                             </div>
-                                            <div class="_articles_text desc">{!!   $item->article !!}</div>
-                                        </div>
-                                        <div class="_articles_options">
-                                            <div class="_art_m _articles_options__more"><i></i><span>{!!   $item->viewer !!}</span></div>
-                                            <div class="_art_m _articles_options__date_create"><i></i><span>{{rusdate3($item->created_at)}}</span> </div>
-                                         {{--   <div class="_art_m _articles_options__date_update"><i></i><span>{{rusdate2($item->updated_at)}}</span></div>--}}
+                                            <div class="_articles_text desc ">{!!   $item->article !!}</div>
                                         </div>
 
+                                    <x-dashboard.user.options.options_article :item="$item"/>
 
                                 </div>
                             @endif

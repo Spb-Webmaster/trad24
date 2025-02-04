@@ -1,0 +1,126 @@
+.web_c_flex {
+  display: flex;
+  justify-content: space-between; }
+  .web_c_flex .web_c__left {
+    width: 11%;
+    min-width: 88px; }
+  .web_c_flex .web_c__center {
+    width: 78%; }
+  .web_c_flex .web_c__right {
+    width: 10%;
+    min-width: 80px; }
+  .web_c_flex .paper {
+    cursor: pointer;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 0 0 0;
+    border: none !important;
+    background: none !important;
+    width: 100% !important; }
+    .web_c_flex .paper svg {
+      transition: 0.2s;
+      width: 30px;
+      height: 30px;
+      color: #667085; }
+    .web_c_flex .paper:hover svg {
+      width: 30px;
+      height: 30px;
+      color: #EF533F; }
+
+.web_comments_wrap {
+  padding: 20px 0  10px 0; }
+
+.web_comment_wrap {
+  padding: 11px 0 0 0; }
+
+.web_comment {
+  padding: 1px 0 0 0; }
+  .web_comment .web_comment__flex {
+    display: flex;
+    padding: 0 0 20px 0;
+    margin: 0; }
+  .web_comment .web_comment__avatar {
+    width: 50px;
+    min-width: 50px; }
+    .web_comment .web_comment__avatar .user25__avatar_img {
+      border-radius: 26px;
+      display: block; }
+  .web_comment .web_comment__text_wrap {
+    width: 100%;
+    min-height: 50px;
+    margin: 0 0 0 10px;
+    padding: 0 35px 24px 0;
+    line-height: 1.4em;
+    border-bottom: 1px solid #e0e0e0; }
+  .web_comment .web_comment_date__flex {
+    display: flex;
+    min-height: 30px;
+    position: relative; }
+    .web_comment .web_comment_date__flex .web_comment__date {
+      color: #999999;
+      font-size: 15px;
+      position: relative;
+      top: 10px;
+      margin-right: 26px;
+      display: flex;
+      align-items: center; }
+    .web_comment .web_comment_date__flex .web_comment__answer {
+      color: #0969A4;
+      font-size: 15px;
+      position: relative;
+      top: 10px;
+      cursor: pointer;
+      display: flex;
+      align-items: center; }
+    .web_comment .web_comment_date__flex .web_comment__answer:hover {
+      text-decoration: underline; }
+  .web_comment .show_answer_form {
+    padding: 10px 0; }
+
+.comment_answer {
+  padding: 10px 0 0 0; }
+  .comment_answer .web_c_answer_left {
+    width: 100%; }
+  .comment_answer .web_c_answer_right {
+    min-width: 80px; }
+
+.livewire_component__comment {
+  padding: 20px 0 0 0; }
+
+.web_comment__delete {
+  position: relative; }
+  .web_comment__delete button {
+    width: 30px;
+    min-width: 30px;
+    height: 30px;
+    color: #EF533F;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    z-index: 10;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    border: none !important;
+    background: none !important; }
+  .web_comment__delete svg {
+    width: 20px;
+    min-width: 20px;
+    height: 20px;
+    color: #EF533F;
+    position: absolute;
+    cursor: pointer; }
+  .web_comment__delete svg:hover {
+    color: red; }
+
+.error_comment {
+  position: relative;
+  width: 100%; }
+  .error_comment .errorBlade {
+    padding: 0 !important; }
+
+/*# sourceMappingURL=comment.css.map */

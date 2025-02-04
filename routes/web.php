@@ -104,6 +104,35 @@ Route::controller(DashboardController::class)->group(function () {
         ->name('cabinet');
 
 
+/** свой профиль подробно, без редактирования */
+
+    Route::get('/cabinet/profile', 'profile')
+        ->middleware('auth.published')
+        ->name('cabinet.profile');
+
+    Route::get('/cabinet/profile/photos', 'profile_photos')
+        ->middleware('auth.published')
+        ->name('cabinet.profile_photos');
+
+    Route::get('/cabinet/profile/videos', 'profile_videos')
+        ->middleware('auth.published')
+        ->name('cabinet.profile_videos');
+
+    Route::get('/cabinet/profile/videos/{user_id}/video/{id}', 'profile_video')
+        ->middleware('auth.published')
+        ->name('cabinet.profile_video');
+
+    Route::get('/cabinet/profile/articles', 'profile_articles')
+        ->middleware('auth.published')
+        ->name('cabinet.profile_articles');
+
+    Route::get('/cabinet/profile/articles/{user_id}/article/{id}', 'profile_article')
+        ->middleware('auth.published')
+        ->name('cabinet.profile_article');
+
+/** свой профиль подробно, без редактирования */
+
+
     Route::get('/cabinet-blocked', 'blocked')
         ->middleware('auth.blocked')
         ->name('blocked');
@@ -138,7 +167,7 @@ Route::controller(UserPhotoAjaxController::class)->group(function () {
  */
 Route::controller(UserPhotoController::class)->group(function () {
 
-    Route::get('/cabinet/photos/{id}', 'page')
+    Route::get('/cabinet/photos/{user_id}', 'page')
         ->middleware('auth.published')
         ->name('cabinet.photos');
 
@@ -280,6 +309,18 @@ Route::controller(UserVideoController::class)->group(function () {
 
 /**
  *  ///////UserArticleController - статьи
+ */
+
+/**
+ *  livewire3
+ */
+
+//Route::post('/posts/save', Comment::class);
+/*Livewire::setScriptRoute(function ($handle) {
+    return Route::get('/custom/livewire/livewire.js', $handle);
+});*/
+/**
+ *  ///////livewire3
  */
 
 

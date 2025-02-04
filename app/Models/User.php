@@ -4,6 +4,7 @@ namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
 use App\Events\ResetPasswordEvent;
+use Domain\User\ViewModels\UserViewModel;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -51,7 +52,23 @@ class User extends Authenticatable
 
     public function user_photo(): HasMany
     {
-        return $this->hasMany(UserPhoto::class)->where('published', 1)->orderBy('created_at', 'desc');
+        return $this->hasMany(UserPhoto::class)->orderBy('created_at', 'desc');
+    }
+    public function user_video(): HasMany
+    {
+        return $this->hasMany(UserVideo::class)->orderBy('created_at', 'desc');
+    }
+    public function user_article(): HasMany
+    {
+        return $this->hasMany(UserArticle::class)->orderBy('created_at', 'desc');
+    }
+
+    /**
+     * @return integer
+     */
+
+    public function getUserCountPhotosAttribute() {
+        return UserViewModel::make()->user_photos($this->id);
     }
 
 

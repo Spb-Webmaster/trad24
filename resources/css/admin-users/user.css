@@ -1,3 +1,4 @@
+@charset "UTF-8";
 .dashboardBox__a_user .dashboardBox__col {
   display: flex;
   align-items: center; }
@@ -70,6 +71,30 @@
         color: #0969A4;
         border-bottom: 2px solid #0969A4; }
 
+/* левая часть ссылки на профиль порльзователя */
+.user_profile__links {
+  padding: 20px 0; }
+  .user_profile__links .user_profile__link a {
+    color: #282828;
+    text-decoration: none;
+    min-height: 30px;
+    padding: 10px 0 12px 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #F0F0F0; }
+  .user_profile__links .user_profile__link svg {
+    width: 24px;
+    min-width: 24px;
+    height: 24px;
+    color: #0969A4;
+    margin-right: 16px; }
+  .user_profile__links .user_profile__link a:hover {
+    color: #0969A4; }
+  .user_profile__links .user_profile__link:last-child a {
+    border-bottom: none; }
+
+/* ////левая часть ссылки на профиль порльзователя */
 @media screen and (max-width: 468px) {
   .cli_hot_user_Flex .site_avatar {
     width: 90px !important;

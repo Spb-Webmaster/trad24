@@ -252,13 +252,20 @@ if (!function_exists('shortcode')) {
 
 
 if (!function_exists('rusdate')) {
-    function rusdate($timestump): string|null
+    function rusdate($date): string|null
     {
-        $month = [1 => "Янв", 2 => "Фев", 3 => "Мар", 4 => "Апр", 5 => "Май", 6 => "Июн", 7 => "Июл", 8 => "Авг", 9 => "Сен", 10 => "Окт", 11 => "Ноя", 12 => "Дек"];
-        $return = date('d', $timestump);
-        $return .= " " . $month[date('n', $timestump)];
+        $timestump = strtotime($date);
+        $month = [1 => "янв.", 2 => "фев.", 3 => "мар.", 4 => "апр.", 5 => "май", 6 => "июн.", 7 => "июл.", 8 => "авг.", 9 => "сен.", 10 => "окт.", 11 => "ноя.", 12 => "дек."];
 
-        return $return;
+        $days = ['(вс)', '(пн)', '(вт)', '(ср)', '(чт)', '(пт)', '(сб)'];
+
+        $day = $days[date("w", strtotime($date))];
+        $m = $month[date('n', $timestump)];
+        $y = date('Y', $timestump);
+        $d = date('d', $timestump);
+
+        return $d . ' ' . $m . ' ' . $y;
+
     }
 }
 if (!function_exists('rusdate2')) {
@@ -496,6 +503,24 @@ if (!function_exists('rutube')) {
 
 
 
+
+
+/**
+ * textarea оствляем некоторрые теги
+ */
+
+if (!function_exists('textarea')) {
+    function textarea($str): string
+    {
+        if(is_string($str)) {
+            $result = strip_tags(nl2br($str), '<code><p><br><br /><br/><b><i><strong>');
+            return $result;
+        }
+
+        return  '';
+
+    }
+}
 
 
 

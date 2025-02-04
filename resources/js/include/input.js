@@ -10,7 +10,8 @@ export function input_label() {
             label.addClass(show);
         }
     });
-    $('.inputClass').change(function () {
+
+    $('body').on('change', '.inputClass', function (event) {
         let label = $(this).next('label');
         if ($(this).val() != '') {
             label.addClass(show);

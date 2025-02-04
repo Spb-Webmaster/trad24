@@ -22,6 +22,8 @@ class UserPeopleController extends Controller
         if ($user->id) {
             $items =  UserPeopleViewModel::make()->userPeoples();
 
+
+
             return view('dashboard.user_peoples.user_peoples', [
                 'user' => $user,
                 'items' => $items

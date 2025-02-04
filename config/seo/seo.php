@@ -1,6 +1,6 @@
 <?php
 return [
-    'title' => '',
+    'title' => 'Фамильная идентичность',
     'description' => '',
     'keywords' => '',
 

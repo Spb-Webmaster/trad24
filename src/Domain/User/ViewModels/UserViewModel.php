@@ -51,4 +51,17 @@ class UserViewModel
 
     }
 
+    /**
+     * @param $user_id
+     * @return int
+     */
+    public  function user_photos($user_id) {
+
+        $int = UserPhoto::query()
+            ->where('user_id' , $user_id )->count();
+        if($int) {
+            return $int;
+        }
+        return  0;
+    }
 }

@@ -438,6 +438,79 @@ $maxWidth: 1440;
 
 
 }
-.dashboardBox__a_users  {
 
+
+.user25 {
+        display: flex;
+    justify-content: space-between;
+        min-height: 52px;
+        margin-bottom: 2px;
+        border-radius: 8px;
+    text-decoration: none;
+    color: $color;
+    .user25__avatar {
+        width: 5%;
+        min-width: 50px;
+        display: flex;
+        align-items: start;
+        justify-content: center;
+        flex-direction: column;
+        padding-left: 8px;
+        .user25__avatar_img {
+            border-radius: 30px;
+            border: 1px solid #ccc;
+            width: 30px;
+            height: 30px;
+            min-width: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-size: contain;
+        }
+    }
+    .user25__name_birthday {
+        position: relative;
+        padding: 8px;
+        width: 45%;
+        .user25__birthday {
+            padding: 1px 0 ;
+        }
+
+    }
+    .user25__email_phone {
+        position: relative;
+        padding: 8px;
+        width: 35%;
+        .user25__phone {
+            color: $colorRed;
+            font-size: 14px;
+            padding: 1px 0;
+        }
+    }
+    .user25__icons {
+        position: relative;
+        padding: 8px;
+        width: 15%;
+        display: flex;
+        justify-content: end;
+        align-items: center;
+        min-height: 52px;
+        color: $colorBlue;
+
+        div {
+            padding:  6px;
+            svg {
+                width: 20px;
+                height: 20px;
+            }
+        }
+    }
+    &:nth-child(even) {
+        background: #dffefe ;
+    }
+    &:hover {
+        .user25__icons {
+color: $colorRed;
+        }
+    }
 }
