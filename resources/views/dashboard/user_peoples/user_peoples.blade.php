@@ -36,7 +36,7 @@
                             </div>
 
 
-                            @if(isset($items))
+                            @if(isset($items__))
                                 <div class="cabinet_ob_peoles pad_t20  pad_b20 desc">
 
                                     @foreach($items as $k => $item)
@@ -89,7 +89,7 @@
                                                         <x-dashboard.icons.articles/>
                                                     </div>
                                                 @endif
-                                                
+
 
                                             </div>
 
