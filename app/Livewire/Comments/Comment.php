@@ -32,6 +32,8 @@ class Comment extends Component
     {
 
         $create = $this->validate();
+
+
         if($create) {
             $this->create_comment($create, $this->model, $this->prefix);
 

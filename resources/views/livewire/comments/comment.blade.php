@@ -4,7 +4,6 @@
         <div class="web_c__left web_c_avatar">
             @if(isset($user->avatar))
 
-
                     <div class="site_avatar"
                          style="cursor: auto ;background-image: url('@if($user->avatar){{  asset(intervention('120x120', $user->avatar, 'users/' . $user->id  . '/avatar')) }} @endif '); width: 70px; height: 70px"></div>
 

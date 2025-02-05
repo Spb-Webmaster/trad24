@@ -21,15 +21,22 @@ trait MyTraitComment
         return  false;
     }
 
+
+
+
     public function load_comments($model, $prefix, $article_id ) {
 
         $result =  $model::query()
             ->where('user_'. $prefix .'_id', $article_id)
+            ->where('user_'. $prefix .'_comment_id', null)
+            ->where('published', 1)
             ->where('published', 1)
             ->with('user')
+            ->with('find')
+            ->with('parent')
             ->with('article')
             ->orderBy('created_at', 'desc')
-            ->get();
+            ->paginate(config('site.constants.paginate'));
         if($result) {
             return $result;
         }

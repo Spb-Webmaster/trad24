@@ -8,6 +8,7 @@ use App\Http\Controllers\Auth\SignInController;
 use App\Http\Controllers\Auth\SignUpController;
 use App\Http\Controllers\Calendar\CalendarEventController;
 use App\Http\Controllers\Dashboard\DashboardController;
+use App\Http\Controllers\Dashboard\Manager\ManagerController;
 use App\Http\Controllers\Dashboard\UserArticle\UserArticleController;
 use App\Http\Controllers\Dashboard\UserPeoples\People\UserPeopleArticleController;
 use App\Http\Controllers\Dashboard\UserPeoples\People\UserPeoplePhotosController;
@@ -24,6 +25,7 @@ use App\Http\Controllers\Info\InfoController;
 use App\Http\Controllers\Pages\PageController;
 use App\Http\Controllers\TestController;
 use App\Http\Controllers\Video\VideoController;
+use App\Http\Middleware\ManagerMiddleware;
 use Illuminate\Support\Facades\Route;
 use Spatie\Honeypot\ProtectAgainstSpam;
 
@@ -47,7 +49,6 @@ Route::controller(SignInController::class)->group(function () {
         ->middleware('guest')
         ->name('login');
     Route::post('/login', 'handle')
-
         ->name('login.handle');
 
 });
@@ -75,7 +76,7 @@ Route::controller(ForgotPasswordController::class)->group(function () {
 
 Route::controller(ResetPasswordController::class)->group(function () {
 
-    Route::get('/reset-password/{token}','page')
+    Route::get('/reset-password/{token}', 'page')
         ->middleware('guest')
         ->name('password.reset');
 
@@ -104,7 +105,7 @@ Route::controller(DashboardController::class)->group(function () {
         ->name('cabinet');
 
 
-/** свой профиль подробно, без редактирования */
+    /** свой профиль подробно, без редактирования */
 
     Route::get('/cabinet/profile', 'profile')
         ->middleware('auth.published')
@@ -130,7 +131,7 @@ Route::controller(DashboardController::class)->group(function () {
         ->middleware('auth.published')
         ->name('cabinet.profile_article');
 
-/** свой профиль подробно, без редактирования */
+    /** свой профиль подробно, без редактирования */
 
 
     Route::get('/cabinet-blocked', 'blocked')
@@ -228,7 +229,6 @@ Route::controller(UserPeopleArticleController::class)->group(function () {
 });
 
 
-
 /**
  *  ///////UserPhotoController
  */
@@ -262,8 +262,6 @@ Route::controller(UserArticleController::class)->group(function () {
     Route::post('/cabinet/update-articles', 'articleUpdate')
         ->middleware('auth.published')
         ->name('cabinet.article.update');
-
-
 
 
 });
@@ -303,8 +301,6 @@ Route::controller(UserVideoController::class)->group(function () {
         ->name('cabinet.video.update');
 
 
-
-
 });
 
 /**
@@ -323,169 +319,183 @@ Route::controller(UserVideoController::class)->group(function () {
  *  ///////livewire3
  */
 
-
-
-Route::controller(InfoController::class)->group(function () {
-
-    Route::get('/' . config('links.link.news'), 'infos')
-        ->name('infos');
-    Route::get('/' . config('links.link.news') . '/{slug}', 'info')
-        ->name('info');
-});
-Route::controller(VideoController::class)->group(function () {
-
-    Route::get('/' . config('links.link.video'), 'videos')
-        ->name('videos');
-    Route::get('/' . config('links.link.video') . '/{slug}', 'video')
-        ->name('video');
-});
-
 /**
- * страницы
+ * менеджеры
  */
 
-/**
- * каталог
- */
+Route::controller(ManagerController::class)->group(function () {
 
-
-Route::controller(AjaxController::class)->group(function () {
-    /* подставка в input в поиске */
-    Route::post('/search/big_autocomplete', 'bigAutocomplete');
-    Route::post('/search/top_autocomplete', 'topAutocomplete');
-    /* загрузка аватара*/
-    Route::post('/cabinet/upload-avatar', 'uploadAvatar')->name('uploadAvatar');
+    /** работа с user */
+    Route::get('/m_users', 'users')
+        ->name('m_users')
+        ->middleware(ManagerMiddleware::class);
 
 });
+    /**
+     * /////менеджеры
+     */
+
+    Route::controller(InfoController::class)->group(function () {
+
+        Route::get('/' . config('links.link.news'), 'infos')
+            ->name('infos');
+        Route::get('/' . config('links.link.news') . '/{slug}', 'info')
+            ->name('info');
+    });
+
+    Route::controller(VideoController::class)->group(function () {
+
+        Route::get('/' . config('links.link.video'), 'videos')
+            ->name('videos');
+        Route::get('/' . config('links.link.video') . '/{slug}', 'video')
+            ->name('video');
+    });
+
+    /**
+     * страницы
+     */
+
+    /**
+     * каталог
+     */
 
 
-/**
- * каталог
- */
+    Route::controller(AjaxController::class)->group(function () {
+        /* подставка в input в поиске */
+        Route::post('/search/big_autocomplete', 'bigAutocomplete');
+        Route::post('/search/top_autocomplete', 'topAutocomplete');
+        /* загрузка аватара*/
+        Route::post('/cabinet/upload-avatar', 'uploadAvatar')->name('uploadAvatar');
 
-
-/**
- *
- * фамилии
- */
-
-/**
- * категория - фамилии
- */
-Route::controller(FamilyCatalogController::class)->group(function () {
-
-    Route::get('/family/last-names', 'familyCategory')->name('familyCategory');
-    /** search */
-
-    Route::post('/search/top-search', 'topSearch')
-        ->name('form.search.top_search');
-
-    /** //search */
-});
-
-
-/**
- * гланая фамилии - Глава фамилии - выпадает
- */
-Route::controller(FamilyObjectController::class)->group(function () {
+    });
 
 
     /**
-     *  фамилии
+     * каталог
      */
-    Route::get('/family/last-names/{slug}/main', 'family')->name('family');
-    /**
-     * Глава фамилии
-     */
-    Route::get('/family/last-names/{family_slug}/main/{slug}', 'family_main')->name('family_main');
-
-    /**
-     * Новости  фамилии
-     */
-    Route::get('/family/last-names/{family_slug}/news', 'family_news')->name('family_news');
-
-    Route::get('/family/last-names/{family_slug}/news/{slug}', 'family_new')->name('family_new');
-
-    /**
-     * Категороия  - Фотогалереи  фамилии
-     */
-    Route::get('/family/last-names/{family_slug}/galleries', 'family_galleries')->name('family_galleries');
-
-    Route::get('/family/last-names/{family_slug}/galleries/{slug}', 'family_gallery')->name('family_gallery');
-
-    /**
-     * медиа
-     */
-    Route::get('/family/last-names/{family_slug}/media/{slug}', 'family_media')->name('family_media');
 
 
     /**
-     * Глава Благотоворительность
+     *
+     * фамилии
      */
-    Route::get('/family/last-names/{family_slug}/charity', 'family_charity')->name('family_charity');
-    /**
-     * Люди
-     */
-    Route::get('/family/last-names/{family_slug}/people', 'family_peoples')->name('family_peoples');
-    Route::get('/family/last-names/{family_slug}/people/{slug}', 'family_people')->name('family_people');
 
     /**
-     * Люди - герои (подкатегория)
+     * категория - фамилии
      */
-    Route::get('/family/last-names/{family_slug}/people/v/hero', 'family_heroes')->name('family_heroes');
-    Route::get('/family/last-names/{family_slug}/people/hero/v/{slug}', 'family_hero')->name('family_hero');
+    Route::controller(FamilyCatalogController::class)->group(function () {
 
-    /**
-     * Культурное наследие
-     */
-    Route::get('/family/last-names/{family_slug}/culture', 'family_cultures')->name('family_cultures');
-    Route::get('/family/last-names/{family_slug}/culture/{slug}', 'family_culture')->name('family_culture');
+        Route::get('/family/last-names', 'familyCategory')->name('familyCategory');
+        /** search */
 
+        Route::post('/search/top-search', 'topSearch')
+            ->name('form.search.top_search');
+
+        /** //search */
+    });
 
 
     /**
-     * Страницы в левое меню
+     * гланая фамилии - Глава фамилии - выпадает
      */
-    Route::get('/family/last-names/{family_slug}/page/{slug}', 'family_page')->name('family_page');
+    Route::controller(FamilyObjectController::class)->group(function () {
 
-});
+
+        /**
+         *  фамилии
+         */
+        Route::get('/family/last-names/{slug}/main', 'family')->name('family');
+        /**
+         * Глава фамилии
+         */
+        Route::get('/family/last-names/{family_slug}/main/{slug}', 'family_main')->name('family_main');
+
+        /**
+         * Новости  фамилии
+         */
+        Route::get('/family/last-names/{family_slug}/news', 'family_news')->name('family_news');
+
+        Route::get('/family/last-names/{family_slug}/news/{slug}', 'family_new')->name('family_new');
+
+        /**
+         * Категороия  - Фотогалереи  фамилии
+         */
+        Route::get('/family/last-names/{family_slug}/galleries', 'family_galleries')->name('family_galleries');
+
+        Route::get('/family/last-names/{family_slug}/galleries/{slug}', 'family_gallery')->name('family_gallery');
+
+        /**
+         * медиа
+         */
+        Route::get('/family/last-names/{family_slug}/media/{slug}', 'family_media')->name('family_media');
+
+
+        /**
+         * Глава Благотоворительность
+         */
+        Route::get('/family/last-names/{family_slug}/charity', 'family_charity')->name('family_charity');
+        /**
+         * Люди
+         */
+        Route::get('/family/last-names/{family_slug}/people', 'family_peoples')->name('family_peoples');
+        Route::get('/family/last-names/{family_slug}/people/{slug}', 'family_people')->name('family_people');
+
+        /**
+         * Люди - герои (подкатегория)
+         */
+        Route::get('/family/last-names/{family_slug}/people/v/hero', 'family_heroes')->name('family_heroes');
+        Route::get('/family/last-names/{family_slug}/people/hero/v/{slug}', 'family_hero')->name('family_hero');
+
+        /**
+         * Культурное наследие
+         */
+        Route::get('/family/last-names/{family_slug}/culture', 'family_cultures')->name('family_cultures');
+        Route::get('/family/last-names/{family_slug}/culture/{slug}', 'family_culture')->name('family_culture');
+
+
+        /**
+         * Страницы в левое меню
+         */
+        Route::get('/family/last-names/{family_slug}/page/{slug}', 'family_page')->name('family_page');
+
+    });
 
 
 // familyObjects
 
-Route::controller(FamilyHeadController::class)->group(function () {
+    Route::controller(FamilyHeadController::class)->group(function () {
 
-    Route::get('/head-family-name', 'head_familyname')->name('head_familyname');
+        Route::get('/head-family-name', 'head_familyname')->name('head_familyname');
 
-});
+    });
 
-/**
- * * /////////// фамилии
- */
+    /**
+     * * /////////// фамилии
+     */
 
-Route::controller(TestController::class)->group(function () {
+    Route::controller(TestController::class)->group(function () {
 
-    Route::get('/test', 'test')->name('test');
+        Route::get('/test', 'test')->name('test');
 
-});
+    });
 
-Route::controller(CalendarEventController::class)->group(function () {
+    Route::controller(CalendarEventController::class)->group(function () {
 
-    Route::get('/calendar-events', 'calendarEvents')->name('calendarEvents');
-    Route::get('/calendar-events/{slug}', 'calendarEvent')->name('calendarEvent');
+        Route::get('/calendar-events', 'calendarEvents')->name('calendarEvents');
+        Route::get('/calendar-events/{slug}', 'calendarEvent')->name('calendarEvent');
 
-});
+    });
 
-/**
- * страницы
- */
+    /**
+     * страницы
+     */
 
-Route::controller(PageController::class)->group(function () {
+    Route::controller(PageController::class)->group(function () {
 
-    Route::get('{page:slug}', 'page')->name('page');
-    Route::get('/religion/religion-list', 'religionList')->name('religion.list');
+        Route::get('{page:slug}', 'page')->name('page');
+        Route::get('/religion/religion-list', 'religionList')->name('religion.list');
 
-});
+    });
 
 /**
  * страницы

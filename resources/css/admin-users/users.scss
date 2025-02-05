@@ -439,6 +439,60 @@ $maxWidth: 1440;
 
 }
 
+/**
+мелкие иконки
+ */
+.user25_first {
+    display: flex;
+    justify-content: space-between;
+    min-height: 40px;
+    margin-bottom: 30px;
+    border-radius: 0;
+    text-decoration: none;
+    color: $colorGrey;
+    font-size: 12px;
+    border-bottom: 1px solid #ddd;
+    .user25__avatar_first {
+        padding: 2px 8px;
+        position: relative;
+        width: 5%;
+        min-width: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        .user25__avatar_img {
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: contain;
+            position: relative;
+            left: -6px;
+        }
+
+    }
+    .user25__name_birthday_first {
+        padding: 2px 8px;
+        position: relative;
+        width: 45%;
+        display: flex;
+        align-items: center;
+
+    }
+
+    .user25__email_phone_first {
+        padding: 2px 8px;
+        position: relative;
+        width: 35%;
+        display: flex;
+        align-items: center;
+    }
+    .user25__icons_first {
+        position: relative;
+        padding: 2px 8px;
+        width: 15%;
+        display: flex;
+        align-items: center;
+    }
+}
 
 .user25 {
         display: flex;
@@ -472,6 +526,10 @@ $maxWidth: 1440;
         position: relative;
         padding: 8px;
         width: 45%;
+        .user25__name {
+            font-weight: 600;
+        }
+
         .user25__birthday {
             padding: 1px 0 ;
         }
@@ -512,5 +570,228 @@ $maxWidth: 1440;
         .user25__icons {
 color: $colorRed;
         }
+    }
+}
+
+/**
+мелкие иконки
+ */
+/**
+среднии иконки
+ */
+
+.user25_m_first {
+    display: flex;
+    justify-content: space-between;
+    min-height: 40px;
+    margin-bottom: 30px;
+    border-radius: 0;
+    text-decoration: none;
+    color: $colorGrey;
+    font-size: 12px;
+    border-bottom: 1px solid #ddd;
+    .user25__avatar_first {
+        padding: 2px 8px;
+        position: relative;
+        width: 5%;
+        min-width: 70px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        .user25__avatar_img {
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: contain;
+            position: relative;
+            left: -6px;
+        }
+
+    }
+    .user25_m__self_first {
+        padding: 2px 8px;
+        position: relative;
+        width: 45%;
+        display: flex;
+        align-items: center;
+
+    }
+
+    .user25_m_list_first {
+        padding: 2px 8px;
+        position: relative;
+        width: 30%;
+        display: flex;
+        align-items: center;
+    }
+    .user25_m_gallery_first {
+        position: relative;
+        padding: 2px 8px;
+        width: 20%;
+        display: flex;
+        align-items: center;
+    }
+}
+
+.user25_m {
+        display: flex;
+    justify-content: space-between;
+        min-height: 92px;
+        margin-bottom: 2px;
+        border-radius: 8px;
+    text-decoration: none;
+    color: $color;
+    .user25__avatar {
+        width: 5%;
+        min-width: 70px;
+        display: flex;
+        align-items: start;
+        justify-content: center;
+        flex-direction: column;
+        padding-left: 8px;
+
+        .user25__avatar_img {
+            border-radius: 50px;
+            border: 1px solid #ccc;
+            width: 48px;
+            height: 48px;
+            min-width: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-size: contain;
+        }
+    }
+
+    .user25_m__self {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        position: relative;
+        padding: 8px;
+        width: 45%;
+        .user25_m__name {
+            color: $color;
+            font-size: 15px;
+            padding: 1px 0;
+            font-weight: 600;
+
+            &:hover {
+                color: $colorRed;
+            }
+        }
+        .user25_m__email {
+            font-size: 14px;
+            padding: 2px 0;
+        }
+        .user25_m__phone {
+            font-size: 14px;
+            padding: 2px 0;
+        }
+
+    }
+
+    .user25_m_list {
+        padding: 8px;
+        width: 30%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        position: relative;
+
+
+        .user25_m_list_item {
+            font-size: 15px;
+            padding: 1px 0;
+            display: flex;
+            align-items: center;
+            min-height: 28px;
+            text-decoration: none;
+            color: $color;
+            span {
+                text-decoration: underline;
+            }
+            i {
+                font-style: normal;
+            }
+            svg {
+                margin: 0 15px 0 0;
+                position: relative;
+                width: 20px;
+                height: 20px;
+            }
+            &:hover {
+                span {
+                    text-decoration: none;
+                }
+                svg {
+                    color: $colorRed;
+                }
+            }
+        }
+
+    }
+
+    .user25_m_gallery {
+        position: relative;
+        padding: 8px 5px;
+        width: 20%;
+        display: flex;
+        align-items: start;
+        flex-wrap: wrap;
+        min-height: 52px;
+        color: $colorBlue;
+
+        .user25_m_gallery__item {
+            width: 42px;
+            height: 42px;
+            min-width: 42px;
+            background-position: center;
+            background-repeat: no-repeat;
+            margin: 2px;
+            border-radius: 4px;
+
+        }
+
+        div {
+            padding:  6px;
+            svg {
+                width: 20px;
+                height: 20px;
+            }
+        }
+    }
+    &:nth-child(even) {
+        background: #cff4fc ;
+    }
+    &:hover {
+        .user25__icons {
+color: $colorRed;
+        }
+    }
+}
+/**
+среднии иконки
+ */
+
+.background_green {
+    background: rgba(89, 177, 74, .1215686275) !important;
+    border-radius: 8px
+}
+
+.background_biruza {
+    background: #cff4fc !important;
+    border-radius: 8px
+}
+
+.background_green {
+    background: #cff4fc !important;
+    border-radius: 8px
+}
+
+.background_alert {
+    background-color: #f8d7da !important;
+
+    div, p, a {
+        color: #842029 !important;
     }
 }

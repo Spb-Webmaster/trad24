@@ -12,6 +12,7 @@ import {localDataPicker, datepicker_birthdate,  datepicker_event} from "./includ
 import {grid} from "./include/image-loaded";
 import {mobile_menu, add__mobile_menu, mobile_menu_close} from "./include/mobile";
 import {article_toggle} from "./include/toggle";
+import {tooltip} from "./include/tooltip";
 
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -39,6 +40,7 @@ document.addEventListener('DOMContentLoaded', function () {
     mobile_menu_close() // закрытие мобильного меню
     article_toggle() // ЛК открыть-закрытиь иконка в статьях пользователя
     datepicker_event() // datepicker - события event
+    tooltip() // tooltip
 
 
 });

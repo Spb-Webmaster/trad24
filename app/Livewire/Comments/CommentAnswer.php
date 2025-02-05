@@ -2,11 +2,17 @@
 
 namespace App\Livewire\Comments;
 
+use App\Livewire\Comments\Traits\MyTraitComment;
 use Livewire\Attributes\Validate;
 use Livewire\Component;
+use Support\Traits\Makeable;
 
 class CommentAnswer extends Component
 {
+
+    use MyTraitComment;
+    use Makeable;
+
     #[Validate('required', message: 'Введите комментарий')]
     #[Validate('min:3', message: 'Минимум три знака')]
     #[Validate('max:2500', message: 'Максимально 2500 знаков')]
@@ -18,32 +24,33 @@ class CommentAnswer extends Component
     #[Validate('required')]
     public int $comment_id; /** id коммента к которому коммент */
 
+    #[Validate('required')]
     public int $user_id; /** тот кто комментирует */
 
     public string $model; /** передаем из blade нужную model*/
-
+    public string $prefix = ''; /** передаем из blade нужный префикс model (пример article)*/
 
     public function save()
     {
+
         $create = $this->validate();
 
+        if($create) {
+            $this->create_comment($create, $this->model, $this->prefix);
 
-        $create['text'] = textarea($create['text']);
-        $create['user_article_id'] = ($create['article_id'])??null;
-        $create['user_article_comment_id'] = ($create['comment_id'])??null;
+            $this->reset('text');
+            $this->dispatch('comment_created');
+        }
 
-        $this->model::create($create);
         $this->reset('text');
-        $this->dispatch('comment_created');
+
 
     }
-
 
     public function render()
     {
 
         $user = auth()->user();
-
         return view('livewire.comments.comment-answer',['user' => $user]);
     }
 }

@@ -26,14 +26,17 @@ return new class extends Migration
                 ->constrained()
                 ->cascadeOnUpdate()
                 ->cascadeOnDelete();
+
             $table->foreignIdFor(UserArticle::class)
                 ->nullable()
                 ->constrained()
                 ->cascadeOnUpdate()
                 ->cascadeOnDelete();
+
             $table->foreignIdFor(UserArticleComment::class)
                 ->nullable()
                 ->constrained();
+
             $table->integer('published')->default(1);
             $table->integer('sorting')->default(999);
             $table->timestamps();

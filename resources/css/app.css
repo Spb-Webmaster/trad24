@@ -30,6 +30,8 @@
 @import "./general-style/width.scss";
 @import "./fancybox.scss";
 @import "./blocks/select.scss";
+@import "./html/tooltip/tooltip.scss";
+@import "./admin-users/manager.scss";
 @import "./admin-users/users.scss";
 @import "./admin-users/user.scss";
 @import "./cabinet/articles.scss";

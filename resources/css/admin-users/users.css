@@ -284,6 +284,52 @@
       width: 100%;
       padding: 5px 8px 10px 8px;
       border-bottom: 1px solid #dedede; } }
+/**
+мелкие иконки
+ */
+.user25_first {
+  display: flex;
+  justify-content: space-between;
+  min-height: 40px;
+  margin-bottom: 30px;
+  border-radius: 0;
+  text-decoration: none;
+  color: #667085;
+  font-size: 12px;
+  border-bottom: 1px solid #ddd; }
+  .user25_first .user25__avatar_first {
+    padding: 2px 8px;
+    position: relative;
+    width: 5%;
+    min-width: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center; }
+    .user25_first .user25__avatar_first .user25__avatar_img {
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: contain;
+      position: relative;
+      left: -6px; }
+  .user25_first .user25__name_birthday_first {
+    padding: 2px 8px;
+    position: relative;
+    width: 45%;
+    display: flex;
+    align-items: center; }
+  .user25_first .user25__email_phone_first {
+    padding: 2px 8px;
+    position: relative;
+    width: 35%;
+    display: flex;
+    align-items: center; }
+  .user25_first .user25__icons_first {
+    position: relative;
+    padding: 2px 8px;
+    width: 15%;
+    display: flex;
+    align-items: center; }
+
 .user25 {
   display: flex;
   justify-content: space-between;
@@ -314,6 +360,8 @@
     position: relative;
     padding: 8px;
     width: 45%; }
+    .user25 .user25__name_birthday .user25__name {
+      font-weight: 600; }
     .user25 .user25__name_birthday .user25__birthday {
       padding: 1px 0; }
   .user25 .user25__email_phone {
@@ -342,5 +390,175 @@
     background: #dffefe; }
   .user25:hover .user25__icons {
     color: #EF533F; }
+
+/**
+мелкие иконки
+ */
+/**
+среднии иконки
+ */
+.user25_m_first {
+  display: flex;
+  justify-content: space-between;
+  min-height: 40px;
+  margin-bottom: 30px;
+  border-radius: 0;
+  text-decoration: none;
+  color: #667085;
+  font-size: 12px;
+  border-bottom: 1px solid #ddd; }
+  .user25_m_first .user25__avatar_first {
+    padding: 2px 8px;
+    position: relative;
+    width: 5%;
+    min-width: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center; }
+    .user25_m_first .user25__avatar_first .user25__avatar_img {
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: contain;
+      position: relative;
+      left: -6px; }
+  .user25_m_first .user25_m__self_first {
+    padding: 2px 8px;
+    position: relative;
+    width: 45%;
+    display: flex;
+    align-items: center; }
+  .user25_m_first .user25_m_list_first {
+    padding: 2px 8px;
+    position: relative;
+    width: 30%;
+    display: flex;
+    align-items: center; }
+  .user25_m_first .user25_m_gallery_first {
+    position: relative;
+    padding: 2px 8px;
+    width: 20%;
+    display: flex;
+    align-items: center; }
+
+.user25_m {
+  display: flex;
+  justify-content: space-between;
+  min-height: 92px;
+  margin-bottom: 2px;
+  border-radius: 8px;
+  text-decoration: none;
+  color: #282828; }
+  .user25_m .user25__avatar {
+    width: 5%;
+    min-width: 70px;
+    display: flex;
+    align-items: start;
+    justify-content: center;
+    flex-direction: column;
+    padding-left: 8px; }
+    .user25_m .user25__avatar .user25__avatar_img {
+      border-radius: 50px;
+      border: 1px solid #ccc;
+      width: 48px;
+      height: 48px;
+      min-width: 48px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-size: contain; }
+  .user25_m .user25_m__self {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    padding: 8px;
+    width: 45%; }
+    .user25_m .user25_m__self .user25_m__name {
+      color: #282828;
+      font-size: 15px;
+      padding: 1px 0;
+      font-weight: 600; }
+      .user25_m .user25_m__self .user25_m__name:hover {
+        color: #EF533F; }
+    .user25_m .user25_m__self .user25_m__email {
+      font-size: 14px;
+      padding: 2px 0; }
+    .user25_m .user25_m__self .user25_m__phone {
+      font-size: 14px;
+      padding: 2px 0; }
+  .user25_m .user25_m_list {
+    padding: 8px;
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative; }
+    .user25_m .user25_m_list .user25_m_list_item {
+      font-size: 15px;
+      padding: 1px 0;
+      display: flex;
+      align-items: center;
+      min-height: 28px;
+      text-decoration: none;
+      color: #282828; }
+      .user25_m .user25_m_list .user25_m_list_item span {
+        text-decoration: underline; }
+      .user25_m .user25_m_list .user25_m_list_item i {
+        font-style: normal; }
+      .user25_m .user25_m_list .user25_m_list_item svg {
+        margin: 0 15px 0 0;
+        position: relative;
+        width: 20px;
+        height: 20px; }
+      .user25_m .user25_m_list .user25_m_list_item:hover span {
+        text-decoration: none; }
+      .user25_m .user25_m_list .user25_m_list_item:hover svg {
+        color: #EF533F; }
+  .user25_m .user25_m_gallery {
+    position: relative;
+    padding: 8px 5px;
+    width: 20%;
+    display: flex;
+    align-items: start;
+    flex-wrap: wrap;
+    min-height: 52px;
+    color: #0969A4; }
+    .user25_m .user25_m_gallery .user25_m_gallery__item {
+      width: 42px;
+      height: 42px;
+      min-width: 42px;
+      background-position: center;
+      background-repeat: no-repeat;
+      margin: 2px;
+      border-radius: 4px; }
+    .user25_m .user25_m_gallery div {
+      padding: 6px; }
+      .user25_m .user25_m_gallery div svg {
+        width: 20px;
+        height: 20px; }
+  .user25_m:nth-child(even) {
+    background: #cff4fc; }
+  .user25_m:hover .user25__icons {
+    color: #EF533F; }
+
+/**
+среднии иконки
+ */
+.background_green {
+  background: rgba(89, 177, 74, 0.1215686275) !important;
+  border-radius: 8px; }
+
+.background_biruza {
+  background: #cff4fc !important;
+  border-radius: 8px; }
+
+.background_green {
+  background: #cff4fc !important;
+  border-radius: 8px; }
+
+.background_alert {
+  background-color: #f8d7da !important; }
+  .background_alert div, .background_alert p, .background_alert a {
+    color: #842029 !important; }
 
 /*# sourceMappingURL=users.css.map */

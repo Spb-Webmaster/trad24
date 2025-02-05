@@ -14,6 +14,7 @@
                     @enderror
                     <input type="hidden" wire:model="article_id"/>
                     <input type="hidden" wire:model="comment_id"/>
+                    <input type="hidden" wire:model="user_id"/>
                 </div>
 
 

@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace App\MoonShine\Resources;
 
-use App\Models\UserRole;
 use Illuminate\Contracts\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\User;
@@ -95,6 +94,17 @@ class UserResource extends ModelResource
                 Tabs::make([
 
                     Tab::make(__('Общие настройки'), [
+                        Grid::make([
+                            Column::make([
+                                Collapse::make('Сделать пользователя менеджером', [
+
+                                    Switcher::make('Менеджер', 'manager')->default(0)->hint('Включая эту опцию, вы добавляете пользователю большие полномочия, по редактированию личного кабинета других пользователей'),
+
+                                ]),
+
+                            ])
+                                ->columnSpan(12),
+                        ]),
                         Grid::make([
                             Column::make([
 

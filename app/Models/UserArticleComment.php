@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class UserArticleComment extends Model
 {
@@ -15,7 +16,6 @@ class UserArticleComment extends Model
         'user_id',
         'user_article_id',
         'user_article_comment_id',
-        'parent_id',
         'viewer',
         'params',
         'sorting',
@@ -35,6 +35,11 @@ class UserArticleComment extends Model
     public function parent(): BelongsTo
     {
         return $this->belongsTo(self::class, 'user_article_comment_id');
+    }
+
+    public function find(): HasMany
+    {
+        return $this->hasMany(self::class)->orderBy('created_at', 'desc');
     }
 
     public function getToAnswerAttribute(): bool

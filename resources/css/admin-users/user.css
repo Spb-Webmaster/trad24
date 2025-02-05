@@ -89,6 +89,7 @@
     height: 24px;
     color: #0969A4;
     margin-right: 16px; }
+  .user_profile__links .user_profile__link.active a,
   .user_profile__links .user_profile__link a:hover {
     color: #0969A4; }
   .user_profile__links .user_profile__link:last-child a {

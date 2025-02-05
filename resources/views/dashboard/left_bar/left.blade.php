@@ -14,6 +14,39 @@
 </div>
 <br>
 <br>
+
+@if(isset($user->manager))
+    <div class="cabinet_radius12_fff pad_t10_important pad_b10_important">
+        <div class="c__title_manager">
+            <h4>Панель менеджера</h4>
+        </div>
+
+        <div class="user_profile__links pad_t2_important">
+
+            <div class="user_profile__link  {{ active_linkMenu(route('m_users') , 'find' )  }}">
+                <a href="{{route('m_users')}}">
+                    <x-dashboard.icons.users_solid title="Список пользователей сайта"/>
+                    <span>Пользователи</span></a>
+            </div>
+            <div class="user_profile__link">
+                <a href="#">
+                    <x-dashboard.icons.photos_solid title="Новые загруженные изображения пользователями сайта"/>
+                    <span>Новые фото</span></a>
+            </div>
+            <div class="user_profile__link">
+                <a href="#">
+                    <x-dashboard.icons.videos title="Новые ссылки на видео от пользователей сайта" />
+                    <span>Новые видео</span></a>
+            </div>
+
+
+
+        </div>
+    </div>
+    <br>
+    <br>
+@endif
+
 @if(isset($profile))
     <div class="cabinet_radius12_fff pad_t10_important pad_b10_important">
 
@@ -25,7 +58,7 @@
                     <span>Профиль</span></a>
             </div>
 
-           <div class="user_profile__link a_users_solid">
+            <div class="user_profile__link a_users_solid">
                 <a href="{{ route('cabinet.peoples') }}">
                     <x-dashboard.icons.users_solid/>
                     <span>Люди</span></a>
@@ -39,7 +72,7 @@
 
             <div class="user_profile__link a_users_solid">
                 <a href="{{ route('cabinet.videos', ['user_id' => auth()->user()->id ]) }}">
-                    <x-dashboard.icons.users_solid/>
+                    <x-dashboard.icons.videos/>
                     <span>Видео</span></a>
             </div>
 

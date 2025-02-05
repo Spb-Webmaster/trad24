@@ -81,9 +81,11 @@ $maxWidth: 1440;
 
 
 }
+
 .web_comments_wrap {
-    padding:20px 0  10px 0;
+    padding: 20px 0 10px 0;
 }
+
 .web_comment_wrap {
     padding: 11px 0 0 0;
 }
@@ -106,16 +108,17 @@ $maxWidth: 1440;
             display: block;
         }
     }
+
     .web_comment__text_wrap {
         width: 100%;
         min-height: 50px;
         margin: 0 0 0 10px;
-        padding: 0 35px 24px 0;
-        line-height: 1.4em;
+        padding: 0 35px 34px 0;
         border-bottom: 1px solid rgb(224, 224, 224);
     }
-    .web_comment__text {
 
+    .web_comment__text {
+        line-height: 1.4em;
 
     }
 
@@ -123,6 +126,7 @@ $maxWidth: 1440;
         display: flex;
         min-height: 30px;
         position: relative;
+
         .web_comment__date {
             color: #999999;
             font-size: 15px;
@@ -132,6 +136,7 @@ $maxWidth: 1440;
             display: flex;
             align-items: center;
         }
+
         .web_comment__answer {
             color: $colorBlue;
             font-size: 15px;
@@ -141,21 +146,25 @@ $maxWidth: 1440;
             display: flex;
             align-items: center;
         }
+
         .web_comment__answer:hover {
             text-decoration: underline;
         }
     }
+
     .show_answer_form {
         padding: 10px 0;
     }
 }
 
 .comment_answer {
-    padding: 10px 0 0 0;
+    padding: 26px 0 0 0;
+
     .web_c_answer_left {
-      width: 100%;
+        width: 100%;
 
     }
+
     .web_c_answer_right {
         min-width: 80px;
 
@@ -169,6 +178,7 @@ $maxWidth: 1440;
 
 .web_comment__delete {
     position: relative;
+
     button {
         width: 30px;
         min-width: 30px;
@@ -188,6 +198,7 @@ $maxWidth: 1440;
         background: none !important;
 
     }
+
     svg {
         width: 20px;
         min-width: 20px;
@@ -196,10 +207,59 @@ $maxWidth: 1440;
         position: absolute;
         cursor: pointer;
     }
+
     svg:hover {
         color: red;
     }
 }
+
+
+
+.web_comment__find {
+    padding-top: 30px;
+
+    .web_comment__text_wrap {
+        padding-right: 0;
+        padding-bottom: 16px;
+    }
+    .web_comment__text {
+        min-height: 40px;
+        padding-right: 26px;
+
+    }
+
+    .web_comment__flex:last-child {
+        padding-bottom: 0;
+
+        .web_comment__text_wrap {
+            border-bottom: none;
+        }
+    }
+
+    .comment_find__delete {
+        button {
+            top: inherit;
+            bottom: -6px;
+            right: 0;
+
+
+
+
+        }
+    }
+
+
+    .web_comment_date_find__flex {
+        padding-top: 16px;
+        justify-content: space-between;
+        width: 100%;
+        .web_comment__date {
+            top: 0;
+        }
+    }
+
+}
+
 
 .error_comment {
     position: relative;

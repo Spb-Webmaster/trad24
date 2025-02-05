@@ -29,6 +29,7 @@ class User extends Authenticatable
         'published',
         'city',
         'fio',
+        'manager'
     ];
 
     /**
@@ -53,6 +54,10 @@ class User extends Authenticatable
     public function user_photo(): HasMany
     {
         return $this->hasMany(UserPhoto::class)->orderBy('created_at', 'desc');
+    }
+    public function user_photo_9(): HasMany
+    {
+        return $this->hasMany(UserPhoto::class)->orderBy('created_at', 'desc')->limit(9);
     }
     public function user_video(): HasMany
     {
