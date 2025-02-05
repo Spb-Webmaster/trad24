@@ -56,9 +56,6 @@
                                             </div>
                                         </div>
 
-
-
-
                                     @foreach($items as $k => $item)
 
                                         <div class="user25_m  @if(!$item->published) background_alert @endif ">
