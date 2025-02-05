@@ -1,0 +1,19 @@
+.c__title_manager {
+  position: relative; }
+  .c__title_manager h3, .c__title_manager h4 {
+    padding: 24px 0 10px 0;
+    margin-bottom: 18px;
+    font-size: 19px;
+    font-weight: 600;
+    border-bottom: 2px solid #E0E0E0;
+    position: relative; }
+  .c__title_manager h3:after, .c__title_manager h4:after {
+    position: relative;
+    content: '';
+    display: flex;
+    width: 68px;
+    height: 2px;
+    background: #0969A4;
+    bottom: -12px; }
+
+/*# sourceMappingURL=manager.css.map */
