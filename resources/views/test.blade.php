@@ -18,7 +18,7 @@
             </div>
 --}}
 
-            <form action="{{ route('test') }}" method="post"   enctype="multipart/form-data">
+      {{--      <form action="{{ route('test') }}" method="post"   enctype="multipart/form-data">
                 @csrf
                 <input type="file" accept="video/mp4, video/mpeg" name="video" />
                 <input type="submit" value="Загрузить" />
@@ -30,6 +30,6 @@
                 </div>
             @endif
 
-        </div>
+        </div>--}}
     </main>
 @endsection

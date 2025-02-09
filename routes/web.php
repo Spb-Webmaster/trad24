@@ -506,9 +506,9 @@ Route::controller(ManagerController::class)->group(function () {
 
     Route::controller(TestController::class)->group(function () {
 
-        Route::get('/test', 'test')->name('test');
+/*        Route::get('/test', 'test')->name('test');
         Route::post('/test', 'upload')->name('test');
-        Route::post('/cabinet/upload_v', 'upload_v')->name('upload_v');
+        Route::post('/cabinet/upload_v', 'upload_v')->name('upload_v');*/
 
 
     });

@@ -20,6 +20,8 @@ class TestController extends Controller
             'video' => 'required|file',
         ]);
 
+        dd('stop');
+
         /** @var  $fileName / загрузка к себе */
  /*       $fileName = $this->upload_self($request);
         if ($fileName) {
@@ -76,6 +78,8 @@ class TestController extends Controller
         $this->validate($request, [
             'video' => 'required|file',
         ]);
+
+        dd('stop');
 
         $fileName = $request->video->getClientOriginalName();
         $filePath = 'videos/' . $fileName;
