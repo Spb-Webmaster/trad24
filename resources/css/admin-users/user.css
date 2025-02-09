@@ -96,6 +96,27 @@
     border-bottom: none; }
 
 /* ////левая часть ссылки на профиль порльзователя */
+.user_blocked__flex {
+  display: flex;
+  min-height: 34px; }
+  .user_blocked__flex .user_blocked__left {
+    min-height: 34px;
+    padding-right: 30px; }
+  .user_blocked__flex .user_blocked__right {
+    display: flex;
+    align-items: center;
+    min-height: 34px; }
+  .user_blocked__flex .green_mess {
+    color: #fff;
+    background: #43D38B;
+    padding: 4px;
+    border-radius: 4px; }
+  .user_blocked__flex .red_mess {
+    color: #fff;
+    background: #EF533F;
+    padding: 4px;
+    border-radius: 4px; }
+
 @media screen and (max-width: 468px) {
   .cli_hot_user_Flex .site_avatar {
     width: 90px !important;

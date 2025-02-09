@@ -330,6 +330,31 @@ Route::controller(ManagerController::class)->group(function () {
         ->name('m_users')
         ->middleware(ManagerMiddleware::class);
 
+    Route::get('/m_users/user/{user_id}', 'user')
+        ->name('m_user')
+        ->middleware(ManagerMiddleware::class);
+
+    Route::get('/m_users/user/{user_id}/photos', 'm_user_photos')
+        ->name('m_user_photos')
+        ->middleware(ManagerMiddleware::class);
+
+    Route::get('/m_users/user/{user_id}/videos', 'm_user_videos')
+        ->name('m_user_videos')
+        ->middleware(ManagerMiddleware::class);
+
+    Route::get('/m_users/user/{user_id}/videos/video/{id}', 'm_user_video')
+        ->name('m_user_video')
+        ->middleware(ManagerMiddleware::class);
+
+    Route::get('/m_users/user/{user_id}/articles', 'm_user_articles')
+        ->name('m_user_articles')
+        ->middleware(ManagerMiddleware::class);
+
+    Route::get('/m_users/user/{user_id}/articles/article/{id}', 'm_user_article')
+        ->name('m_user_article')
+        ->middleware(ManagerMiddleware::class);
+
+
 });
     /**
      * /////менеджеры
@@ -361,11 +386,17 @@ Route::controller(ManagerController::class)->group(function () {
 
 
     Route::controller(AjaxController::class)->group(function () {
-        /* подставка в input в поиске */
+        /** подставка в input в поиске */
         Route::post('/search/big_autocomplete', 'bigAutocomplete');
         Route::post('/search/top_autocomplete', 'topAutocomplete');
-        /* загрузка аватара*/
+        /** загрузка аватара*/
         Route::post('/cabinet/upload-avatar', 'uploadAvatar')->name('uploadAvatar');
+        /** удаление */
+        Route::post('/cabinet/object-delete', 'deleteObject')->name('deleteObject')->middleware(ManagerMiddleware::class);
+        /** удаление только одного */
+        Route::post('/cabinet/object-one-delete', 'deleteOneObject')->name('deleteOneObject')->middleware(ManagerMiddleware::class);
+        /** публикация или блокировка */
+        Route::post('/cabinet/published_user', 'publishedUser')->name('publishedUser')->middleware(ManagerMiddleware::class);
 
     });
 
@@ -476,6 +507,9 @@ Route::controller(ManagerController::class)->group(function () {
     Route::controller(TestController::class)->group(function () {
 
         Route::get('/test', 'test')->name('test');
+        Route::post('/test', 'upload')->name('test');
+        Route::post('/cabinet/upload_v', 'upload_v')->name('upload_v');
+
 
     });
 

@@ -63,7 +63,7 @@
 
                                             <div class="user25__avatar">
                                                 @if(isset($item->avatar))
-                                                    <a href="#" class="user25__avatar_img"
+                                                    <a href="{{ route('m_user', ['user_id' => $item->id]) }}" class="user25__avatar_img"
                                                          style="background-image: url('{{  asset(intervention('48x48', $item->avatar, 'users/' . $item->id  . '/avatar')) }}'); width: 48px; height: 48px">
                                                     </a>
                                                 @else
@@ -73,7 +73,7 @@
                                             </div>
 
                                             <div class="user25_m__self">
-                                                <a href="#"
+                                                <a href="{{ route('m_user', ['user_id' => $item->id]) }}"
                                                     class="user25_m__name">{{ $item->name }}</a>
                                                 <div
                                                     class="user25_m__email">{{ $item->email }}</div>
@@ -84,11 +84,11 @@
 
                                             <div class="user25_m_list">
 
-                                            <a href="#" class="user25_m_list_item user25_m_photos"><x-dashboard.icons.photos/> <span>Изображений</span> — <i>{{ count($item->user_photo) }}</i></a>
+                                                <a href="{{ route('m_user_photos' , ['user_id' => $item->id] ) }}" class="user25_m_list_item user25_m_photos"><x-dashboard.icons.photos/> <span>Изображений</span> — <i>{{ count($item->user_photo) }}</i></a>
 
-                                            <a href="#" class="user25_m_list_item user25_m_videos"><x-dashboard.icons.videos/> <span>Видоефайлов</span> — <i>{{ count($item->user_video) }}</i></a>
+                                                <a href="{{ route('m_user_videos' , ['user_id' => $item->id] ) }}" class="user25_m_list_item user25_m_videos"><x-dashboard.icons.videos/> <span>Видоефайлов</span> — <i>{{ count($item->user_video) }}</i></a>
 
-                                            <a href="#" class="user25_m_list_item user25_m_articles"><x-dashboard.icons.articles/> <span>Статей</span> — <i>{{ count($item->user_article) }}</i></a>
+                                                <a href="{{ route('m_user_articles' , ['user_id' => $item->id] ) }}" class="user25_m_list_item user25_m_articles"><x-dashboard.icons.articles/> <span>Статей</span> — <i>{{ count($item->user_article) }}</i></a>
 
                                             </div>
 

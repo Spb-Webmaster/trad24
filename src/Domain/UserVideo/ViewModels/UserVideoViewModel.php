@@ -17,7 +17,7 @@ class UserVideoViewModel
        return UserVideo::create([
             'user_id' => $user->id,
             'title' => $request->title_video,
-            'video' => codeYoutube($request->video),
+            'video' => trim($request->video),
            'article' => \textarea($request->article),
         ]);
     }
@@ -48,7 +48,7 @@ class UserVideoViewModel
             ->where('user_id', $user->id)
             ->update([
                 'title' => $request->title_video,
-                'video' => codeYoutube($request->video),
+                'video' => trim($request->video),
                 'article' => \textarea($request->article),
             ]);
 

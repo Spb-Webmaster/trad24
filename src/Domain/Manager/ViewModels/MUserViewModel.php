@@ -14,7 +14,6 @@ class MUserViewModel
     use Makeable;
 
 
-
     public function users()
     {
 
@@ -42,16 +41,31 @@ class MUserViewModel
     {
         $user = User::query()
             ->where('id', $id)
-            ->with('user_list')
-            ->with('user_type')
-            ->with('user_language')
-            ->with('user_city')
+            ->with('user_photo')
+            ->with('user_video')
+            ->with('user_article')
             ->first();
         return $user;
     }
 
 
-    public function  user_search($request)
+    public function published_user($request)
+    {
+        $user = User::query()
+            ->where('id', $request->id)
+            ->update([
+                'published' => $request->published
+            ]);
+
+        if ($user) {
+            return $user;
+        }
+        return false;
+
+    }
+
+
+    public function user_search($request)
     {
         $users = User::query()
             ->where("name", "like", "%" . $request->search . "%")
@@ -59,11 +73,62 @@ class MUserViewModel
             ->orWhere("email", "like", "%" . $request->search . "%")
             ->paginate(config('site.constants.paginate'));
 
-        if($users) {
+        if ($users) {
             return $users;
         }
         return [];
 
     }
+
+
+    /**
+     * @param $request
+     * удалить много элементов таблицы
+     */
+
+    public function delete_objects($request)
+    {
+
+        $result = [];
+
+        $model = $request->model; // модель типа App\Models\UserArticle
+        if($model) {
+            foreach ($request->objects as $id) {
+                if ($row = $model::findOrFail($id['object'])) {
+
+                    $result[] = $row->delete();
+
+                }
+            }
+        }
+
+        return $result;
+    }
+
+
+    /**
+     * @param $request
+     * удалить определенную сущьность
+     */
+
+    public function delete_one_object($request)
+    {
+
+        if ($request->model) {
+
+
+            $model = $request->model; // модель типа App\Models\UserArticle
+            if($row = $model::findOrFail($request->object)) {
+
+                $result = $row->delete();
+                return $result;
+            }
+
+
+
+        }
+        return false;
+    }
+
 
 }

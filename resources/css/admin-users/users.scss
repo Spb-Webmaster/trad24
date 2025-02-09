@@ -92,6 +92,7 @@ $maxWidth: 1440;
 
             width: 70%;
             min-height: 96px;
+
             label {
                 width: 100%;
                 height: 100%;
@@ -114,18 +115,20 @@ $maxWidth: 1440;
 
 
     }
+
     &__formDeleteImage {
         position: relative;
         margin: 0 0 0 18px;
-        border-radius:12px;
+        border-radius: 12px;
         padding: 5px;
         background: #fff;
         border: 1px solid #ddd;
         display: block;
+
         img {
             position: relative;
             z-index: 1;
-            border-radius:12px;
+            border-radius: 12px;
             display: block;
         }
 
@@ -144,45 +147,54 @@ $maxWidth: 1440;
         }
 
     }
+
     &__input-file {
         opacity: 0;
         width: 0.1px;
         height: 0.1px;
         position: absolute;
     }
+
     &__arrow-up {
         display: flex;
         justify-content: end;
         min-height: 69px;
         flex-direction: column;
+
         img {
             transform: rotate(180deg);
         }
 
     }
+
     &__col_plustext {
         display: block;
 
     }
+
     &__switch {
         align-items: start;
 
     }
+
     .dashboardInputButton {
         display: flex;
         justify-content: space-between;
         align-items: start;
     }
+
     .dashboardInput {
         padding: 0 16px 0 0;
         width: 100%;
 
     }
+
     .dashboardButton {
 
         min-width: 180px;
 
     }
+
     /* добавление */
     .remove_worker__imgClose {
         position: relative;
@@ -191,6 +203,7 @@ $maxWidth: 1440;
         display: block;
         cursor: pointer;
     }
+
     #addWorker {
         width: 198px;
         height: 44px;
@@ -208,9 +221,11 @@ $maxWidth: 1440;
         cursor: pointer;
         transition: 0.2s;
     }
+
     #addWorker:hover {
         color: $colorBlue;
     }
+
     /* добавление */
 
 }
@@ -235,6 +250,7 @@ $maxWidth: 1440;
     flex-direction: column;
     padding-left: 8px;
 }
+
 .a_user__checkbox {
     width: 4%;
     display: flex;
@@ -311,6 +327,7 @@ $maxWidth: 1440;
     }
 
 }
+
 .a_user__delete {
     width: 6%;
     display: flex;
@@ -318,9 +335,11 @@ $maxWidth: 1440;
     justify-content: space-between;
     color: $color;
     text-decoration: none;
-.blockForm {
-    width: 100%;
-}
+
+    .blockForm {
+        width: 100%;
+    }
+
     form {
         display: flex;
         align-items: center;
@@ -361,8 +380,6 @@ $maxWidth: 1440;
     background: rgba(89, 177, 74, 0.1215686275) !important;
     border-radius: 8px;
 }
-
-
 
 
 @media (max-width: 742px) {
@@ -435,8 +452,6 @@ $maxWidth: 1440;
     }
 
 
-
-
 }
 
 /**
@@ -452,6 +467,7 @@ $maxWidth: 1440;
     color: $colorGrey;
     font-size: 12px;
     border-bottom: 1px solid #ddd;
+
     .user25__avatar_first {
         padding: 2px 8px;
         position: relative;
@@ -460,6 +476,7 @@ $maxWidth: 1440;
         display: flex;
         align-items: center;
         justify-content: center;
+
         .user25__avatar_img {
             background-position: center;
             background-repeat: no-repeat;
@@ -469,6 +486,8 @@ $maxWidth: 1440;
         }
 
     }
+
+
     .user25__name_birthday_first {
         padding: 2px 8px;
         position: relative;
@@ -485,6 +504,7 @@ $maxWidth: 1440;
         display: flex;
         align-items: center;
     }
+
     .user25__icons_first {
         position: relative;
         padding: 2px 8px;
@@ -495,13 +515,14 @@ $maxWidth: 1440;
 }
 
 .user25 {
-        display: flex;
+    display: flex;
     justify-content: space-between;
-        min-height: 52px;
-        margin-bottom: 2px;
-        border-radius: 8px;
+    min-height: 52px;
+    margin-bottom: 2px;
+    border-radius: 8px;
     text-decoration: none;
     color: $color;
+
     .user25__avatar {
         width: 5%;
         min-width: 50px;
@@ -510,6 +531,7 @@ $maxWidth: 1440;
         justify-content: center;
         flex-direction: column;
         padding-left: 8px;
+
         .user25__avatar_img {
             border-radius: 30px;
             border: 1px solid #ccc;
@@ -522,29 +544,34 @@ $maxWidth: 1440;
             background-size: contain;
         }
     }
+
     .user25__name_birthday {
         position: relative;
         padding: 8px;
         width: 45%;
+
         .user25__name {
             font-weight: 600;
         }
 
         .user25__birthday {
-            padding: 1px 0 ;
+            padding: 1px 0;
         }
 
     }
+
     .user25__email_phone {
         position: relative;
         padding: 8px;
         width: 35%;
+
         .user25__phone {
             color: $colorRed;
             font-size: 14px;
             padding: 1px 0;
         }
     }
+
     .user25__icons {
         position: relative;
         padding: 8px;
@@ -556,19 +583,22 @@ $maxWidth: 1440;
         color: $colorBlue;
 
         div {
-            padding:  6px;
+            padding: 6px;
+
             svg {
                 width: 20px;
                 height: 20px;
             }
         }
     }
+
     &:nth-child(even) {
-        background: #dffefe ;
+        background: #dffefe;
     }
+
     &:hover {
         .user25__icons {
-color: $colorRed;
+            color: $colorRed;
         }
     }
 }
@@ -590,6 +620,7 @@ color: $colorRed;
     color: $colorGrey;
     font-size: 12px;
     border-bottom: 1px solid #ddd;
+
     .user25__avatar_first {
         padding: 2px 8px;
         position: relative;
@@ -598,6 +629,7 @@ color: $colorRed;
         display: flex;
         align-items: center;
         justify-content: center;
+
         .user25__avatar_img {
             background-position: center;
             background-repeat: no-repeat;
@@ -607,6 +639,7 @@ color: $colorRed;
         }
 
     }
+
     .user25_m__self_first {
         padding: 2px 8px;
         position: relative;
@@ -623,6 +656,7 @@ color: $colorRed;
         display: flex;
         align-items: center;
     }
+
     .user25_m_gallery_first {
         position: relative;
         padding: 2px 8px;
@@ -630,16 +664,68 @@ color: $colorRed;
         display: flex;
         align-items: center;
     }
+
+    /** photos */
+    .a_user__checkbox_all {
+        padding: 2px 8px;
+        position: relative;
+        width: 5%;
+        min-width: 70px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+    }
+
+    .user25_m__img_first {
+        padding: 2px 8px;
+        position: relative;
+        width: 25%;
+        display: flex;
+        align-items: center;
+
+    }
+
+    .user25_m_data_first {
+        padding: 2px 8px;
+        position: relative;
+        width: 45%;
+        display: flex;
+        align-items: center;
+    }
+
+    .user25_m_trush_first {
+        position: relative;
+        padding: 2px 8px;
+        width: 20%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    /** photos */
+    /** articles */
+
+    .user25_m__article_first {
+        padding: 2px 8px;
+        position: relative;
+        width: 70%;
+        display: flex;
+        align-items: center;
+    }
+
+    /** articles */
 }
 
 .user25_m {
-        display: flex;
+    display: flex;
     justify-content: space-between;
-        min-height: 92px;
-        margin-bottom: 2px;
-        border-radius: 8px;
+    min-height: 92px;
+    margin-bottom: 2px;
+    border-radius: 8px;
     text-decoration: none;
     color: $color;
+
     .user25__avatar {
         width: 5%;
         min-width: 70px;
@@ -669,6 +755,7 @@ color: $colorRed;
         position: relative;
         padding: 8px;
         width: 45%;
+
         .user25_m__name {
             color: $color;
             font-size: 15px;
@@ -679,10 +766,12 @@ color: $colorRed;
                 color: $colorRed;
             }
         }
+
         .user25_m__email {
             font-size: 14px;
             padding: 2px 0;
         }
+
         .user25_m__phone {
             font-size: 14px;
             padding: 2px 0;
@@ -707,22 +796,27 @@ color: $colorRed;
             min-height: 28px;
             text-decoration: none;
             color: $color;
+
             span {
                 text-decoration: underline;
             }
+
             i {
                 font-style: normal;
             }
+
             svg {
                 margin: 0 15px 0 0;
                 position: relative;
                 width: 20px;
                 height: 20px;
             }
+
             &:hover {
                 span {
                     text-decoration: none;
                 }
+
                 svg {
                     color: $colorRed;
                 }
@@ -753,22 +847,210 @@ color: $colorRed;
         }
 
         div {
-            padding:  6px;
+            padding: 6px;
+
             svg {
                 width: 20px;
                 height: 20px;
             }
         }
     }
-    &:nth-child(even) {
-        background: #cff4fc ;
+
+    /* photos */
+    .a_user__checkbox {
+        width: 5%;
+        min-width: 70px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding-left: 8px;
     }
+
+    .user25_m__img {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        position: relative;
+        padding: 8px;
+        width: 25%;
+
+    }
+
+    .user25_m_data {
+        padding: 8px;
+        width: 45%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        position: relative;
+
+        .user25_m_list_item {
+            font-size: 15px;
+            padding: 1px 0;
+            display: flex;
+            align-items: center;
+            min-height: 28px;
+            text-decoration: none;
+            color: $color;
+
+            span {
+            }
+
+            i {
+                font-style: normal;
+            }
+
+            svg {
+                margin: 0 15px 0 0;
+                position: relative;
+                width: 20px;
+                height: 20px;
+            }
+
+        }
+
+
+    }
+
+    .user25_m_trush {
+        position: relative;
+        padding: 8px 5px;
+        width: 20%;
+        min-height: 52px;
+        color: $colorBlue;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .user25_m_trush_solid {
+            width: 42px;
+            height: 42px;
+            border-radius: 4px;
+            background: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 1px solid #cff4fc;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .user25_m_trush_solid:hover {
+            background: $colorRed;
+            border: 1px solid $colorRed;
+
+            svg {
+
+                color: #fff;
+            }
+        }
+
+
+        div {
+            padding: 6px;
+
+            svg {
+                width: 20px;
+                height: 20px;
+            }
+        }
+    }
+
+    /* photos */
+    /* articles */
+
+    .user25_m__article {
+        padding: 8px;
+        width: 70%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        position: relative;
+
+        .user25_m__article_padding {
+            padding: 20px 0 10px 0;
+
+            ._teaser_text {
+                line-height: 1.3em;
+                font-size: 15px;
+            }
+        }
+
+        h2, h3 {
+            font-size: 18px;
+            font-weight: 600;
+            line-height: 1.2em;
+            padding: 0 0 10px 0;
+
+            a {
+                color: $colorBlue;
+
+            }
+        }
+    }
+
+    /* articles */
+
+    &:nth-child(even) {
+        background: #cff4fc;
+    }
+
     &:hover {
         .user25__icons {
-color: $colorRed;
+            color: $colorRed;
         }
     }
 }
+
+.user25_m.no_nth_child {
+    &:nth-child(even) {
+        background: none;
+    }
+}
+
+/** удаление **/
+.cart_icon__wrap {
+    position: relative;
+    padding: 20px 0 0 1px;
+}
+
+.cart_icon {
+
+    width: 40px;
+    height: 40px;
+    background: $colorRed;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    border-radius: 4px;
+    border: 1px solid $colorRed;
+    transition: 0.2s;
+    cursor: pointer;
+    position: relative;
+
+    .cart_icon_1em {
+        width: 1em;
+        height: 1em;
+        color: #fff;
+    }
+
+}
+
+.cart_icon:hover {
+    width: 40px;
+    height: 40px;
+    background: #fff;
+
+    .cart_icon_1em {
+        width: 1em;
+        height: 1em;
+        color: $colorRed;
+    }
+
+}
+
+/** удаление **/
+
 /**
 среднии иконки
  */

@@ -64,5 +64,13 @@ class UserArticleComment extends Model
 
     }
 
+    //
+    //это рекомендуемый способ объявления обработчиков событий
+    protected static function booted () {
+        static::deleting(function(UserArticleComment $comment) { // перед вызовом метода delete() это
 
+                $comment->find()->delete();
+
+        });
+    }
 }

@@ -302,6 +302,55 @@ if (!function_exists('rusdate3')) {
 
     }
 }
+if (!function_exists('convert_bytes')) {
+
+    function convert_bytes($size)
+    {
+        $i = 0;
+        while (floor($size / 1024) > 0) {
+            ++$i;
+            $size /= 1024;
+        }
+
+        $size = str_replace('.', ',', round($size, 1));
+        switch ($i) {
+            case 0:
+                return $size .= ' байт';
+            case 1:
+                return $size .= ' КБ';
+            case 2:
+                return $size .= ' МБ';
+        }
+    }
+}
+if (!function_exists('file_size')) {
+    function file_size(string $image = null)
+    {
+        if (!$image) {
+            return null;
+        }
+
+        if (File::exists(public_path('storage/' . $image))) {
+            return File::size(public_path('storage/' . $image));
+        }
+        return false;
+
+    }
+}
+if (!function_exists('file_mime')) {
+    function file_mime(string $image = null)
+    {
+        if (!$image) {
+            return null;
+        }
+
+        if (File::exists(public_path('storage/' . $image))) {
+            return File::mimeType(public_path('storage/' . $image));
+        }
+        return false;
+
+    }
+}
 
 if (!function_exists('intervention')) {
     function intervention(string $size, string $image = null, string $dir = 'countries', string $method = 'cover')
@@ -454,8 +503,6 @@ if (!function_exists('fullYoutube')) {
 if (!function_exists('youtube')) {
     function youtube($html, $w = null, $h = null)
     {
-
-
         $style = 'style="width:';
         $wi = ($w) ? $w . 'px' : '100%';
         $style .= $wi . '"';
@@ -497,6 +544,27 @@ if (!function_exists('rutube')) {
 
     }
 }
+
+if (!function_exists('render_video')) {
+    function render_video($link, $w = null, $h = null)
+    {
+
+        if(mb_substr_count($link, 'rutube.ru')) { // int
+
+            return rutube($link, ($w)??null, ($h)??null);
+
+        }
+
+        if(mb_substr_count($link, 'youtube.com')) { // int
+
+            return youtube($link, ($w)??null, ($h)??null);
+
+        }
+        return null;
+    }
+}
+
+
 /**
  * операции с rutube
  */

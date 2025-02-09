@@ -36,6 +36,8 @@
 @import "./admin-users/user.scss";
 @import "./cabinet/articles.scss";
 @import "./cabinet/cabinet.scss";
+@import "./forms/checkbox2.scss";
+@import "./forms/checkbox.scss";
 @import "./forms/file.scss";
 @import "./forms/button.scss";
 @import "./forms/input.scss";

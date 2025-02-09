@@ -44,7 +44,7 @@ $maxWidth: 1440;
 }
 ._video_emb {
     padding: 26px 0 6px 0;
-    embed {
+    embed , iframe{
         border-radius: 12px;
     }
 }
@@ -79,7 +79,14 @@ $maxWidth: 1440;
 
 
 }
-
+._articles_h3_title {
+    padding: 0;
+    font-size: 22px;
+    font-weight: 700;
+    line-height: 1.2em;
+    color: $colorBlue;
+    max-width: 94%;
+}
 
 
 

@@ -66,7 +66,7 @@
                                                 type="text"
                                                 id="video"
                                                 name="video"
-                                                placeholder="Ссылка с YouTube"
+                                                placeholder="Ссылка с YouTube или Rutube"
                                                 value="{{ (old('video'))?:'' }}"
                                                 class="input video"
                                                 required="true"
@@ -147,7 +147,9 @@
 
                                                 <h2 class="_articles_h2_title"><a href="{{ route('cabinet.video', ['user_id'=> $user->id, 'id' => $item->id]) }}">{{ $item->title }}</a></h2>
                                                 <div class="_video_emb">
-                                                    {!!   youtube(fullYoutube($item->video),  658, 345) !!}
+
+                                                    {!!  render_video($item->video, 658, 345)  !!}
+
                                                 </div>
                                                 <div class="_articles_text desc">{!!   $item->teasertext !!}</div>
                                             </div>

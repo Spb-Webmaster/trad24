@@ -1,4 +1,12 @@
-import { upload_f,upload_photo,delete_photo } from './include/ajax';
+import {
+    object_delete,
+    object_one_delete,
+    upload_f,
+    upload_photo,
+    delete_photo,
+    published_user,
+    upload_v
+} from './include/ajax';
 import { imask } from './include/imask';
 import { slick } from './include/slick';
 import { input_label, _iserror } from './include/input';
@@ -13,12 +21,16 @@ import {grid} from "./include/image-loaded";
 import {mobile_menu, add__mobile_menu, mobile_menu_close} from "./include/mobile";
 import {article_toggle} from "./include/toggle";
 import {tooltip} from "./include/tooltip";
+import {checkbox} from "./include/checkbox";
 
 
 document.addEventListener('DOMContentLoaded', function () {
 
     //console.log(moment().format('LL'))
     upload_f() // pзагрузка файлов (Аватар)
+    object_delete() // удаление выделенных элементов у таблицы
+    object_one_delete() // удаление одного  элемента у таблицы
+    published_user() // снятие с публикации, активация  (checkbox2)
     imask() // маска на поле input input[name="phone"]
     slick() // карусел
     input_label() // input движение label
@@ -41,6 +53,8 @@ document.addEventListener('DOMContentLoaded', function () {
     article_toggle() // ЛК открыть-закрытиь иконка в статьях пользователя
     datepicker_event() // datepicker - события event
     tooltip() // tooltip
+    checkbox() // checkbox
+    upload_v() // загрузка видео
 
 
 });

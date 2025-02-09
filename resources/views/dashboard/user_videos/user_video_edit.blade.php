@@ -65,8 +65,8 @@
                                             type="text"
                                             id="video"
                                             name="video"
-                                            placeholder="Ссылка с YouTube"
-                                            value="{{ (old('video'))?: fullYoutube($item->video) }}"
+                                            placeholder="Ссылка с YouTube или Rutube"
+                                            value="{{ (old('video'))?: $item->video }}"
                                             class="input video"
                                             required="true"
                                             :isError="$errors->has('video')"
@@ -107,9 +107,13 @@
                             </x-forms.article-form>
 
                             <br>
+                            <h2 class="_articles_h3_title">{{ $item->title }}</h2>
                             <div class="_video_emb">
-                                {!!   youtube(fullYoutube($item->video),  658, 345) !!}
+                                {!!  render_video($item->video, 658, 345)  !!}
                             </div>
+                            <br>
+                            <div class="_articles_text desc ">{!!   $item->article !!}</div>
+                            <br>
                         </div>
 
                     </div>

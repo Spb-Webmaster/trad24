@@ -3,7 +3,7 @@
 
     @include('dashboard.left_bar.avatar')
 
-    <div class="c__title_subtitle">
+    <div class="c__title_subtitle pad_t20_important">
         <h3 class="F_h1 left_bar__name" title="{{ $user->name }}">{{ $user->name }}</h3>
         <div class="F_h2 left_bar__email pad_t5"><span>{{ $user->email }}</span></div>
         @if($user->phone)

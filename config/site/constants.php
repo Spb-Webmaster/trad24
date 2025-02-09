@@ -1,6 +1,6 @@
 <?php
 return [
-    'paginate' => 15,
+    'paginate' => 20,
     'site_name' => 'Фамильная идентичность'
 
 ];

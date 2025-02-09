@@ -7,7 +7,7 @@
 
 ._video_emb {
   padding: 26px 0 6px 0; }
-  ._video_emb embed {
+  ._video_emb embed, ._video_emb iframe {
     border-radius: 12px; }
 
 ._articles__foreach {
@@ -26,6 +26,14 @@
       color: #EF533F; }
   ._articles__foreach ._articles_text {
     padding: 16px  0 0 0; }
+
+._articles_h3_title {
+  padding: 0;
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 1.2em;
+  color: #0969A4;
+  max-width: 94%; }
 
 ._articles_options {
   padding: 11px 0 18px 0;

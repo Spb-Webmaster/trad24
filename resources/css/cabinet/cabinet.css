@@ -579,6 +579,48 @@
     background-image: url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjwhLS0gVXBsb2FkZWQgdG86IFNWRyBSZXBvLCB3d3cuc3ZncmVwby5jb20sIEdlbmVyYXRvcjogU1ZHIFJlcG8gTWl4ZXIgVG9vbHMgLS0+DQo8c3ZnIHdpZHRoPSI4MHB4IiBoZWlnaHQ9IjgwcHgiIHZpZXdCb3g9IjAgMCAxMDI0IDEwMjQiIGNsYXNzPSJpY29uIiAgdmVyc2lvbj0iMS4xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxwYXRoIGQ9Ik05NjAgMTYwaC0yOTEuMmExNjAgMTYwIDAgMCAwLTMxMy42IDBINjRhMzIgMzIgMCAwIDAgMCA2NGg4OTZhMzIgMzIgMCAwIDAgMC02NHpNNTEyIDk2YTk2IDk2IDAgMCAxIDkwLjI0IDY0aC0xODAuNDhBOTYgOTYgMCAwIDEgNTEyIDk2ek04NDQuMTYgMjkwLjU2YTMyIDMyIDAgMCAwLTM0Ljg4IDYuNzJBMzIgMzIgMCAwIDAgODAwIDMyMGEzMiAzMiAwIDEgMCA2NCAwIDMzLjYgMzMuNiAwIDAgMC05LjI4LTIyLjcyIDMyIDMyIDAgMCAwLTEwLjU2LTYuNzJ6TTgzMiA0MTZhMzIgMzIgMCAwIDAtMzIgMzJ2OTZhMzIgMzIgMCAwIDAgNjQgMHYtOTZhMzIgMzIgMCAwIDAtMzItMzJ6TTgzMiA2NDBhMzIgMzIgMCAwIDAtMzIgMzJ2MjI0YTMyIDMyIDAgMCAxLTMyIDMySDI1NmEzMiAzMiAwIDAgMS0zMi0zMlYzMjBhMzIgMzIgMCAwIDAtNjQgMHY1NzZhOTYgOTYgMCAwIDAgOTYgOTZoNTEyYTk2IDk2IDAgMCAwIDk2LTk2di0yMjRhMzIgMzIgMCAwIDAtMzItMzJ6IiBmaWxsPSIjRUY1MzNGIiAvPjxwYXRoIGQ9Ik0zODQgNzY4VjM1MmEzMiAzMiAwIDAgMC02NCAwdjQxNmEzMiAzMiAwIDAgMCA2NCAwek01NDQgNzY4VjM1MmEzMiAzMiAwIDAgMC02NCAwdjQxNmEzMiAzMiAwIDAgMCA2NCAwek03MDQgNzY4VjM1MmEzMiAzMiAwIDAgMC02NCAwdjQxNmEzMiAzMiAwIDAgMCA2NCAweiIgZmlsbD0iI0VGNTMzRiIgLz48L3N2Zz4="); }
 
 /* ////////// фото галерея  в ЛК  */
+.yellow_mess {
+  background: #FF931E;
+  color: #fff; }
+  .yellow_mess .Y_h2 {
+    padding: 5px 0 12px 0;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 1.2em; }
+  .yellow_mess p {
+    line-height: 1.4em; }
+  .yellow_mess a {
+    color: #fff;
+    position: relative; }
+  .yellow_mess a:hover {
+    color: #fff; }
+  .yellow_mess .subscr a:after {
+    top: -2px;
+    right: -30px;
+    display: inline-block;
+    content: '';
+    position: absolute;
+    border-radius: 5px;
+    width: 21px;
+    height: 21px;
+    background-position: 0 0;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-color: #fff;
+    background-image: url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz48IS0tIFVwbG9hZGVkIHRvOiBTVkcgUmVwbywgd3d3LnN2Z3JlcG8uY29tLCBHZW5lcmF0b3I6IFNWRyBSZXBvIE1peGVyIFRvb2xzIC0tPg0KPHN2ZyB3aWR0aD0iODBweCIgaGVpZ2h0PSI4MHB4IiB2aWV3Qm94PSIwIDAgMjQgMjQiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+DQo8cGF0aCBkPSJNMTYuMTkgMkg3LjgxQzQuMTcgMiAyIDQuMTcgMiA3LjgxVjE2LjE4QzIgMTkuODMgNC4xNyAyMiA3LjgxIDIySDE2LjE4QzE5LjgyIDIyIDIxLjk5IDE5LjgzIDIxLjk5IDE2LjE5VjcuODFDMjIgNC4xNyAxOS44MyAyIDE2LjE5IDJaTTguMTggMTYuNzdDOC4xNiAxNi43NyA4LjEzIDE2Ljc3IDguMTEgMTYuNzdDNy4xNCAxNi42OCA2LjIzIDE2LjIzIDUuNTUgMTUuNTFDMy45NSAxMy44MyAzLjk1IDExLjEgNS41NSA5LjQyTDcuNzQgNy4xMkM4LjUyIDYuMyA5LjU3IDUuODQgMTAuNjkgNS44NEMxMS44MSA1Ljg0IDEyLjg2IDYuMjkgMTMuNjQgNy4xMkMxNS4yNCA4LjggMTUuMjQgMTEuNTMgMTMuNjQgMTMuMjFMMTIuNTUgMTQuMzZDMTIuMjYgMTQuNjYgMTEuNzkgMTQuNjcgMTEuNDkgMTQuMzlDMTEuMTkgMTQuMSAxMS4xOCAxMy42MyAxMS40NiAxMy4zM0wxMi41NSAxMi4xOEMxMy42MSAxMS4wNyAxMy42MSA5LjI2IDEyLjU1IDguMTZDMTEuNTYgNy4xMiA5LjgyIDcuMTIgOC44MiA4LjE2TDYuNjMgMTAuNDZDNS41NyAxMS41NyA1LjU3IDEzLjM4IDYuNjMgMTQuNDhDNy4wNiAxNC45NCA3LjY0IDE1LjIyIDguMjUgMTUuMjhDOC42NiAxNS4zMiA4Ljk2IDE1LjY5IDguOTIgMTYuMUM4Ljg5IDE2LjQ4IDguNTYgMTYuNzcgOC4xOCAxNi43N1pNMTguNDUgMTQuNTlMMTYuMjYgMTYuODlDMTUuNDggMTcuNzEgMTQuNDMgMTguMTcgMTMuMzEgMTguMTdDMTIuMTkgMTguMTcgMTEuMTQgMTcuNzIgMTAuMzYgMTYuODlDOC43NiAxNS4yMSA4Ljc2IDEyLjQ4IDEwLjM2IDEwLjhMMTEuNDUgOS42NUMxMS43NCA5LjM1IDEyLjIxIDkuMzQgMTIuNTEgOS42MkMxMi44MSA5LjkxIDEyLjgyIDEwLjM4IDEyLjU0IDEwLjY4TDExLjQ1IDExLjgzQzEwLjM5IDEyLjk0IDEwLjM5IDE0Ljc1IDExLjQ1IDE1Ljg1QzEyLjQ0IDE2Ljg5IDE0LjE4IDE2LjkgMTUuMTggMTUuODVMMTcuMzcgMTMuNTVDMTguNDMgMTIuNDQgMTguNDMgMTAuNjMgMTcuMzcgOS41M0MxNi45NCA5LjA3IDE2LjM2IDguNzkgMTUuNzUgOC43M0MxNS4zNCA4LjY5IDE1LjA0IDguMzIgMTUuMDggNy45MUMxNS4xMiA3LjUgMTUuNDggNy4xOSAxNS45IDcuMjRDMTYuODcgNy4zNCAxNy43OCA3Ljc4IDE4LjQ2IDguNUMyMC4wNSAxMC4xNyAyMC4wNSAxMi45MSAxOC40NSAxNC41OVoiIGZpbGw9IiNGRjkzMUUiLz4NCjwvc3ZnPg==");
+    text-decoration: none; }
+
+.green_mess {
+  background: #43D38B;
+  color: #fff; }
+  .green_mess .Y_h2 {
+    padding: 5px 0 12px 0;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 1.2em; }
+  .green_mess p {
+    line-height: 1.4em; }
+
 @media screen and (max-width: 742px) {
   .cabinet__right .hbox__submenu.top {
     display: none; } }

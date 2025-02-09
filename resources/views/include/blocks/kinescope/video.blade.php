@@ -1,0 +1,1 @@
+<div style="position: relative; padding-top: 56.25%; width: 100%"><iframe src="https://kinescope.io/embed/haNWdac4CoExgAJVQq7kjb" allow="autoplay; fullscreen; picture-in-picture; encrypted-media; gyroscope; accelerometer; clipboard-write;" frameborder="0" allowfullscreen style="position: absolute; width: 100%; height: 100%; top: 0; left: 0;"></iframe></div>

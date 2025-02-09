@@ -198,6 +198,41 @@ $maxWidth: 1440;
 /* ////левая часть ссылки на профиль порльзователя */
 
 
+
+
+.user_blocked__flex {
+
+    display: flex;
+    min-height: 34px;
+    .user_blocked__left {
+
+        min-height: 34px;
+        padding-right: 30px;
+
+
+    }
+    .user_blocked__right {
+        display: flex;
+        align-items: center;
+        min-height: 34px;
+
+    }
+    .green_mess {
+
+        color: #fff;
+        background: #43D38B;
+        padding: 4px;
+        border-radius: 4px;
+
+    }
+    .red_mess {
+        color: #fff;
+        background: $colorRed;
+        padding: 4px;
+        border-radius: 4px;
+    }
+}
+
 @media screen and (max-width: 468px) {
 
 

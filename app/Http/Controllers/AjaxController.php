@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Regobject;
 use App\Models\User;
 use Domain\Catalog\ViewModels\AutoCompleteViewModel;
+use Domain\Manager\ViewModels\MUserPhotoViewModel;
+use Domain\Manager\ViewModels\MUserViewModel;
 use Domain\User\ViewModels\UserViewModel;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
@@ -31,6 +33,68 @@ class AjaxController
         header('Content-Type: application/json');
         return response()->json($result);
 
+    }
+
+
+    /**
+     * @param Request $request
+     * @return \Illuminate\Http\JsonResponse
+     * удаляем элемент(ы) таблицы (все в $request )
+     */
+
+    public function deleteObject(Request $request)
+    {
+
+        $result = MUserViewModel::make()->delete_objects($request);
+
+        /**
+         * возвращаем назад в браузер
+         */
+
+        return response()->json([
+            'result' => $result
+        ]);
+    }
+
+    /**
+     * @param Request $request
+     * @return \Illuminate\Http\JsonResponse
+     * удаляем элемент таблицы (все в $request )
+     */
+
+    public function deleteOneObject(Request $request)
+    {
+
+        $result = MUserViewModel::make()->delete_one_object($request);
+
+        /**
+         * возвращаем назад в браузер
+         */
+
+        return response()->json([
+            'result' => $result
+        ]);
+    }
+
+
+    /**
+     * @param Request $request
+     * @return \Illuminate\Http\JsonResponse
+     * публикация или блокировка
+     */
+
+    public function publishedUser(Request $request)
+    {
+
+        $result = MUserViewModel::make()->published_user($request);
+
+        /**
+         * возвращаем назад в браузер
+         */
+
+        return response()->json([
+            'result' => $result
+        ]);
     }
 
 

@@ -17,6 +17,12 @@
                 @include('include.blocks.responce.teaser_responce')
             </div>
         </div><!--.h_row-->--}}
-        @include('include.blocks.content.content_index')
-    </main>
-@endsection
+{{--        <div class="h_row block">
+            @include('include.blocks.kinescope.video')
+        </div>--}}
+
+
+
+            @include('include.blocks.content.content_index')
+        </main>
+    @endsection
