@@ -1,5 +1,5 @@
 .fancybox__backdrop {
-  background: #abdfdf !important; }
+  background: rgba(0, 0, 0, 0.8) !important; }
 
 .dialogFancyBox {
   display: none;
@@ -54,5 +54,8 @@
     height: 1px;
     background: #ddd;
     margin: 6px 0; }
+
+.fancybox__caption {
+  color: #282828 !important; }
 
 /*# sourceMappingURL=fancybox.css.map */
