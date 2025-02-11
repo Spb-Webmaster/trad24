@@ -48,7 +48,7 @@
 
                                                 <h2 class="_articles_h2_title">{{ $it->title }}</h2>
                                                 <div class="_video_emb">
-                                                    {!!   youtube(fullYoutube($it->video),  658, 345) !!}
+                                                    {!!  render_video($it->video, 658, 345)  !!}
                                                 </div>
                                                 <div class="_articles_text desc">{!!   $it->article !!}</div>
 

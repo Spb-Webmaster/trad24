@@ -794,4 +794,57 @@
   .background_alert div, .background_alert p, .background_alert a {
     color: #842029 !important; }
 
+@media screen and (max-width: 742px) {
+  .user25 {
+    flex-wrap: wrap; }
+    .user25 .user25__avatar {
+      width: 25%;
+      margin-bottom: 10px;
+      padding-top: 15px;
+      padding-bottom: 15px;
+      min-width: 90px !important; }
+      .user25 .user25__avatar .user25__avatar_img {
+        width: 70px !important;
+        min-width: 70px !important;
+        height: 70px !important;
+        border-radius: 70px; }
+    .user25 .user25__name_birthday {
+      width: 72%;
+      margin-bottom: 10px;
+      padding-top: 15px;
+      padding-bottom: 15px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center; }
+      .user25 .user25__name_birthday .user25__name {
+        padding-bottom: 3px; }
+    .user25 .user25__email_phone {
+      width: 60%;
+      padding-bottom: 20px; }
+    .user25 .user25__icons {
+      width: 40%;
+      padding-bottom: 20px; } }
+@media screen and (max-width: 468px) {
+  .user25 {
+    flex-wrap: wrap; }
+    .user25 .user25__avatar {
+      width: 20%;
+      margin-bottom: 10px;
+      padding-top: 15px;
+      padding-bottom: 10px;
+      min-width: 60px !important; }
+      .user25 .user25__avatar .user25__avatar_img {
+        width: 50px !important;
+        min-width: 50px !important;
+        height: 50px !important; }
+    .user25 .user25__name_birthday {
+      width: 80%;
+      padding-bottom: 10px; }
+    .user25 .user25__email {
+      font-size: 14px;
+      padding-bottom: 3px; }
+
+  .user25_first {
+    display: none; } }
+
 /*# sourceMappingURL=users.css.map */

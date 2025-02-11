@@ -196,10 +196,13 @@
   border-radius: 8px; }
 
 @media screen and (max-width: 742px) {
-  ._video_emb embed {
-    width: 100% !important; } }
+  ._video_emb embed, ._video_emb iframe {
+    width: 100% !important; }
+
+  ._articles_h2_title {
+    max-width: 100% !important; } }
 @media screen and (max-width: 468px) {
-  ._video_emb embed {
+  ._video_emb embed, ._video_emb iframe {
     height: 266px !important; } }
 
 /*# sourceMappingURL=articles.css.map */

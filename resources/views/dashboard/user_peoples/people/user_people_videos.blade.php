@@ -48,7 +48,7 @@
 
                                                 <h2 class="_articles_h2_title"><a href="{{ route('cabinet.people_video', ['user_id' => $item->id,  'id' => $it->id]) }}">{{ $it->title }}</a></h2>
                                                 <div class="_video_emb">
-                                                    {!!   youtube(fullYoutube($it->video),  658, 345) !!}
+                                                    {!!  render_video($it->video, 658, 345)  !!}
                                                 </div>
                                                 <div class="_articles_text desc">{!!   $it->teasertext !!}</div>
 
