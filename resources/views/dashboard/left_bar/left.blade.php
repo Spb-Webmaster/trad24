@@ -58,25 +58,25 @@
                     <span>Профиль</span></a>
             </div>
 
-            <div class="user_profile__link a_users_solid">
+            <div class="user_profile__link a_users_solid  {{ active_linkMenu(route('cabinet.peoples') , 'find' )  }}">
                 <a href="{{ route('cabinet.peoples') }}">
                     <x-dashboard.icons.users_solid/>
                     <span>Люди</span></a>
             </div>
 
-            <div class="user_profile__link a_photos_solid">
+            <div class="user_profile__link a_photos_solid  {{ active_linkMenu(route('cabinet.photos', ['user_id' => auth()->user()->id ]) , 'find' )  }}">
                 <a href="{{ route('cabinet.photos', ['user_id' => auth()->user()->id ]) }}">
                     <x-dashboard.icons.photos_solid/>
                     <span>Фото</span></a>
             </div>
 
-            <div class="user_profile__link a_users_solid">
+            <div class="user_profile__link a_users_solid {{ active_linkMenu(route('cabinet.videos', ['user_id' => auth()->user()->id ]) , 'find' )  }}">
                 <a href="{{ route('cabinet.videos', ['user_id' => auth()->user()->id ]) }}">
                     <x-dashboard.icons.videos/>
                     <span>Видео</span></a>
             </div>
 
-            <div class="user_profile__link a_articles_solid">
+            <div class="user_profile__link a_articles_solid {{ active_linkMenu(route('cabinet.articles', ['user_id' => auth()->user()->id ]) , 'find' )  }}">
                 <a href="{{route('cabinet.articles', ['user_id' => auth()->user()->id ])}}">
                     <x-dashboard.icons.articles_solid/>
                     <span>Статьи</span></a>
