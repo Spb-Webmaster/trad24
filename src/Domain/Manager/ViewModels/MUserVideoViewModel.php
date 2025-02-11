@@ -6,23 +6,24 @@ namespace Domain\Manager\ViewModels;
 use App\Models\User;
 use App\Models\UserArticle;
 use App\Models\UserPhoto;
+use App\Models\UserVideo;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\DB;
 use Support\Traits\Makeable;
 
-class MUserArticleViewModel
+class MUserVideoViewModel
 {
     use Makeable;
 
     /**
-     * все статьи    user-a
+     * все видео     user-a
      */
 
-    public function articles($user_id)
+    public function videos($user_id)
     {
 
-        $articles = UserArticle::query()
+        $articles = UserVideo::query()
             ->where('user_id', $user_id)
             ->with('user')
             ->orderBy('created_at', 'desc')
@@ -31,20 +32,19 @@ class MUserArticleViewModel
     }
 
     /**
-     * одна статья  user-a
+     * одно видео  user-a
      */
 
-    public function article($user_id, $id)
+    public function video($user_id, $id)
     {
 
-        $article = UserArticle::query()
+        $article = UserVideo::query()
             ->where('id', $id)
             ->where('user_id', $user_id)
             ->with('user')
             ->first();
         return $article;
     }
-
 
 
 }

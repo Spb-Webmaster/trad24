@@ -409,6 +409,8 @@
   border-bottom: 1px solid #ddd;
   /** photos */
   /** photos */
+  /** videos */
+  /** videos */
   /** articles */
   /** articles */ }
   .user25_m_first .user25__avatar_first {
@@ -470,6 +472,18 @@
     display: flex;
     justify-content: center;
     align-items: center; }
+  .user25_m_first .user25_m__video_first {
+    padding: 2px 8px;
+    position: relative;
+    width: 35%;
+    display: flex;
+    align-items: center; }
+  .user25_m_first .user25_m_data_video_first {
+    padding: 2px 8px;
+    position: relative;
+    width: 35%;
+    display: flex;
+    align-items: center; }
   .user25_m_first .user25_m__article_first {
     padding: 2px 8px;
     position: relative;
@@ -487,6 +501,8 @@
   color: #282828;
   /* photos */
   /* photos */
+  /* videos */
+  /* videos */
   /* articles */
   /* articles */ }
   .user25_m .user25__avatar {
@@ -643,6 +659,62 @@
       .user25_m .user25_m_trush div svg {
         width: 20px;
         height: 20px; }
+  .user25_m .user25_m__video {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    padding: 8px;
+    width: 35%; }
+    .user25_m .user25_m__video .user25_m__video_link {
+      position: relative;
+      transition: 0.3s; }
+      .user25_m .user25_m__video .user25_m__video_link ._play_ {
+        z-index: 10;
+        display: block;
+        left: 82px;
+        top: -70px;
+        position: absolute;
+        width: 40px;
+        height: 40px;
+        border-radius: 50px;
+        background-color: #fff;
+        background-size: 40px;
+        background-position: 0 0;
+        background-repeat: no-repeat;
+        background-image: url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCg0KPCFET0NUWVBFIHN2ZyBQVUJMSUMgIi0vL1czQy8vRFREIFNWRyAxLjEvL0VOIiAiaHR0cDovL3d3dy53My5vcmcvR3JhcGhpY3MvU1ZHLzEuMS9EVEQvc3ZnMTEuZHRkIj4NCjwhLS0gVXBsb2FkZWQgdG86IFNWRyBSZXBvLCB3d3cuc3ZncmVwby5jb20sIEdlbmVyYXRvcjogU1ZHIFJlcG8gTWl4ZXIgVG9vbHMgLS0+DQo8c3ZnIGhlaWdodD0iODAwcHgiIHdpZHRoPSI4MDBweCIgdmVyc2lvbj0iMS4xIiBpZD0iX3gzMl8iIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIA0KCSB2aWV3Qm94PSIwIDAgNTEyIDUxMiIgIHhtbDpzcGFjZT0icHJlc2VydmUiPg0KPHN0eWxlIHR5cGU9InRleHQvY3NzIj4NCgkuc3Qwe2ZpbGw6I0VGNTMzRjt9DQo8L3N0eWxlPg0KPGc+DQoJPHBhdGggY2xhc3M9InN0MCIgZD0iTTI1NiwwQzExNC42MjUsMCwwLDExNC42MjUsMCwyNTZjMCwxNDEuMzc0LDExNC42MjUsMjU2LDI1NiwyNTZjMTQxLjM3NCwwLDI1Ni0xMTQuNjI2LDI1Ni0yNTYNCgkJQzUxMiwxMTQuNjI1LDM5Ny4zNzQsMCwyNTYsMHogTTM1MS4wNjIsMjU4Ljg5OGwtMTQ0LDg1Ljk0NWMtMS4wMzEsMC42MjYtMi4zNDQsMC42NTctMy40MDYsMC4wMzENCgkJYy0xLjAzMS0wLjU5NC0xLjY4Ny0xLjcwMi0xLjY4Ny0yLjkzN3YtODUuOTQ2di04NS45NDZjMC0xLjIxOCwwLjY1Ni0yLjM0MywxLjY4Ny0yLjkzOGMxLjA2Mi0wLjYwOSwyLjM3NS0wLjU3OCwzLjQwNiwwLjAzMQ0KCQlsMTQ0LDg1Ljk2MmMxLjAzMSwwLjU4NiwxLjY0MSwxLjcxOCwxLjY0MSwyLjg5QzM1Mi43MDMsMjU3LjE4NywzNTIuMDk0LDI1OC4yOTcsMzUxLjA2MiwyNTguODk4eiIvPg0KPC9nPg0KPC9zdmc+"); }
+      .user25_m .user25_m__video .user25_m__video_link img {
+        opacity: 1;
+        transition: 0.3s; }
+      .user25_m .user25_m__video .user25_m__video_link:hover img {
+        opacity: 0.5; }
+  .user25_m .user25_m__video_data {
+    padding: 8px;
+    width: 35%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative; }
+    .user25_m .user25_m__video_data .user25_m_list_item {
+      font-size: 15px;
+      padding: 1px 0;
+      display: flex;
+      align-items: center;
+      min-height: 28px;
+      text-decoration: none;
+      color: #282828; }
+      .user25_m .user25_m__video_data .user25_m_list_item i {
+        font-style: normal; }
+      .user25_m .user25_m__video_data .user25_m_list_item svg {
+        margin: 0 15px 0 0;
+        position: relative;
+        width: 20px;
+        height: 20px; }
+      .user25_m .user25_m__video_data .user25_m_list_item a {
+        color: #0969A4; }
+      .user25_m .user25_m__video_data .user25_m_list_item .rutube_svg svg {
+        width: inherit;
+        height: inherit; }
   .user25_m .user25_m__article {
     padding: 8px;
     width: 70%;

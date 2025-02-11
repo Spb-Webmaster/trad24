@@ -528,18 +528,18 @@ if (!function_exists('rutube')) {
         $he = ($h) ?: 'auto';
         $style .= 'height="' . $he . '"';
 
-        $url  = $html;
+        $url = $html;
         $s = substr($url, -1); // returns "s"
-        if($s == '/') {
-            $uri  = rtrim($url,'/');
+        if ($s == '/') {
+            $uri = rtrim($url, '/');
         } else {
             $uri = $url;
         }
 
 
-         preg_match("/[^\/]+$/", $uri, $matches);
-         $rutube = $matches[0]; // ID rutube
-        return  '<iframe  '. $style .'  src="https://rutube.ru/play/embed/'. $rutube .'"  frameBorder="0"  allow="clipboard-write; autoplay"  webkitAllowFullScreen  mozallowfullscreen  allowFullScreen></iframe>';
+        preg_match("/[^\/]+$/", $uri, $matches);
+        $rutube = $matches[0]; // ID rutube
+        return '<iframe  ' . $style . '  src="https://rutube.ru/play/embed/' . $rutube . '"  frameBorder="0"  allow="clipboard-write; autoplay"  webkitAllowFullScreen  mozallowfullscreen  allowFullScreen></iframe>';
 
 
     }
@@ -549,18 +549,73 @@ if (!function_exists('render_video')) {
     function render_video($link, $w = null, $h = null)
     {
 
-        if(mb_substr_count($link, 'rutube.ru')) { // int
+        if (mb_substr_count($link, 'rutube.ru')) { // int
 
-            return rutube($link, ($w)??null, ($h)??null);
+            return rutube($link, ($w) ?? null, ($h) ?? null);
 
         }
 
-        if(mb_substr_count($link, 'youtube.com')) { // int
+        if (mb_substr_count($link, 'youtube.com')) { // int
 
-            return youtube($link, ($w)??null, ($h)??null);
+
+            return youtube($link, ($w) ?? null, ($h) ?? null);
 
         }
         return null;
+    }
+}
+
+
+if (!function_exists('preview')) {
+    function preview($link)
+    {
+
+        if (mb_substr_count($link, 'rutube.ru')) {
+
+            $url = $link;
+            $s = substr($url, -1); // returns "s"
+            if ($s == '/') {
+                $uri = rtrim($url, '/');
+            } else {
+                $uri = $url;
+            }
+
+            preg_match("/[^\/]+$/", $uri, $matches);
+            $rutube = $matches[0]; // ID rutube
+            return "https://rutube.ru/api/video/$rutube/thumbnail/?redirect=1";
+
+        }
+
+        if (mb_substr_count($link, 'youtube.com')) {
+
+            preg_match('%(?:youtube(?:-nocookie)?\.com/(?:[^/]+/.+/|(?:v|e(?:mbed)?)/|.*[?&]v=)|youtu\.be/)([^"&?/ ]{11})%i', $link, $match);
+
+            if (isset($match[1])) {
+                return "https://img.youtube.com/vi/$match[1]/1.jpg";
+            }
+
+
+        }
+        return null;
+    }
+}
+
+if (!function_exists('name_hosting')) {
+    function name_hosting($link)
+    {
+
+        if (mb_substr_count($link, 'rutube.ru')) {
+
+            return 'rutube.ru';
+        }
+
+        if (mb_substr_count($link, 'youtube.com')) {
+
+            return 'youtube.com';
+
+
+        }
+        return 'Не определено';
     }
 }
 
@@ -570,9 +625,6 @@ if (!function_exists('render_video')) {
  */
 
 
-
-
-
 /**
  * textarea оствляем некоторрые теги
  */
@@ -580,18 +632,15 @@ if (!function_exists('render_video')) {
 if (!function_exists('textarea')) {
     function textarea($str): string
     {
-        if(is_string($str)) {
+        if (is_string($str)) {
             $result = strip_tags(nl2br($str), '<code><p><br><br /><br/><b><i><strong>');
             return $result;
         }
 
-        return  '';
+        return '';
 
     }
 }
-
-
-
 
 
 if (!function_exists('a_url')) {
@@ -603,7 +652,7 @@ if (!function_exists('a_url')) {
             $a = $d . '/' . $url;
             return trim($a);
         }
-      return  false;
+        return false;
     }
 }
 

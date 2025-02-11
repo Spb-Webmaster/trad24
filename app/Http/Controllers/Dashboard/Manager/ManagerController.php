@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\User;
 use Domain\Manager\ViewModels\MUserArticleViewModel;
 use Domain\Manager\ViewModels\MUserPhotoViewModel;
+use Domain\Manager\ViewModels\MUserVideoViewModel;
 use Domain\Manager\ViewModels\MUserViewModel;
 use Domain\User\ViewModels\UserViewModel;
 use Illuminate\Http\Request;
@@ -84,7 +85,7 @@ class ManagerController extends Controller
         $user = auth()->user();
 
         $item = MUserViewModel::make()->user($user_id); /** просматриваемый пользователь */
-        $items = MUserPhotoViewModel::make()->photos($user_id); /** фото этого пользователя */
+        $items = MUserVideoViewModel::make()->videos($user_id); /** видео этого пользователя */
 
         return view('dashboard.manager.user.user_videos', [
             'user' => $user,
