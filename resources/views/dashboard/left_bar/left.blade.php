@@ -15,7 +15,7 @@
 <br>
 <br>
 
-@if(isset($user->manager))
+@if($user->manager)
     <div class="cabinet_radius12_fff pad_t10_important pad_b10_important">
         <div class="c__title_manager">
             <h4>Панель менеджера</h4>
