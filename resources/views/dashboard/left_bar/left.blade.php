@@ -49,7 +49,9 @@
 
 @if(isset($profile))
     <div class="cabinet_radius12_fff pad_t10_important pad_b10_important">
-
+        <div class="c__title_manager">
+            <h4>Мой профиль</h4>
+        </div>
         <div class="user_profile__links">
 
             <div class="user_profile__link a_profile_solid">
