@@ -353,7 +353,17 @@ Route::controller(ManagerController::class)->group(function () {
     Route::get('/m_users/user/{user_id}/articles/article/{id}', 'm_user_article')
         ->name('m_user_article')
         ->middleware(ManagerMiddleware::class);
+    /** /// работа с user */
 
+    /** работа с photos user-а */
+    Route::get('/m_photos', 'photos')
+        ->name('m_photos')
+        ->middleware(ManagerMiddleware::class);
+
+    Route::get('/m_videos', 'videos')
+        ->name('m_videos')
+        ->middleware(ManagerMiddleware::class);
+    /** /// работа с photos user-а */
 
 });
     /**

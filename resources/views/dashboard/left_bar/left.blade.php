@@ -28,8 +28,8 @@
                     <x-dashboard.icons.users_solid title="Список пользователей сайта"/>
                     <span>Пользователи</span></a>
             </div>
-            <div class="user_profile__link">
-                <a href="#">
+            <div class="user_profile__link {{ active_linkMenu(route('m_photos') , 'find' )  }}">
+                <a href="{{route('m_photos')}}">
                     <x-dashboard.icons.photos_solid title="Новые загруженные изображения пользователями сайта"/>
                     <span>Новые фото</span></a>
             </div>

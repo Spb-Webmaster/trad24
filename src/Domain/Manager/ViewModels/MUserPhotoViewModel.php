@@ -29,6 +29,25 @@ class MUserPhotoViewModel
         return $photos;
     }
 
+
+
+    /**
+     * все фото  user-a
+     */
+
+    public function new_photos()
+    {
+
+        $photos = UserPhoto::query()
+            ->with('user')
+            ->orderBy('created_at', 'desc')
+            ->paginate(config('site.constants.paginate'));
+        return $photos;
+    }
+
+
+
+
     /**
      *  ПЕРЕПИСАЛ ПЕРЕПИСАЛ ПЕРЕПИСАЛ ПЕРЕПИСАЛ ПЕРЕПИСАЛ ПЕРЕПИСАЛ ПЕРЕПИСАЛ ПЕРЕПИСАЛ ПЕРЕПИСАЛ ПЕРЕПИСАЛ
      * src/Domain/Manager/ViewModels/MUserViewModel.php

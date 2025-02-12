@@ -738,6 +738,13 @@
     background: #cff4fc; }
   .user25_m:hover .user25__icons {
     color: #EF533F; }
+  .user25_m .photos_users_solid {
+    color: #0969A4;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    display: block;
+    max-width: 200px; }
 
 .user25_m.no_nth_child:nth-child(even) {
   background: none; }

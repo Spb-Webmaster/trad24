@@ -216,168 +216,19 @@ class ManagerController extends Controller
 
     }
 
-    /**
-     * отчеты
-     * спискок отчетов
-     */
+  public function photos() {
 
-    public function reports()
-    {
+      $user = auth()->user();
 
-        $user = auth()->user();
+      $items = MUserPhotoViewModel::make()->new_photos(); /** новые фото */
 
-        $items = MReportViewModel::make()->reports();
-        if (!$items) {
-            abort(404);
-        }
-        return view('dashboard.manager.report.reports', [
-            'user' => $user,
-            'items' => $items,
-        ]);
-
-    }
-
-    /**
-     *
-     *  отчет по id
-     */
-
-    public function report($id)
-    {
-
-        $user = auth()->user();
-
-        $item = MReportViewModel::make()->report($id);
-        if (!$item) {
-            abort(404);
-        }
-
-        return view('dashboard.manager.report.report', [
-            'user' => $user,
-            'item' => $item,
-        ]);
-
-    }
+      return view('dashboard.manager.photos.photos', [
+          'user' => $user,
+          'items' => $items,
+      ]);
 
 
-    /**
-     * Метод вывода всех пользователей по полям name,username,email у кого есть отчеты на модерации
-     */
-    public function search_user_report(UserSearchRequest $request)
-    {
-
-
-        $user = auth()->user();
-
-        $items = MReportViewModel::make()->search_user_report($request);
-        if (!count($items)) {
-            flash()->alert(config('message_flash.alert.search_error'));
-        }
-        return view('dashboard.manager.report.reports', [
-            'user' => $user,
-            'items' => $items,
-        ]);
-
-    }
-
-
-    /**
-     * @param Request $request
-     * блокировать
-     */
-
-
-    public function blocked_report(Request $request)
-    {
-        ReportViewModel::make()->blocked_report($request);
-        flash()->alert(config('message_flash.alert.manager_blocked_report'));
-        return redirect(route('m_reports'));
-
-    }
-
-    /**
-     * @param Request $request
-     * разблоктровать
-     */
-
-    public function unblock_report(Request $request)
-    {
-
-        ReportViewModel::make()->unblock_report($request);
-        flash()->info(config('message_flash.info.manager_unblock_report'));
-        return redirect(route('m_reports'));
-
-    }
-
-    /**
-     * комментарии
-     */
-    public function comments()
-    {
-
-        $user = auth()->user();
-
-        $items = MCommentViewModel::make()->comments();
-
-        if (!$items) {
-            abort(404);
-        }
-        return view('dashboard.manager.comment.comments', [
-            'user' => $user,
-            'items' => $items,
-        ]);
-
-
-    }
-
-    /**
-     *
-     *  отзыв по id
-     */
-
-    public function comment($id)
-    {
-
-        $user = auth()->user();
-
-        $item = MCommentViewModel::make()->comment($id);
-        if (!$item) {
-            abort(404);
-        }
-
-        return view('dashboard.manager.comment.comment', [
-            'user' => $user,
-            'item' => $item,
-        ]);
-
-    }
-
-
-    /**
-     ** удалить отзыв
-     */
-    public function delete_comment(Request $request)
-    {
-
-
-        $result = MCommentViewModel::make()->delete_comment($request->id);
-
-        return redirect(route('m_comments'));
-
-    }
-
-    /**
-     * опубликовываем отзыв
-     */
-    public function published_comments(Request $request)
-    {
-
-
-        $result = MCommentViewModel::make()->published_comments($request->id);
-
-        return redirect(route('m_comments'));
-
-    }
+  }
 
 
 
