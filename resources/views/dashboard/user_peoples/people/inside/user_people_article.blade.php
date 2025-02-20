@@ -18,14 +18,14 @@
                     <div class="cabinet__left">
                         <div class="cl">
 
-                            @include('dashboard.left_bar.left')
+                            @include('dashboard.left_bar.left', ['profile' => true])
 
                         </div>
                     </div>
 
                     <div class="cabinet__right">
 
-                        @include('dashboard.menu.cabinet_menu')
+
 
                         <div class="cabinet_radius12_fff">
 
