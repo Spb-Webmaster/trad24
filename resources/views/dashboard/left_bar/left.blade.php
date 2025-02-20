@@ -33,8 +33,8 @@
                     <x-dashboard.icons.photos_solid title="Новые загруженные изображения пользователями сайта"/>
                     <span>Новые фото</span></a>
             </div>
-            <div class="user_profile__link">
-                <a href="#">
+            <div class="user_profile__link {{ active_linkMenu(route('m_videos') , 'find' )  }}">
+                <a href="{{route('m_videos')}}">
                     <x-dashboard.icons.videos title="Новые ссылки на видео от пользователей сайта" />
                     <span>Новые видео</span></a>
             </div>

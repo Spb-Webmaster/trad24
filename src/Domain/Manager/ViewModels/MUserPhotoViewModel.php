@@ -32,7 +32,7 @@ class MUserPhotoViewModel
 
 
     /**
-     * все фото  user-a
+     * все фото  новые
      */
 
     public function new_photos()

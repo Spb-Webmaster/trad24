@@ -1,8 +1,7 @@
 <div>
-    {{-- Care about people's approval and you will be their prisoner. --}}
     <a class="user25_m__video_link" href="#{{ $yakor }}" data-fancybox  wire:click="click_video({{ $video->video }})">
         <span class="_play_"></span>
-        <img    loading="lazy" class="pc_category_img" width="210" height="120" data-url_video="{{ $video->video }}"  src="{{preview($video->video)}}" alt="photo_" title="" />
+        <img    loading="lazy" class="pc_category_img" width="210" height="120" data-url_video="{{ $video->video }}"  src="{{preview($video->video)}}" alt="{{ $video->title }}" title="" />
     </a>
     {{--preview($it->video)--}}
 

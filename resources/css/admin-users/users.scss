@@ -994,12 +994,15 @@ $maxWidth: 1440;
         .user25_m__video_link {
             position: relative;
             transition: 0.3s;
+            width: 210px;
+            height: 120px;
+            display: block;
 
             ._play_ {
                 z-index: 10;
                 display: block;
                 left: 82px;
-                top: -70px;
+                top: 43px;
                 position: absolute;
                 width: 40px;
                 height: 40px;

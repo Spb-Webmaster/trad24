@@ -17,8 +17,6 @@ class Video extends Component
 
     public function render()
     {
-
-
         return view('livewire.modals.manager.video', ['yakor' => rand(1, 10000000)]);
     }
 }

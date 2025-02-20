@@ -230,6 +230,20 @@ class ManagerController extends Controller
 
   }
 
+  public function videos() {
+
+      $user = auth()->user();
+
+      $items = MUserVideoViewModel::make()->new_videos(); /** новые видео */
+
+      return view('dashboard.manager.videos.videos', [
+          'user' => $user,
+          'items' => $items,
+      ]);
+
+
+  }
+
 
 
 

@@ -47,4 +47,14 @@ class MUserVideoViewModel
     }
 
 
+    public function new_videos() {
+
+        $videos = UserVideo::query()
+            ->with('user')
+            ->orderBy('created_at', 'desc')
+            ->paginate(config('site.constants.paginate'));
+        return $videos;
+
+    }
+
 }

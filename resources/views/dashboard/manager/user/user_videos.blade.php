@@ -34,6 +34,7 @@
                                     <span>{{ __('Пользователь') . ' - ' . $item->name }}</span>
                                 </div>
                             </div>
+
                             <div class="dashboardBox dashboardBox__a_user ">
 
                                 <x-dashboard.user.user_avatar_email_phone__mini :user="$item"
