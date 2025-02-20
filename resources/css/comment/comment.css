@@ -147,4 +147,29 @@
   .error_comment .errorBlade {
     padding: 0 !important; }
 
+@media screen and (max-width: 468px) {
+  .web_comments .web_c_avatar {
+    min-width: 69px; }
+    .web_comments .web_c_avatar .site_avatar {
+      width: 50px !important;
+      height: 50px !important; }
+  .web_comments .web_c_flex .web_c__right {
+    width: 10%;
+    min-width: 50px; }
+
+  .web_comment {
+    font-size: 14px; }
+    .web_comment .web_comment__avatar {
+      width: 40px;
+      min-width: 40px; }
+      .web_comment .web_comment__avatar a {
+        width: 30px !important;
+        height: 30px !important; }
+    .web_comment .web_comment__text_wrap {
+      padding-right: 16px; }
+    .web_comment .web_comment__text {
+      padding-right: 6px; }
+    .web_comment .comment_answer .web_c_answer_right {
+      min-width: 50px; } }
+
 /*# sourceMappingURL=comment.css.map */

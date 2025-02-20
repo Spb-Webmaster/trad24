@@ -81,7 +81,7 @@
                                                 <div class="user25_m__video_data">
                                                     <div class="user25_m_list_item">
                                                         <x-dashboard.icons.users_solid/>
-                                                       
+
                                                         <i><a class="photos_users_solid" href="{{ route('m_user_photos', ['user_id' => $it->user->id ]) }}">{{ $it->user->name }}</a></i>
                                                     </div>
 
