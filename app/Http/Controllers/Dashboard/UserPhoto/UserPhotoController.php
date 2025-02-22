@@ -52,6 +52,7 @@ class UserPhotoController extends Controller
         }
 
         foreach ($request->photos as $photo) {
+
             $filename = $photo->store('users/' . $user->id . '/photos');
             UserPhotoViewModel::make()->create($user->id, $filename);
 

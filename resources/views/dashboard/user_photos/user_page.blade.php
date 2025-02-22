@@ -47,7 +47,7 @@
 
                                 <div class="drob_container">
                                     <div class="camera"></div>
-                                    <div class="camera_title"><span>{{ __('Перетащите изображение или') }}</span></div>
+                                    <div class="camera_title"><span>{{ __('Изображения') }}</span></div>
 
                                     <input type="file" id="upload-button" name="photos[]" multiple accept="image/*"/>
                                     <label for="upload-button"
