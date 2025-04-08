@@ -11,6 +11,8 @@ composer require barryvdh/laravel-debugbar --dev
 composer require "maatwebsite/excel:^3.1"
 npm i imask
 npm i slick
+npm i slick-carousel
+npm i moment
 npm i jquery
 очереди - https://phpqa.ru/post/ocheredi-v-laravel
 composer require livewire/livewire

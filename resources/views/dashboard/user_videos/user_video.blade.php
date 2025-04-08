@@ -35,8 +35,6 @@
                                 </div>
                             </div>
 
-
-
                             @if(isset($item))
 
                                 <div class="_articles_full _articles__foreach">
